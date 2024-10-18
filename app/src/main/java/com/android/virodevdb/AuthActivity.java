@@ -22,7 +22,7 @@ import java.security.KeyStore;
 public class AuthActivity extends AppCompatActivity {
 
     //objetos
-    //Prueba de un push 22:56 por Jaime
+    //Prueba de un push por Jaime
     private Button botonRegistrar;
     private Button botonAcceder;
     private TextView textoEmail;

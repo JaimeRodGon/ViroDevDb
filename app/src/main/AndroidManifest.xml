@@ -13,6 +13,27 @@
         android:theme="@style/Theme.ViroDevDb"
         tools:targetApi="31">
         <activity
+            android:name=".billActivity"
+            android:exported="false" />
+        <activity
+            android:name=".reportActivity"
+            android:exported="false" />
+        <activity
+            android:name=".addClientActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ClientsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".addProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProductsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".signActivity"
+            android:exported="false" />
+        <activity
             android:name=".PerfilActivity"
             android:exported="false" />
         <activity
