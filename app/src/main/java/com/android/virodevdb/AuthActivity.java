@@ -21,6 +21,7 @@ import java.security.KeyStore;
 
 public class AuthActivity extends AppCompatActivity {
 
+    //Prueba conexion Git
     //objetos
     private Button botonRegistrar;
     private Button botonAcceder;
