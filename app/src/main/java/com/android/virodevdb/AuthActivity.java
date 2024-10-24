@@ -14,12 +14,14 @@ import androidx.core.view.WindowInsetsCompat;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
-
 import com.google.firebase.auth.FirebaseAuth;
+
 
 import java.security.KeyStore;
 
 public class AuthActivity extends AppCompatActivity {
+
+
 
     //Prueba conexion Git
     //objetos
@@ -29,11 +31,12 @@ public class AuthActivity extends AppCompatActivity {
     private TextView textoPass;
     public String StrEmail;
     private String StrPass;
-    private String message = "";
+    private String mensaje = "";
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
 
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
@@ -54,43 +57,21 @@ public class AuthActivity extends AppCompatActivity {
         textoPass = findViewById(R.id.passwordEditText);
         botonRegistrar = findViewById(R.id.signUpButton);
         botonAcceder = findViewById(R.id.logintButton);
-        botonRegistrar.setOnClickListener(new listenerRegistrar());
+
+        //Listeners botones
+        botonRegistrar.setOnClickListener(new listenerPerfil());
         botonAcceder.setOnClickListener(new listenerAcceder());
 
     }
-    //Boton Registrar
-    class listenerRegistrar implements View.OnClickListener{
+    //Boton perfil
+    class listenerPerfil implements View.OnClickListener{
 
         @Override
         public void onClick(View v) {
-            //Recogemos datos del textoEmail i textoPass
-            StrEmail = textoEmail.getText().toString();
-            StrPass = textoPass.getText().toString();
-                try {
 
-                    FirebaseAuth.getInstance().createUserWithEmailAndPassword(StrEmail,
-                            StrPass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if(task.isSuccessful()){
-
-                                message="EXITO EN REGISTRO";
-                                showAlert();
-
-                            }else{
-                                message="Error de registro";
-                                showAlert();
-
-                            }
-                        }
-                    });
-
-
-                }
-                catch (Exception errorRegistro){
-                    message="Error de registro";
-                    showAlert();
-                }
+            FirebaseAuth.getInstance().signOut();
+            Intent intentPerfil = new Intent(AuthActivity.this, PerfilActivity.class);
+            showPerfil();
 
         }
     }
@@ -112,11 +93,11 @@ public class AuthActivity extends AppCompatActivity {
 
                             if(task.isSuccessful()){
 
-                                message="EXITO EN ACCESO";
+                                mensaje="EXITO EN ACCESO";
                                 showHome(StrEmail, StrPass);
 
                             }else{
-                                message="Error de registro";
+                                mensaje="ERROR DE ACCESO";
                                 showAlert();
 
                             }
@@ -126,7 +107,7 @@ public class AuthActivity extends AppCompatActivity {
 
                 }
                 catch (Exception errorRegistro){
-                    message = "Error de acceso";
+                    mensaje = "ERROR DE ACCESO";
                     showAlert();
                 }
 
@@ -149,15 +130,32 @@ public class AuthActivity extends AppCompatActivity {
 
 
     }
+
+    //Muestra PerfilActivity
+    public void showPerfil(){
+
+        //Crea Intents para homeActivity y PerfilActivity
+
+        Intent i = new Intent(this, PerfilActivity.class);
+
+        //Manda datos a homeActivity
+        //i.putExtra("DatosEmail", StrEmail);
+
+        startActivity(i);
+
+
+    }
+
     //Lanza Alerta
     private void showAlert(){
 
         AlertDialog.Builder alerta = new AlertDialog.Builder(this);
-        alerta.setMessage(message);
+        alerta.setMessage(mensaje);
         alerta.show();
 
 
     }
+
 
 
 

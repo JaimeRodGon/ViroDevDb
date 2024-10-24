@@ -23,17 +23,16 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:editable="false"
             android:fontFamily="sans-serif"
             android:text="PERFIL"
             android:textAlignment="center"
             android:textSize="24sp" />
 
-        <TextView
-            android:id="@+id/tvEmail"
+        <EditText
+            android:id="@+id/etEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:hint="EMAIL" />
 
         <View
             android:id="@+id/divider"
@@ -43,12 +42,10 @@
             android:backgroundTint="#FCF5FE" />
 
         <EditText
-            android:id="@+id/NombreEditText"
+            android:id="@+id/etNombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="NOMBRE"
-            android:inputType="textPassword" />
+            android:hint="NOMBRE" />
 
         <View
             android:id="@+id/divider2"
@@ -58,18 +55,50 @@
             android:backgroundTint="#FCF5FE" />
 
         <EditText
-            android:id="@+id/apellidosEditText"
+            android:id="@+id/etApellidos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="APELLIDOS"
-            android:inputType="textPassword" />
+            android:hint="APELLIDOS"  />
+
+        <View
+            android:id="@+id/divider3"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:background="?android:attr/listDivider"
+            android:backgroundTint="#FCF5FE" />
+
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:inputType="textPassword"
+            android:hint="PASSWORD" />
+
+        <View
+            android:id="@+id/divider4"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:background="?android:attr/listDivider"
+            android:backgroundTint="#FCF5FE" />
+
+        <EditText
+            android:id="@+id/etDniCif"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="DNI/CIF" />
 
         <Button
-            android:id="@+id/btnGuardarPerfil"
+            android:id="@+id/btnGuardar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="GUARDAR" />
+
+        <Button
+            android:id="@+id/btnCancelar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CANCELAR" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
