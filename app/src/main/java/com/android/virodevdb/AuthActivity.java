@@ -94,7 +94,7 @@ public class AuthActivity extends AppCompatActivity {
                             if(task.isSuccessful()){
 
                                 mensaje="EXITO EN ACCESO";
-                                showHome(StrEmail, StrPass);
+                                showHome(StrEmail);
 
                             }else{
                                 mensaje="ERROR DE ACCESO";
@@ -114,16 +114,14 @@ public class AuthActivity extends AppCompatActivity {
         }
     }
     //Muestra homeActivity
-    public void showHome(String StrEmail, String StrPass){
+    public void showHome(String StrEmail){
 
         //Crea Intents para homeActivity y PerfilActivity
         Intent i = new Intent(this, homeActivity.class);
-        Intent i2 = new Intent(this, PerfilActivity.class);
+        Intent i2 = new Intent(this, NuevaFacturaActivity.class);
 
         //Manda datos a homeActivity
         i.putExtra("DatosEmail", StrEmail);
-        i.putExtra("DatosPass", StrPass);
-
         i2.putExtra("DatosEmail", StrEmail);
 
         startActivity(i);
