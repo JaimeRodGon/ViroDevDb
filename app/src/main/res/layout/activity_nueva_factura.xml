@@ -14,6 +14,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -26,38 +27,17 @@
             android:textAlignment="center"
             android:textSize="24sp" />
 
-        <View
-            android:id="@+id/divider6"
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:background="?android:attr/listDivider"
-            android:backgroundTint="@color/white" />
-
         <EditText
             android:id="@+id/etClienteFra"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="ID CLIENTE" />
 
-        <View
-            android:id="@+id/divider7"
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:background="?android:attr/listDivider"
-            android:backgroundTint="@color/white" />
-
         <EditText
             android:id="@+id/etNumFra"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="ID FACTURA" />
-
-        <View
-            android:id="@+id/divider8"
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:background="?android:attr/listDivider"
-            android:backgroundTint="@color/white" />
 
         <EditText
             android:id="@+id/etFechaFactura"
@@ -67,25 +47,11 @@
             android:hint="FECHA FACTURA"
             android:inputType="date" />
 
-        <View
-            android:id="@+id/divider11"
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:background="?android:attr/listDivider"
-            android:backgroundTint="@color/white" />
-
         <EditText
             android:id="@+id/etDetalleFra"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="DETALLE" />
-
-        <View
-            android:id="@+id/divider14"
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:background="?android:attr/listDivider"
-            android:backgroundTint="@color/white" />
 
         <EditText
             android:id="@+id/etImporteFra"
@@ -93,25 +59,11 @@
             android:layout_height="wrap_content"
             android:hint="IMPORTE" />
 
-        <View
-            android:id="@+id/divider15"
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:background="?android:attr/listDivider"
-            android:backgroundTint="@color/white" />
-
         <EditText
             android:id="@+id/etIvaFra"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="IVA" />
-
-        <View
-            android:id="@+id/divider16"
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:background="?android:attr/listDivider"
-            android:backgroundTint="@color/white" />
 
         <EditText
             android:id="@+id/etTotalFra"

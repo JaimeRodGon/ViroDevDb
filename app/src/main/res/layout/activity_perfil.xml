@@ -34,13 +34,6 @@
             android:layout_height="wrap_content"
             android:hint="EMAIL" />
 
-        <View
-            android:id="@+id/divider"
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:background="?android:attr/listDivider"
-            android:backgroundTint="#FCF5FE" />
-
         <EditText
             android:id="@+id/etPassword"
             android:layout_width="match_parent"
@@ -49,25 +42,11 @@
             android:hint="PASSWORD"
             android:inputType="textPassword" />
 
-        <View
-            android:id="@+id/divider2"
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:background="?android:attr/listDivider"
-            android:backgroundTint="#FCF5FE" />
-
         <EditText
             android:id="@+id/etNombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="NOMBRE" />
-
-        <View
-            android:id="@+id/divider3"
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:background="?android:attr/listDivider"
-            android:backgroundTint="#FCF5FE" />
 
         <EditText
             android:id="@+id/etApellidos"
@@ -75,25 +54,11 @@
             android:layout_height="wrap_content"
             android:hint="APELLIDOS" />
 
-        <View
-            android:id="@+id/divider4"
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:background="?android:attr/listDivider"
-            android:backgroundTint="#FCF5FE" />
-
         <EditText
             android:id="@+id/etDniCif"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="DNI/CIF" />
-
-        <View
-            android:id="@+id/divider9"
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:background="?android:attr/listDivider"
-            android:backgroundTint="@color/white" />
 
         <EditText
             android:id="@+id/etDireccion"
@@ -101,25 +66,11 @@
             android:layout_height="wrap_content"
             android:hint="DIRECCION" />
 
-        <View
-            android:id="@+id/divider10"
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:background="?android:attr/listDivider"
-            android:backgroundTint="@color/white" />
-
         <EditText
             android:id="@+id/etCP"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="CODIGO POSTAL" />
-
-        <View
-            android:id="@+id/divider12"
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:background="?android:attr/listDivider"
-            android:backgroundTint="@color/white" />
 
         <EditText
             android:id="@+id/etTelefono"
