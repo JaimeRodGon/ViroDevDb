@@ -13,6 +13,9 @@
         android:theme="@style/Theme.ViroDevDb"
         tools:targetApi="31">
         <activity
+            android:name=".DatosPerfilActivity"
+            android:exported="false" />
+        <activity
             android:name=".NuevaFacturaActivity"
             android:exported="false" />
         <activity

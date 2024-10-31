@@ -172,6 +172,8 @@ public class PerfilActivity extends AppCompatActivity {
         alerta.show();
 
     }
+
+    //Crear DocsPerfil
     private void crearDocsPerfil(){
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -190,8 +192,6 @@ public class PerfilActivity extends AppCompatActivity {
 
         //Inserta datos en nodos 
         db.collection("/users").document(strEmail).collection("perfil").document("perfil").set(datosPerfil);
-        db.collection("/users").document(strEmail).collection("clientes").document("cliente1").set(datosPerfil);
-        db.collection("/users").document(strEmail).collection("informes").document("informe1").set(datosPerfil);
 
     }
 

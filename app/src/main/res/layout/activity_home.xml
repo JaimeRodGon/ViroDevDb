@@ -35,10 +35,9 @@
         tools:text="Email" />
 
     <Button
-        android:id="@+id/btnPerfil"
+        android:id="@+id/buttonPerfil"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:enabled="false"
         android:text="PERFIL" />
 
     <View
