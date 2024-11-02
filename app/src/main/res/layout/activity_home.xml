@@ -9,8 +9,8 @@
     tools:context=".homeActivity">
 
   <LinearLayout
-      android:layout_width="409dp"
-      android:layout_height="729dp"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
       android:layout_marginStart="16dp"
       android:layout_marginTop="16dp"
       android:layout_marginEnd="16dp"
@@ -28,36 +28,74 @@
         android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/emailTV"
+        android:id="@+id/textViewEmail"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:text="TextView"
         tools:text="Email" />
 
-    <TextView
-        android:id="@+id/passTV"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:text="Proveedor" />
-
     <Button
-        android:id="@+id/btnPerfil"
+        android:id="@+id/buttonPerfil"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="PERFIL" />
 
-    <LinearLayout
+    <View
+        android:id="@+id/divider5"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider" />
 
-      <Button
-          android:id="@+id/btnClose"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_weight="1"
-          android:text="CERRAR SESION" />
+    <Button
+        android:id="@+id/buttonFacturas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="FACTURAS" />
 
-    </LinearLayout>
+    <View
+        android:id="@+id/divider18"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider" />
+
+    <Button
+        android:id="@+id/buttonClientes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:text="CLIENTES" />
+
+    <View
+        android:id="@+id/divider19"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider" />
+
+    <Button
+        android:id="@+id/buttonArticulos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:text="ARTICULOS" />
+
+    <View
+        android:id="@+id/divider20"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider" />
+
+    <Button
+        android:id="@+id/buttonInformes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:text="INFORMES" />
+
+    <Button
+        android:id="@+id/buttonCerrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CERRAR SESION" />
+
   </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
