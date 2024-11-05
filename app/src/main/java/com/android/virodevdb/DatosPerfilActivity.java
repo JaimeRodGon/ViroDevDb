@@ -36,7 +36,6 @@ public class DatosPerfilActivity extends AppCompatActivity {
     private TextView tvTelefono;
 
     //Variables para HashMap
-
     private String miNombre;
     private String misApellidos;
     private String miEmail;
@@ -84,7 +83,7 @@ public class DatosPerfilActivity extends AppCompatActivity {
     //Setup
     private void Setup (){
 
-        //Recibe datos variables AuthActivity
+        //Recibe datos variables homeActivity
         this.tvEmail.setText(strEmail);
 
         //Listeners Botones
@@ -107,13 +106,14 @@ public class DatosPerfilActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 if (task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
+
+                    //Si el Doc existe
                     if (document.exists()) {
                         Log.d(TAG, "DocumentSnapshot data: " + document.getData());
 
                         //Crea hashMap para almacenar document
                         Map<String, Object> mapPerfil = new HashMap<>();
                         mapPerfil = document.getData();
-
 
                         //Recogemos los datos del HashMap en Strings
                         miNombre = mapPerfil.get("nombre").toString();
@@ -123,7 +123,6 @@ public class DatosPerfilActivity extends AppCompatActivity {
                         miDireccion = mapPerfil.get("direccion").toString();
                         miCp= mapPerfil.get("cp").toString();
                         miTelefono = mapPerfil.get("telefono").toString();
-
 
                         //Llama a función para insertar datos en textViews
                         insertaDatosTextViews();
@@ -150,7 +149,6 @@ public class DatosPerfilActivity extends AppCompatActivity {
         tvDireccion.setText(miDireccion);
         tvCP.setText(miCp);
         tvTelefono.setText(miTelefono);
-
 
     }
 

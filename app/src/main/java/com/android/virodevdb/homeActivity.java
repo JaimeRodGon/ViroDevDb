@@ -1,5 +1,4 @@
 package com.android.virodevdb;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -20,7 +19,6 @@ public class homeActivity extends AppCompatActivity {
     private Button  btnPerfil;
     private TextView tvEmail;
     private String strEmail;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,8 +61,6 @@ public class homeActivity extends AppCompatActivity {
         btnPerfil.setOnClickListener(new homeActivity.listenerPerfil());
 
     }
-
-
 
     //Boton Cerrar
     class listenerCerrar implements View.OnClickListener{
@@ -117,11 +113,12 @@ public class homeActivity extends AppCompatActivity {
 
         Intent i = new Intent(this, DatosPerfilActivity.class);
 
+        //Manda datos a DatosPerfilActivity
+
         i.putExtra("DatosEmail", strEmail);
 
         startActivity(i);
 
     }
-
-
+    
 }

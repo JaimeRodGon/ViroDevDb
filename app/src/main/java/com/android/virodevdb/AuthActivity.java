@@ -17,13 +17,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 
-import java.security.KeyStore;
-
 public class AuthActivity extends AppCompatActivity {
 
-
-
-    //Prueba conexion Git
     //objetos
     private Button botonRegistrar;
     private Button botonAcceder;
@@ -33,10 +28,8 @@ public class AuthActivity extends AppCompatActivity {
     private String StrPass;
     private String mensaje = "";
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
 
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
@@ -78,13 +71,11 @@ public class AuthActivity extends AppCompatActivity {
     //Boton Acceder
     class listenerAcceder implements View.OnClickListener{
 
-
         @Override
         public void onClick(View v) {
             //Recogemos datos del textoEmail i textoPass
             StrEmail = textoEmail.getText().toString();
             StrPass = textoPass.getText().toString();
-
                 try {
                     FirebaseAuth.getInstance().signInWithEmailAndPassword(StrEmail,
                             StrPass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -126,7 +117,6 @@ public class AuthActivity extends AppCompatActivity {
 
         startActivity(i);
 
-
     }
 
     //Muestra PerfilActivity
@@ -141,7 +131,6 @@ public class AuthActivity extends AppCompatActivity {
 
         startActivity(i);
 
-
     }
 
     //Lanza Alerta
@@ -153,8 +142,5 @@ public class AuthActivity extends AppCompatActivity {
 
 
     }
-
-
-
 
 }

@@ -20,7 +20,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
 
-
 public class PerfilActivity extends AppCompatActivity {
     //Variables String
     public String strEmail;
@@ -32,7 +31,6 @@ public class PerfilActivity extends AppCompatActivity {
     private String strCP;
     private String strTelefono;
 
-
     //Variables TexView
     private TextView tvEmail;
     private TextView tvPassword;
@@ -42,7 +40,6 @@ public class PerfilActivity extends AppCompatActivity {
     private TextView tvDireccion;
     private TextView tvCP;
     private TextView tvTelefono;
-
 
     //Variables botones
     private Button btnGuardar;
