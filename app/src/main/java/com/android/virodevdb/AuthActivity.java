@@ -24,7 +24,7 @@ public class AuthActivity extends AppCompatActivity {
     private Button botonAcceder;
     private TextView textoEmail;
     private TextView textoPass;
-    public String StrEmail;
+    private String StrEmail;
     private String StrPass;
     private String mensaje = "";
 
@@ -45,7 +45,7 @@ public class AuthActivity extends AppCompatActivity {
         setup();
     }
     //SETUP
-    public void setup(){
+    private void setup(){
         textoEmail = findViewById(R.id.emailEditText);
         textoPass = findViewById(R.id.passwordEditText);
         botonRegistrar = findViewById(R.id.signUpButton);
@@ -105,7 +105,7 @@ public class AuthActivity extends AppCompatActivity {
         }
     }
     //Muestra homeActivity
-    public void showHome(String StrEmail){
+    private void showHome(String StrEmail){
 
         //Crea Intents para homeActivity y PerfilActivity
         Intent i = new Intent(this, homeActivity.class);
@@ -120,7 +120,7 @@ public class AuthActivity extends AppCompatActivity {
     }
 
     //Muestra PerfilActivity
-    public void showPerfil(){
+    private void showPerfil(){
 
         //Crea Intents para homeActivity y PerfilActivity
 
@@ -134,7 +134,7 @@ public class AuthActivity extends AppCompatActivity {
     }
 
     //Lanza Alerta
-    private void showAlert(){
+    public void showAlert(){
 
         AlertDialog.Builder alerta = new AlertDialog.Builder(this);
         alerta.setMessage(mensaje);

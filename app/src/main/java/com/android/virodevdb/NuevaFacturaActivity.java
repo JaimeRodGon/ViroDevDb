@@ -221,7 +221,7 @@ public class NuevaFacturaActivity extends AppCompatActivity {
     }
 
     //Lanza Alerta
-    private void showAlert(){
+    public void showAlert(){
 
         AlertDialog.Builder alerta = new AlertDialog.Builder(this);
         alerta.setMessage(mensaje);
@@ -241,7 +241,7 @@ public class NuevaFacturaActivity extends AppCompatActivity {
     }
 
     //Muestra homeActivity
-    public void showHomeActivity(){
+    private void showHomeActivity(){
         //Crea Intents para volver homeActivity
 
         Intent i = new Intent(this, homeActivity.class);

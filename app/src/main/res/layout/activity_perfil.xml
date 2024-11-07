@@ -86,7 +86,7 @@
             android:backgroundTint="@color/white" />
 
         <Button
-            android:id="@+id/btnGuardar"
+            android:id="@+id/btnGuardarActualizaPerfil"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="GUARDAR" />

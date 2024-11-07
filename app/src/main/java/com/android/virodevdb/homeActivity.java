@@ -94,7 +94,7 @@ public class homeActivity extends AppCompatActivity {
         }
     }
     //Muestra PerfilActivity
-    public void showNuevaFacturaActivity(String strEmail){
+    private void showNuevaFacturaActivity(String strEmail){
 
         //Crea Intents para NuevaFacturaActivity
 
@@ -107,11 +107,11 @@ public class homeActivity extends AppCompatActivity {
     }
 
     //Muestra DatosPerfilActivity
-    public void showDatosPerfilActivity(String strEmail){
+    private void showDatosPerfilActivity(String strEmail){
 
         //Crea Intents para DatosPerfilActivity
 
-        Intent i = new Intent(this, DatosPerfilActivity.class);
+        Intent i = new Intent(this, VerPerfilActivity.class);
 
         //Manda datos a DatosPerfilActivity
 

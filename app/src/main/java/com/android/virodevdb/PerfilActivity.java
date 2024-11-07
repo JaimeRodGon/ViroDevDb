@@ -22,7 +22,7 @@ import java.util.Map;
 
 public class PerfilActivity extends AppCompatActivity {
     //Variables String
-    public String strEmail;
+    private String strEmail;
     private String strPassword;
     private String strNombre;
     private String strApellidos;
@@ -67,7 +67,7 @@ public class PerfilActivity extends AppCompatActivity {
     private void Setup (){
 
         //Variable boton guardar
-        btnGuardar = findViewById(R.id.btnGuardar);
+        btnGuardar = findViewById(R.id.btnGuardarActualizaPerfil);
         btnCancelar = findViewById(R.id.buttonCancelar);
 
         //Find by ID
@@ -152,7 +152,7 @@ public class PerfilActivity extends AppCompatActivity {
     }
 
     //Muestra AuthActivity
-    public void showAuthActivity(){
+   private void showAuthActivity(){
         //Crea Intents para volver AuthActivity
 
         Intent i = new Intent(this, AuthActivity.class);
@@ -162,7 +162,7 @@ public class PerfilActivity extends AppCompatActivity {
     }
 
     //Lanza Alerta
-    private void showAlert(){
+    public void showAlert(){
 
         AlertDialog.Builder alerta = new AlertDialog.Builder(this);
         alerta.setMessage(mensaje2);
@@ -191,7 +191,6 @@ public class PerfilActivity extends AppCompatActivity {
         db.collection("/users").document(strEmail).collection("perfil").document("perfil").set(datosPerfil);
 
     }
-
 
 
 }
