@@ -1,5 +1,4 @@
 package com.android.virodevdb;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -15,12 +14,11 @@ import com.google.firebase.auth.FirebaseAuth;
 public class homeActivity extends AppCompatActivity {
 
     //Variables
-    private Button  botonCerrar;
-    private Button  botonPerfil;
+    private Button  btnCerrar;
+    private Button  btnFacturas;
+    private Button  btnPerfil;
     private TextView tvEmail;
-    private TextView tvPass;
-    private String StrEmail;
-    private String StrPass;
+    private String strEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,31 +33,32 @@ public class homeActivity extends AppCompatActivity {
 
         });
         //Variables View
-        tvEmail = findViewById(R.id.emailTV);
-        tvPass = findViewById(R.id.passTV);
-        botonCerrar = findViewById(R.id.btnClose);
-        botonPerfil = findViewById(R.id.btnPerfil);
+        tvEmail = findViewById(R.id.textViewEmail);
 
-
+        //Variables botones
+        btnCerrar = findViewById(R.id.buttonCerrar);
+        btnFacturas = findViewById(R.id.buttonFacturas);
+        btnPerfil = findViewById(R.id.buttonPerfil);
 
         //Recibe datosEmail datosPass
         Intent recibir = getIntent();
-        StrEmail = recibir.getStringExtra("DatosEmail");
-        StrPass = recibir.getStringExtra("DatosPass");
+        strEmail = recibir.getStringExtra("DatosEmail");
 
+
+        //Setup
         setup();
 
-    //Setup
+
     }
     private void setup (){
 
         //Recibe datos variables AuthActivity
-        this.tvEmail.setText(StrEmail);
-        this.tvPass.setText(StrPass);
-        //Listeners Botones
-        botonCerrar.setOnClickListener(new homeActivity.listenerCerrar());
-        botonPerfil.setOnClickListener(new homeActivity.listenerPerfil());
+        this.tvEmail.setText(strEmail);
 
+        //Listeners Botones
+        btnCerrar.setOnClickListener(new homeActivity.listenerCerrar());
+        btnFacturas.setOnClickListener(new homeActivity.listenerFacturas());
+        btnPerfil.setOnClickListener(new homeActivity.listenerPerfil());
 
     }
 
@@ -75,35 +74,51 @@ public class homeActivity extends AppCompatActivity {
         }
     }
 
-    //Boton perfil
+    //Boton Facturas
+    class listenerFacturas implements View.OnClickListener{
+
+        @Override
+        public void onClick(View v) {
+
+            showNuevaFacturaActivity(strEmail);
+        }
+    }
+
+    //Boton Facturas
     class listenerPerfil implements View.OnClickListener{
 
         @Override
         public void onClick(View v) {
 
-            FirebaseAuth.getInstance().signOut();
-            Intent intentPerfil = new Intent(homeActivity.this, PerfilActivity.class);
-            showPerfil(StrEmail);
-
+            showDatosPerfilActivity(strEmail);
         }
     }
-
     //Muestra PerfilActivity
-    public void showPerfil(String StrEmail){
+    private void showNuevaFacturaActivity(String strEmail){
 
-        //Crea Intents para homeActivity y PerfilActivity
+        //Crea Intents para NuevaFacturaActivity
 
-        Intent i = new Intent(this, PerfilActivity.class);
+        Intent i = new Intent(this, NuevaFacturaActivity.class);
 
-        //Manda datos a homeActivity
-        i.putExtra("DatosEmail", StrEmail);
+        i.putExtra("DatosEmail", strEmail);
 
         startActivity(i);
 
-
     }
 
+    //Muestra DatosPerfilActivity
+    private void showDatosPerfilActivity(String strEmail){
 
+        //Crea Intents para DatosPerfilActivity
 
+        Intent i = new Intent(this, VerPerfilActivity.class);
 
+        //Manda datos a DatosPerfilActivity
+
+        i.putExtra("DatosEmail", strEmail);
+
+        startActivity(i);
+
+    }
+    
 }
