@@ -5,78 +5,75 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FacturaActivity">
+    tools:context=".NuevoArticuloActivity">
 
     <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="409dp"
+        android:layout_height="729dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/textViewEmail"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="TextView"
+            tools:text="Email" />
+
+        <TextView
+            android:id="@+id/textView11"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="NUEVA FACTURA"
+            android:text="ARTICULOS"
             android:textAlignment="center"
             android:textSize="24sp" />
 
-        <EditText
-            android:id="@+id/etClienteFra"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="ID CLIENTE" />
-
         <TextView
-            android:id="@+id/etNumFra"
+            android:id="@+id/TexViewtArticuloId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="ID FACTURA" />
+            android:hint="idArticulo" />
 
         <EditText
-            android:id="@+id/etFechaFactura"
+            android:id="@+id/editTexArticulorRef"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="FECHA FACTURA"
-            android:inputType="date" />
+            android:hint="REFERENCIA" />
 
         <EditText
-            android:id="@+id/etDetalleFra"
+            android:id="@+id/editTexArticuloNombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="DETALLE" />
+            android:hint="ARTICULO" />
 
         <EditText
-            android:id="@+id/etImporteFra"
+            android:id="@+id/editTexArticuloProv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="IMPORTE" />
+            android:hint="PROVEEDOR" />
 
         <EditText
-            android:id="@+id/etIvaFra"
+            android:id="@+id/editTextArticuloDesc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="IVA" />
+            android:hint="DESCRIPCION" />
 
         <EditText
-            android:id="@+id/etTotalFra"
+            android:id="@+id/editTexArticuloPrecio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="TOTAL" />
+            android:hint="PRECIO" />
 
-        <View
-            android:id="@+id/divider17"
+        <EditText
+            android:id="@+id/editTextArticuloStock"
             android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:background="?android:attr/listDivider"
-            android:backgroundTint="@color/white" />
+            android:layout_height="wrap_content"
+            android:hint="Stock" />
 
         <Button
             android:id="@+id/buttonGuardar"
@@ -85,16 +82,10 @@
             android:text="GUARDAR" />
 
         <Button
-            android:id="@+id/buttonVerFacturas"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="VER FACTURAS" />
-
-        <Button
             android:id="@+id/buttonCancelar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="CANCELAR" />
+            android:text="CERRAR" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
