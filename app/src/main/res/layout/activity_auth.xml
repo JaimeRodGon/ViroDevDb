@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".AuthActivity">
 
     <LinearLayout
@@ -16,7 +17,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_max="800dp">
 
 
 
@@ -24,13 +26,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-            <View
-                android:id="@+id/divider"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:background="?android:attr/listDivider"
-                android:backgroundTint="#FCF5FE" />
 
             <EditText
                 android:id="@+id/emailEditText"
@@ -41,10 +36,11 @@
                 android:hint="@string/email"
                 android:inputType="textEmailAddress"
                 android:minHeight="48dp"
+                android:maxLength="488"
                 android:textAlignment="center"
-                android:textColorHint="#546E7A"
-                android:paddingTop="15dp"
-                android:paddingBottom="15dp" />
+                android:background="@color/textBoxs"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"/>
 
             <EditText
                 android:id="@+id/passwordEditText"
@@ -56,9 +52,9 @@
                 android:inputType="textPassword"
                 android:minHeight="48dp"
                 android:textAlignment="center"
-                android:textColorHint="#546E7A"
-                android:paddingTop="15dp"
-                android:paddingBottom="15dp" />
+                android:background="@color/textBoxs"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp" />
 
         </LinearLayout>
 
@@ -73,7 +69,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/Registrar" />
+                android:text="@string/Registrar"
+                android:backgroundTint="@color/colorBoton"/>
 
             <Space
                 style="20"
@@ -87,7 +84,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/Acceder" />
+                android:text="@string/Acceder"
+                android:backgroundTint="@color/colorBoton"/>
         </LinearLayout>
 
     </LinearLayout>
@@ -97,19 +95,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="20dp" />
+        app:layout_constraintGuide_percent="0.048661802" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/app_name"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:paddingBottom="15dp"
         android:layout_marginTop="150dp"
         android:layout_marginBottom="500dp"
+        android:paddingBottom="15dp"
+        android:text="@string/nameProyect"
+        android:textAlignment="center"
+        android:textSize="50sp"
         app:layout_constraintBottom_toTopOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.037"
+        tools:layout_editor_absoluteX="0dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
