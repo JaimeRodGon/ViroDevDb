@@ -19,7 +19,7 @@
             android:name=".VerPerfilActivity"
             android:exported="false" />
         <activity
-            android:name=".NuevaFacturaActivity"
+            android:name=".FacturaActivity"
             android:exported="false" />
         <activity
             android:name=".PerfilActivity"
