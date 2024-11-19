@@ -21,7 +21,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
 
-public class FacturaActivity extends AppCompatActivity {
+public class NuevaFacturaActivity extends AppCompatActivity {
 
     private String strEmail;
 
@@ -85,8 +85,8 @@ public class FacturaActivity extends AppCompatActivity {
         this.tvNumFra.setText(strNumFra);
 
         //Listener botones
-        btnGuardar.setOnClickListener(new FacturaActivity.listenerGuardar());
-        btnCancelar.setOnClickListener(new FacturaActivity.listenerCancelar());
+        btnGuardar.setOnClickListener(new NuevaFacturaActivity.listenerGuardar());
+        btnCancelar.setOnClickListener(new NuevaFacturaActivity.listenerCancelar());
     }
     //Boton Guardar
 
