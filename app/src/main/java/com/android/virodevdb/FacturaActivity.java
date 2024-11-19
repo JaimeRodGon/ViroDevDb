@@ -21,7 +21,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
 
-public class NuevaFacturaActivity extends AppCompatActivity {
+public class FacturaActivity extends AppCompatActivity {
 
     private String strEmail;
 
@@ -42,6 +42,9 @@ public class NuevaFacturaActivity extends AppCompatActivity {
     private String strImporteFra;
     private String strIvaFra;
     private String strTotalFra;
+
+    private Button btnGuardar;
+    private Button btnCancelar;
 
     private String mensaje="";
 
@@ -67,10 +70,9 @@ public class NuevaFacturaActivity extends AppCompatActivity {
     //Setup
     private void Setup (){
 
-        //Variable boton guardar
         //Variables botones
-        Button btnGuardar = findViewById(R.id.buttonGuardar);
-        Button btnCancelar = findViewById(R.id.buttonCancelar);
+        btnGuardar = findViewById(R.id.buttonGuardar);
+        btnCancelar = findViewById(R.id.buttonCancelar);
 
         //Find by ID
         tvClienteFra = findViewById(R.id.etClienteFra);
@@ -85,8 +87,8 @@ public class NuevaFacturaActivity extends AppCompatActivity {
         this.tvNumFra.setText(strNumFra);
 
         //Listener botones
-        btnGuardar.setOnClickListener(new NuevaFacturaActivity.listenerGuardar());
-        btnCancelar.setOnClickListener(new NuevaFacturaActivity.listenerCancelar());
+        btnGuardar.setOnClickListener(new FacturaActivity.listenerGuardar());
+        btnCancelar.setOnClickListener(new FacturaActivity.listenerCancelar());
     }
     //Boton Guardar
 
@@ -245,6 +247,8 @@ public class NuevaFacturaActivity extends AppCompatActivity {
         //Crea Intents para volver homeActivity
 
         Intent i = new Intent(this, homeActivity.class);
+
+        i.putExtra("DatosEmail", strEmail);
 
         startActivity(i);
 

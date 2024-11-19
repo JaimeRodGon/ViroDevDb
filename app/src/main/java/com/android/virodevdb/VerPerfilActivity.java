@@ -15,7 +15,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -46,7 +45,7 @@ public class VerPerfilActivity extends AppCompatActivity {
 
     //Variables boton
     private Button btnCerrar;
-    private Button btnActualizaPerfil;
+    private Button btnActualizar;
 
 
     @Override
@@ -64,6 +63,13 @@ public class VerPerfilActivity extends AppCompatActivity {
         Intent recibir = getIntent();
         strEmail = recibir.getStringExtra("DatosEmail");
 
+        // Ejecuta Setup
+        Setup();
+    }
+
+    //Setup
+    private void Setup (){
+
         //Variables View
         tvEmail = findViewById(R.id.textViewEmail);
         tvNombre = findViewById(R.id.textViewNombre);
@@ -75,54 +81,19 @@ public class VerPerfilActivity extends AppCompatActivity {
         tvTelefono = findViewById(R.id.textViewTelefono);
 
         //Variables botones
-        btnCerrar = findViewById(R.id.buttonCerrar);
-        btnActualizaPerfil = findViewById(R.id.buttonAcutalizaPerfil);
+        btnCerrar = findViewById(R.id.buttonCerrarPerfil);
+        btnActualizar = findViewById(R.id.buttonAcutalizaPerfil);
 
-        // Ejecuta Setup
-        Setup();
-    }
-
-    //Setup
-    private void Setup (){
-
-        //Recibe datos variables homeActivity
+        //Inserta datos en textViewEamil
         this.tvEmail.setText(strEmail);
 
         mostrarPerfil();
 
         //Listeners Botones
-        btnCerrar.setOnClickListener(new VerPerfilActivity.listenerCerrar());
-        btnActualizaPerfil.setOnClickListener(new VerPerfilActivity.listenerActualizaPerfil());
-
-
-    }
-
-    //Boton Facturas
-    class listenerActualizaPerfil implements View.OnClickListener{
-
-        @Override
-        public void onClick(View v) {
-
-        actualizaDatosPerfilActivity(strEmail);
-        }
-    }
-
-    //Muestra ModificaPerfil
-    private void actualizaDatosPerfilActivity(String strEmail){
-
-        //Crea Intents para ModificaPerfilActivity
-
-        Intent i2 = new Intent(VerPerfilActivity.this, ActualizaPerfilActivity.class);
-
-        //Manda datos a ModificaDatosPerfilActivity
-
-        i2.putExtra("DatosEmail", strEmail);
-
-        startActivity(i2);
+        btnCerrar.setOnClickListener(new VerPerfilActivity.listenerCancelar());
+        btnActualizar.setOnClickListener(new VerPerfilActivity.listenerActualizaPerfil());
 
     }
-
-
 
     private void mostrarPerfil(){
         //Inicializa FireStore
@@ -182,16 +153,52 @@ public class VerPerfilActivity extends AppCompatActivity {
 
     }
 
-    //Boton Cerrar
-
-    class listenerCerrar implements View.OnClickListener{
+    //Boton Facturas
+    class listenerActualizaPerfil implements View.OnClickListener{
 
         @Override
         public void onClick(View v) {
 
-            Intent intentHome = new Intent(VerPerfilActivity.this, homeActivity.class);
-            startActivity(intentHome);
+            actualizaDatosPerfilActivity(strEmail);
         }
+    }
+
+    //Muestra homeActivity
+    class listenerCancelar implements View.OnClickListener{
+
+        @Override
+        public void onClick(View v) {
+
+            showHomeActivity();
+        }
+    }
+
+    //Muestra homeActivity
+    private void showHomeActivity(){
+        //Crea Intents para volver homeActivity
+
+        Intent i = new Intent(this, homeActivity.class);
+
+        i.putExtra("DatosEmail", strEmail);
+
+        startActivity(i);
+
+    }
+
+
+    //Muestra ModificaPerfil
+    private void actualizaDatosPerfilActivity(String strEmail){
+
+        //Crea Intents para ModificaPerfilActivity
+
+        Intent i2 = new Intent(VerPerfilActivity.this, ActualizaPerfilActivity.class);
+
+        //Manda datos a ModificaDatosPerfilActivity
+
+        i2.putExtra("DatosEmail", strEmail);
+
+        startActivity(i2);
+
     }
 
 

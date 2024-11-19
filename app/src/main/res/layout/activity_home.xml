@@ -80,6 +80,7 @@
         android:backgroundTint="@color/colorBoton"
         android:textColor="@color/Titulos"/>
 
+
     <Button
         android:id="@+id/buttonInformes"
         android:layout_width="match_parent"
@@ -91,7 +92,7 @@
         android:textColor="@color/Titulos"/>
 
     <Button
-        android:id="@+id/buttonCerrar"
+        android:id="@+id/buttonCerrarPerfil"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/LogOut"

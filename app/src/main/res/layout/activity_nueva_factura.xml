@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".NuevaFacturaActivity">
+    tools:context=".FacturaActivity">
+
 
     <LinearLayout
         android:layout_width="0dp"
@@ -123,6 +124,12 @@
             android:text="@string/guardar"
             android:layout_marginBottom="10dp"
             android:backgroundTint="@color/colorBoton"/>
+
+        <Button
+            android:id="@+id/buttonVerFacturas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="VER FACTURAS" />
 
         <Button
             android:id="@+id/buttonCancelar"

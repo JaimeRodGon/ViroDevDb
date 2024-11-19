@@ -121,7 +121,7 @@
             />
 
         <Button
-            android:id="@+id/buttonCerrar"
+            android:id="@+id/buttonCerrarPerfil"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
