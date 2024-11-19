@@ -51,13 +51,6 @@
         android:textAllCaps="true"
         />
 
-    <View
-        android:id="@+id/divider5"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="?android:attr/listDivider"
-        />
-
     <Button
         android:id="@+id/buttonFacturas"
         android:layout_width="match_parent"
@@ -66,12 +59,6 @@
         android:layout_marginBottom="15dp"
         android:backgroundTint="@color/colorBoton"
         android:textColor="@color/Titulos"/>
-
-    <View
-        android:id="@+id/divider18"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="?android:attr/listDivider" />
 
     <Button
         android:id="@+id/buttonClientes"
@@ -83,12 +70,6 @@
         android:backgroundTint="@color/colorBoton"
         android:textColor="@color/Titulos"/>
 
-    <View
-        android:id="@+id/divider19"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="?android:attr/listDivider" />
-
     <Button
         android:id="@+id/buttonArticulos"
         android:layout_width="match_parent"
@@ -98,13 +79,6 @@
         android:layout_marginBottom="15dp"
         android:backgroundTint="@color/colorBoton"
         android:textColor="@color/Titulos"/>
-
-    <View
-        android:id="@+id/divider20"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="?android:attr/listDivider"
-        />
 
     <Button
         android:id="@+id/buttonInformes"
