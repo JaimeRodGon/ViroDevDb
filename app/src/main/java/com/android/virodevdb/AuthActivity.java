@@ -109,7 +109,7 @@ public class AuthActivity extends AppCompatActivity {
 
         //Crea Intents para homeActivity y PerfilActivity
         Intent i = new Intent(this, homeActivity.class);
-        Intent i2 = new Intent(this, NuevaFacturaActivity.class);
+        Intent i2 = new Intent(this, FacturaActivity.class);
 
         //Manda datos a homeActivity
         i.putExtra("DatosEmail", StrEmail);

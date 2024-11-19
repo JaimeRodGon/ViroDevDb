@@ -20,6 +20,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -201,9 +202,11 @@ public class ActualizaPerfilActivity extends AppCompatActivity {
     private void showVerPerfilActivity(){
         //Crea Intents para volver VerPerfilActivity
 
-        Intent intentVerPerfil = new Intent(this, VerPerfilActivity.class);
+        Intent i = new Intent(this, VerPerfilActivity.class);
 
-        startActivity(intentVerPerfil);
+        i.putExtra("DatosEmail", strEmail);
+
+        startActivity(i);
 
     }
     //Lanza Alerta

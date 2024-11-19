@@ -75,7 +75,6 @@
         android:id="@+id/buttonArticulos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:enabled="false"
         android:text="ARTICULOS" />
 
     <View
@@ -92,7 +91,7 @@
         android:text="INFORMES" />
 
     <Button
-        android:id="@+id/buttonCerrar"
+        android:id="@+id/buttonCerrarPerfil"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="CERRAR SESION" />
