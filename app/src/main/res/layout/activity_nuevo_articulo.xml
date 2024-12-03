@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NuevoArticuloActivity">
+
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textViewEmail"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="TextView"
+            tools:text="Email" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ARTICULOS"
+            android:textAlignment="center"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/TexViewtArticuloId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="idArticulo" />
+
+        <EditText
+            android:id="@+id/editTexArticulorRef"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="REFERENCIA" />
+
+        <EditText
+            android:id="@+id/editTexArticuloNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="ARTICULO" />
+
+        <EditText
+            android:id="@+id/editTexArticuloProv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="PROVEEDOR" />
+
+        <EditText
+            android:id="@+id/editTextArticuloDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="DESCRIPCION" />
+
+        <EditText
+            android:id="@+id/editTexArticuloPrecio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="PRECIO" />
+
+        <EditText
+            android:id="@+id/editTextArticuloStock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Stock" />
+
+        <Button
+            android:id="@+id/buttonGuardar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="GUARDAR" />
+
+        <Button
+            android:id="@+id/buttonCancelar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CERRAR" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

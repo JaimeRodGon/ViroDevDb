@@ -1,5 +1,4 @@
 package com.android.virodevdb;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -18,9 +17,9 @@ public class homeActivity extends AppCompatActivity {
     private Button  btnCerrar;
     private Button  btnFacturas;
     private Button  btnPerfil;
+    private Button  btnArticulos;
     private TextView tvEmail;
     private String strEmail;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +37,10 @@ public class homeActivity extends AppCompatActivity {
         tvEmail = findViewById(R.id.textViewEmail);
 
         //Variables botones
-        btnCerrar = findViewById(R.id.buttonCerrar);
+        btnCerrar = findViewById(R.id.buttonCerrarPerfil);
         btnFacturas = findViewById(R.id.buttonFacturas);
         btnPerfil = findViewById(R.id.buttonPerfil);
+        btnArticulos = findViewById(R.id.buttonArticulos);
 
         //Recibe datosEmail datosPass
         Intent recibir = getIntent();
@@ -61,10 +61,10 @@ public class homeActivity extends AppCompatActivity {
         btnCerrar.setOnClickListener(new homeActivity.listenerCerrar());
         btnFacturas.setOnClickListener(new homeActivity.listenerFacturas());
         btnPerfil.setOnClickListener(new homeActivity.listenerPerfil());
+        btnArticulos.setOnClickListener(new homeActivity.listenerArticulos());
+
 
     }
-
-
 
     //Boton Cerrar
     class listenerCerrar implements View.OnClickListener{
@@ -78,17 +78,17 @@ public class homeActivity extends AppCompatActivity {
         }
     }
 
-    //Boton Facturas
+    //Listener boton Facturas
     class listenerFacturas implements View.OnClickListener{
 
         @Override
         public void onClick(View v) {
 
-            showNuevaFacturaActivity(strEmail);
+            showFacturaActivity(strEmail);
         }
     }
 
-    //Boton Facturas
+    //Listener boton Perfil
     class listenerPerfil implements View.OnClickListener{
 
         @Override
@@ -97,12 +97,23 @@ public class homeActivity extends AppCompatActivity {
             showDatosPerfilActivity(strEmail);
         }
     }
+
+    //Listener boton Articulos
+    class listenerArticulos implements View.OnClickListener{
+
+        @Override
+        public void onClick(View v) {
+
+            showArticulosActivity(strEmail);
+        }
+    }
+
     //Muestra PerfilActivity
-    public void showNuevaFacturaActivity(String strEmail){
+    private void showFacturaActivity(String strEmail){
 
         //Crea Intents para NuevaFacturaActivity
 
-        Intent i = new Intent(this, NuevaFacturaActivity.class);
+        Intent i = new Intent(this, FacturaActivity.class);
 
         i.putExtra("DatosEmail", strEmail);
 
@@ -111,17 +122,31 @@ public class homeActivity extends AppCompatActivity {
     }
 
     //Muestra DatosPerfilActivity
-    public void showDatosPerfilActivity(String strEmail){
+    private void showDatosPerfilActivity(String strEmail){
 
         //Crea Intents para DatosPerfilActivity
 
-        Intent i = new Intent(this, DatosPerfilActivity.class);
+        Intent i2 = new Intent(this, VerPerfilActivity.class);
 
-        i.putExtra("DatosEmail", strEmail);
+        //Manda datos a DatosPerfilActivity
 
-        startActivity(i);
+        i2.putExtra("DatosEmail", strEmail);
+
+        startActivity(i2);
 
     }
 
+    //Muestra ArticulosActivity
+    private void showArticulosActivity(String strEmail){
 
+        //Crea Intents para NuevaFacturaActivity
+
+        Intent i3 = new Intent(this, VerArticuloActivity.class);
+
+        i3.putExtra("DatosEmail", strEmail);
+
+        startActivity(i3);
+
+    }
+    
 }

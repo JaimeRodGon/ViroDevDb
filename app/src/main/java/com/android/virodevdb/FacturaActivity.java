@@ -1,38 +1,28 @@
 package com.android.virodevdb;
-
+import static android.content.ContentValues.TAG;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-
 import java.util.HashMap;
 import java.util.Map;
 
-public class NuevaFacturaActivity extends AppCompatActivity {
+public class FacturaActivity extends AppCompatActivity {
 
-    //Variables String
-    public String strClienteFra;
-    private String strNumFra;
-    private String strFechaFra;
-    private String strDetalleFra;
-    private String strImporteFra;
-    private String strIvaFra;
-    private String strTotalFra;
     private String strEmail;
 
     //Variables TexView
@@ -44,9 +34,18 @@ public class NuevaFacturaActivity extends AppCompatActivity {
     private TextView tvIvaFra;
     private TextView tvTotalFra;
 
-    //Variables botones
+    //Variables String
+    private String strClienteFra;
+    private String strNumFra="0";
+    private String strFechaFra;
+    private String strDetalleFra;
+    private String strImporteFra;
+    private String strIvaFra;
+    private String strTotalFra;
+
     private Button btnGuardar;
     private Button btnCancelar;
+
     private String mensaje="";
 
     @Override
@@ -71,12 +70,12 @@ public class NuevaFacturaActivity extends AppCompatActivity {
     //Setup
     private void Setup (){
 
-        //Variable boton guardar
+        //Variables botones
         btnGuardar = findViewById(R.id.buttonGuardar);
         btnCancelar = findViewById(R.id.buttonCancelar);
 
         //Find by ID
-        tvClienteFra = findViewById(R.id.etDetalleFra);
+        tvClienteFra = findViewById(R.id.etClienteFra);
         tvNumFra = findViewById(R.id.etNumFra);
         tvFechaFra = findViewById(R.id.etFechaFactura);
         tvDetalleFra = findViewById(R.id.etDetalleFra);
@@ -84,9 +83,12 @@ public class NuevaFacturaActivity extends AppCompatActivity {
         tvIvaFra = findViewById(R.id.etIvaFra);
         tvTotalFra = findViewById(R.id.etTotalFra);
 
+        //Inserta en tvNumFra "0"
+        this.tvNumFra.setText(strNumFra);
+
         //Listener botones
-        btnGuardar.setOnClickListener(new NuevaFacturaActivity.listenerGuardar());
-        btnCancelar.setOnClickListener(new NuevaFacturaActivity.listenerCancelar());
+        btnGuardar.setOnClickListener(new FacturaActivity.listenerGuardar());
+        btnCancelar.setOnClickListener(new FacturaActivity.listenerCancelar());
     }
     //Boton Guardar
 
@@ -95,26 +97,109 @@ public class NuevaFacturaActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                //Recogemos datos de forumulario
+                //Recoge datos de TextViews
+
                 strClienteFra = tvClienteFra.getText().toString();
-                strNumFra = tvNumFra.getText().toString();
                 strFechaFra = tvFechaFra.getText().toString();
                 strDetalleFra = tvDetalleFra.getText().toString();
                 strImporteFra = tvImporteFra.getText().toString();
                 strIvaFra = tvIvaFra.getText().toString();
                 strTotalFra = tvTotalFra.getText().toString();
 
-                crearDocsFactura();
+                //Crea la factura
+                inciarNuevaFactura();
 
             }
         }
 
-    //Crea Factura en FireStore
-    private void crearDocsFactura(){
+    private void inciarNuevaFactura(){
+
+        //Inicializa FireStore
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        // Create a new user Map
+        DocumentReference docRef = db.collection("/users").document(strEmail).collection
+                ("facturas").document("idFacturas").collection
+                ("idFacturas").document(strNumFra);
+
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+
+                    //Si el Doc existe
+                    if (document.exists()) {
+                        Log.d(TAG, "DocumentSnapshot data: " + document.getData());
+
+                        //Pide que se asigne nuevo Id a factura
+                        strNumFra = devuelveId(strNumFra);
+
+                        //Prueba de generar nueva factura
+                        inciarNuevaFactura();
+
+                        //Si no existe
+                    } else {
+                        Log.d(TAG, "No such document");
+                        creaIdFactura();
+                        creaNuevaFactura();
+                    }
+                } else {
+                    Log.d(TAG, "get failed with ", task.getException());
+                }
+            }
+        });
+    }
+
+    //Calculo nuevos IdFra
+    private String devuelveId (String strNumFra){
+
+        int numIdFra;
+        String strIdFactura="";
+        try{
+            //Parse a Int strNumFra
+            numIdFra= Integer.valueOf(strNumFra);
+            numIdFra++;
+
+            //Parse a String numId
+            strIdFactura = Integer.toString(numIdFra);
+
+        }
+        catch (NumberFormatException e){
+            System.out.println("Error");
+
+        }
+
+        //Devuelve String
+        return strIdFactura;
+    }
+
+
+    private void creaIdFactura(){
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        // Create a new map idFacturas
+        Map<String, Object> idFacturas = new HashMap<>();
+
+        // Datos de idFacturas
+        idFacturas.put("idFactura", strNumFra);
+
+        //Inserta datos en idFacturas
+        db.collection("/users").document(strEmail).collection
+                ("facturas").document("idFacturas").collection
+                ("idFacturas").document(strNumFra).set(idFacturas);
+        //Lanza alerta
+        mensaje = "ID FACTURA CREADO!";
+        showAlert();
+
+    }
+
+    private void creaNuevaFactura(){
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        // Create a new map factura datosFactura
         Map<String, Object> datosFactura = new HashMap<>();
 
         // Datos de Factura
@@ -126,17 +211,19 @@ public class NuevaFacturaActivity extends AppCompatActivity {
         datosFactura.put("ivaFactura", strIvaFra);
         datosFactura.put("totalFactura", strTotalFra);
 
-        //Inserta datos en nodos
-        db.collection("/users").document(strEmail).collection("facturas").document(strNumFra).set(datosFactura);
+        //Inserta datos en Factura
+        db.collection("/users").document(strEmail).collection
+                ("facturas").document(strNumFra).set(datosFactura);
 
-        // Mensaje
-        mensaje="FACTURA CREADA";
-
+        //Lanza alerta
+        mensaje = "FACTURA CREADA!";
         showAlert();
+
+
     }
 
     //Lanza Alerta
-    private void showAlert(){
+    public void showAlert(){
 
         AlertDialog.Builder alerta = new AlertDialog.Builder(this);
         alerta.setMessage(mensaje);
@@ -156,17 +243,15 @@ public class NuevaFacturaActivity extends AppCompatActivity {
     }
 
     //Muestra homeActivity
-    public void showHomeActivity(){
+    private void showHomeActivity(){
         //Crea Intents para volver homeActivity
 
         Intent i = new Intent(this, homeActivity.class);
 
+        i.putExtra("DatosEmail", strEmail);
+
         startActivity(i);
 
     }
-
-
-
-
 
 }

@@ -17,26 +17,19 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 
-import java.security.KeyStore;
-
 public class AuthActivity extends AppCompatActivity {
 
-
-
-    //Prueba conexion Git
     //objetos
     private Button botonRegistrar;
     private Button botonAcceder;
     private TextView textoEmail;
     private TextView textoPass;
-    public String StrEmail;
+    private String StrEmail;
     private String StrPass;
     private String mensaje = "";
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
 
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
@@ -52,7 +45,7 @@ public class AuthActivity extends AppCompatActivity {
         setup();
     }
     //SETUP
-    public void setup(){
+    private void setup(){
         textoEmail = findViewById(R.id.emailEditText);
         textoPass = findViewById(R.id.passwordEditText);
         botonRegistrar = findViewById(R.id.signUpButton);
@@ -78,13 +71,11 @@ public class AuthActivity extends AppCompatActivity {
     //Boton Acceder
     class listenerAcceder implements View.OnClickListener{
 
-
         @Override
         public void onClick(View v) {
             //Recogemos datos del textoEmail i textoPass
             StrEmail = textoEmail.getText().toString();
             StrPass = textoPass.getText().toString();
-
                 try {
                     FirebaseAuth.getInstance().signInWithEmailAndPassword(StrEmail,
                             StrPass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -114,11 +105,11 @@ public class AuthActivity extends AppCompatActivity {
         }
     }
     //Muestra homeActivity
-    public void showHome(String StrEmail){
+    private void showHome(String StrEmail){
 
         //Crea Intents para homeActivity y PerfilActivity
         Intent i = new Intent(this, homeActivity.class);
-        Intent i2 = new Intent(this, NuevaFacturaActivity.class);
+        Intent i2 = new Intent(this, FacturaActivity.class);
 
         //Manda datos a homeActivity
         i.putExtra("DatosEmail", StrEmail);
@@ -126,11 +117,10 @@ public class AuthActivity extends AppCompatActivity {
 
         startActivity(i);
 
-
     }
 
     //Muestra PerfilActivity
-    public void showPerfil(){
+    private void showPerfil(){
 
         //Crea Intents para homeActivity y PerfilActivity
 
@@ -141,11 +131,10 @@ public class AuthActivity extends AppCompatActivity {
 
         startActivity(i);
 
-
     }
 
     //Lanza Alerta
-    private void showAlert(){
+    public void showAlert(){
 
         AlertDialog.Builder alerta = new AlertDialog.Builder(this);
         alerta.setMessage(mensaje);
@@ -153,8 +142,5 @@ public class AuthActivity extends AppCompatActivity {
 
 
     }
-
-
-
 
 }

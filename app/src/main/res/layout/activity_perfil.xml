@@ -4,98 +4,147 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:context=".PerfilActivity">
+    android:layout_height="match_parent"
+    tools:context=".PerfilActivity"
+    android:background="@color/background">
 
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_max="800dp">
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif"
-            android:text="PERFIL"
+            android:text="@string/Perfil"
             android:textAlignment="center"
-            android:textSize="24sp" />
+            android:textSize="40sp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="50dp"/>
 
         <EditText
             android:id="@+id/etEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="EMAIL" />
+            android:autofillHints="@string/email"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:minHeight="50dp"
+            android:textAlignment="center"
+            android:layout_marginBottom="10dp"
+            android:background="@color/textBoxs"/>
 
         <EditText
             android:id="@+id/etPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
-            android:hint="PASSWORD"
-            android:inputType="textPassword" />
+            android:autofillHints="password"
+            android:hint="@string/Password"
+            android:inputType="textPassword"
+            android:minHeight="50dp"
+            android:textAlignment="center"
+            android:layout_marginBottom="10dp"
+            android:background="@color/textBoxs"/>
 
         <EditText
             android:id="@+id/etNombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="NOMBRE" />
+            android:autofillHints="name"
+            android:hint="@string/nombre"
+            android:inputType="textPersonName"
+            android:minHeight="50dp"
+            android:textAlignment="center"
+            android:layout_marginBottom="10dp"
+            android:background="@color/textBoxs"/>
 
         <EditText
             android:id="@+id/etApellidos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="APELLIDOS" />
+            android:autofillHints="name"
+            android:hint="@string/apellido"
+            android:inputType="textPersonName"
+            android:minHeight="50dp"
+            android:textAlignment="center"
+            android:layout_marginBottom="10dp"
+            android:background="@color/textBoxs"/>
 
         <EditText
             android:id="@+id/etDniCif"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="DNI/CIF" />
+            android:autofillHints="none"
+            android:hint="@string/NIF"
+            android:inputType="textNoSuggestions"
+            android:minHeight="50dp"
+            android:textAlignment="center"
+            android:layout_marginBottom="10dp"
+            android:background="@color/textBoxs"/>
 
         <EditText
             android:id="@+id/etDireccion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="DIRECCION" />
+            android:autofillHints="postalAddress"
+            android:hint="@string/domicilio"
+            android:inputType="textPostalAddress"
+            android:minHeight="50dp"
+            android:textAlignment="center"
+            android:layout_marginBottom="10dp"
+            android:background="@color/textBoxs"/>
 
         <EditText
             android:id="@+id/etCP"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="CODIGO POSTAL" />
+            android:autofillHints="none"
+            android:hint="@string/cp"
+            android:inputType="number"
+            android:minHeight="50dp"
+            android:textAlignment="center"
+            android:layout_marginBottom="10dp"
+            android:background="@color/textBoxs"/>
 
         <EditText
             android:id="@+id/etTelefono"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="TELEFONO" />
+            android:autofillHints="phone"
+            android:hint="@string/telefono"
+            android:inputType="phone"
+            android:minHeight="50dp"
+            android:textAlignment="center"
+            android:layout_marginBottom="10dp"
+            android:background="@color/textBoxs"/>
 
-        <View
-            android:id="@+id/divider13"
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:background="?android:attr/listDivider"
-            android:backgroundTint="@color/white" />
 
         <Button
-            android:id="@+id/btnGuardar"
+            android:id="@+id/btnGuardarActualizaPerfil"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="GUARDAR" />
+            android:text="@string/guardar"
+            android:minHeight="50dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/colorBoton"/>
 
         <Button
             android:id="@+id/buttonCancelar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="CANCELAR" />
+            android:layout_marginBottom="25dp"
+            android:minHeight="50dp"
+            android:text="@string/cancel"
+            android:backgroundTint="@color/botonCancelar"/>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
