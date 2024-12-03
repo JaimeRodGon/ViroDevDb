@@ -4,15 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".FacturaActivity">
 
     <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_width="410dp"
+        android:layout_height="705dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="30dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,81 +21,55 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/textView8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="NUEVA FACTURA"
+            android:text="FECHA FACTURA"
             android:textAlignment="center"
             android:textSize="24sp" />
 
-        <EditText
-            android:id="@+id/etClienteFra"
+        <TextView
+            android:id="@+id/textViewFechaFra"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="ID CLIENTE" />
+            android:textAlignment="center"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/buttonModificar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Modificar fecha" />
 
         <TextView
-            android:id="@+id/etNumFra"
+            android:id="@+id/textView9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="ID FACTURA" />
+            android:text="CLIENTE"
+            android:textAlignment="center"
+            android:textSize="24sp" />
 
-        <EditText
-            android:id="@+id/etFechaFactura"
+        <Spinner
+            android:id="@+id/spinnerArticulos"
+            android:layout_width="match_parent"
+            android:layout_height="60dp" />
+
+        <CalendarView
+            android:id="@+id/calendarView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="FECHA FACTURA"
-            android:inputType="date" />
-
-        <EditText
-            android:id="@+id/etDetalleFra"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="DETALLE" />
-
-        <EditText
-            android:id="@+id/etImporteFra"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="IMPORTE" />
-
-        <EditText
-            android:id="@+id/etIvaFra"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="IVA" />
-
-        <EditText
-            android:id="@+id/etTotalFra"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="TOTAL" />
-
-        <View
-            android:id="@+id/divider17"
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:background="?android:attr/listDivider"
-            android:backgroundTint="@color/white" />
+            android:visibility="invisible" />
 
         <Button
-            android:id="@+id/buttonGuardar"
+            android:id="@+id/buttonSiguiente"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="GUARDAR" />
-
-        <Button
-            android:id="@+id/buttonVerFacturas"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="VER FACTURAS" />
+            android:text="Siguiente" />
 
         <Button
             android:id="@+id/buttonCancelar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="CANCELAR" />
-
+            android:text="Cancelar" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
