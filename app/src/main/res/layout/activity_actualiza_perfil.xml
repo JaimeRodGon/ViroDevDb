@@ -8,145 +8,137 @@
     android:background="@color/background"
     tools:context=".ActualizaPerfilActivity">
 
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_max="800dp"
-        tools:ignore="TextSizeCheck">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/ActualizarPerfil"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="30dp"
-            android:text="@string/actualizarPerfil"
-            android:textAlignment="center"
-            android:textSize="40sp" />
+            android:orientation="vertical" >
+            <TextView
+                android:id="@+id/ActualizarPerfil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:text="@string/actualizarPerfil"
+                android:textAlignment="center"
+                android:textSize="40sp" />
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="24sp" />
 
-        <TextView
-            android:id="@+id/textView7"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:textSize="24sp" />
+            <EditText
+                android:id="@+id/textViewNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:autofillHints=""
+                android:background="@color/textBoxs"
+                android:hint="@string/nombre"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:textAlignment="center"
+                android:textSize="25sp" />
 
-        <EditText
-            android:id="@+id/textViewNombre"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:autofillHints=""
-            android:background="@color/textBoxs"
-            android:hint="@string/nombre"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            android:textAlignment="center"
-            android:textSize="25sp" />
+            <EditText
+                android:id="@+id/textViewApellidos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:autofillHints="@string/apellido"
+                android:background="@color/textBoxs"
+                android:hint="@string/apellido"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:textAlignment="center"
+                android:textSize="25sp" />
 
-        <EditText
-            android:id="@+id/textViewApellidos"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:autofillHints="@string/apellido"
-            android:background="@color/textBoxs"
-            android:hint="@string/apellido"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            android:textAlignment="center"
-            android:textSize="25sp" />
+            <TextView
+                android:id="@+id/textViewEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:background="@color/textBoxs"
+                android:hint="@string/email"
+                android:minHeight="48dp"
+                android:textAlignment="center"
+                android:textSize="25sp" />
 
-        <TextView
-            android:id="@+id/textViewEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:background="@color/textBoxs"
-            android:hint="@string/email"
-            android:minHeight="48dp"
-            android:textAlignment="center"
-            android:textSize="25sp" />
+            <EditText
+                android:id="@+id/textViewDniCif"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:height="45dp"
+                android:autofillHints="postalAddress"
+                android:background="@color/textBoxs"
+                android:hint="@string/domicilioFiscal"
+                android:inputType="textPostalAddress"
+                android:minHeight="48dp"
+                android:textAlignment="center"
+                android:textSize="25sp" />
 
-        <EditText
-            android:id="@+id/textViewDniCif"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:height="45dp"
-            android:autofillHints="postalAddress"
-            android:background="@color/textBoxs"
-            android:hint="@string/domicilioFiscal"
-            android:inputType="textPostalAddress"
-            android:minHeight="48dp"
-            android:textAlignment="center"
-            android:textSize="25sp" />
+            <EditText
+                android:id="@+id/textViewDireccion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:autofillHints="emailAddress"
+                android:background="@color/textBoxs"
+                android:hint="@string/domicilio"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:textAlignment="center"
+                android:textSize="25sp" />
 
-        <EditText
-            android:id="@+id/textViewDireccion"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:autofillHints="emailAddress"
-            android:background="@color/textBoxs"
-            android:hint="@string/domicilio"
-            android:inputType="text"
-            android:minHeight="48dp"
-            android:textAlignment="center"
-            android:textSize="25sp" />
+            <EditText
+                android:id="@+id/textViewCp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:autofillHints="postalCode"
+                android:background="@color/textBoxs"
+                android:hint="@string/cp"
+                android:inputType="number"
+                android:minHeight="48dp"
+                android:textAlignment="center"
+                android:textSize="25sp" />
 
-        <EditText
-            android:id="@+id/textViewCp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:autofillHints="postalCode"
-            android:background="@color/textBoxs"
-            android:hint="@string/cp"
-            android:inputType="number"
-            android:minHeight="48dp"
-            android:textAlignment="center"
-            android:textSize="25sp" />
+            <EditText
+                android:id="@+id/textViewTelefono"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:autofillHints="phone"
+                android:background="@color/textBoxs"
+                android:hint="@string/telefono"
+                android:inputType="phone"
+                android:minHeight="48dp"
+                android:textAlignment="center"
+                android:textSize="25sp" />
 
-        <EditText
-            android:id="@+id/textViewTelefono"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:autofillHints="phone"
-            android:background="@color/textBoxs"
-            android:hint="@string/telefono"
-            android:inputType="phone"
-            android:minHeight="48dp"
-            android:textAlignment="center"
-            android:textSize="25sp" />
+            <Button
+                android:id="@+id/btnGuardarActualizaPerfil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="@color/colorBoton"
+                android:text="@string/guardar" />
 
-        <Button
-            android:id="@+id/btnGuardarActualizaPerfil"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="10dp"
-            android:backgroundTint="@color/colorBoton"
-            android:text="@string/guardar" />
-
-        <Button
-            android:id="@+id/btnCancelarActualizaPerfil"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:backgroundTint="@color/botonCancelar"
-            android:text="@string/cancel"
-            />
-
-    </LinearLayout>
-
+            <Button
+                android:id="@+id/btnCancelarActualizaPerfil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:backgroundTint="@color/botonCancelar"
+                android:text="@string/cancel" />
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

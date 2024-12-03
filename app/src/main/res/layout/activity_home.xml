@@ -64,6 +64,7 @@
         android:id="@+id/buttonClientes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:enabled="true"
         android:text="@string/Clientes"
         android:layout_marginBottom="15dp"
         android:backgroundTint="@color/colorBoton"
@@ -73,13 +74,11 @@
         android:id="@+id/buttonArticulos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:enabled="false"
-        android:text="@string/Articulos"
         android:layout_marginBottom="15dp"
         android:backgroundTint="@color/colorBoton"
-        android:textColor="@color/Titulos"/>
-
-
+        android:enabled="true"
+        android:text="@string/Articulos"
+        android:textColor="@color/Titulos" />
     <Button
         android:id="@+id/buttonInformes"
         android:layout_width="match_parent"

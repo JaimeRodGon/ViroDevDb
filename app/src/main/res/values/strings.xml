@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">AViroDevDb</string> <!--Recordar que modifico el appname, preguntar si importa ViroDevDb-->
-    <!-- Strings used for fragments for navigation -->
+    <string name="app_name">AViroDevDb</string> 
     <string name="nameProyect">AVJ Soft S.A.</string>
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
@@ -36,6 +35,4 @@
     <string name="total">Total</string>
     <string name="NIF">NIF/CIF</string>
     <string name="DatosPefil">Datos del Usuario</string>
-
-
 </resources>

@@ -13,10 +13,16 @@
         android:theme="@style/Theme.ViroDevDb"
         tools:targetApi="31">
         <activity
-            android:name=".VerClientesActivity"
-            android:exported="false" />
+         android:name=".VerClientesActivity"
+         android:exported="false" />
         <activity
-            android:name=".ClientesActivity"
+         android:name=".ClientesActivity" 
+         android:exported="false"/>
+        <activity
+         android:name=".ArticulosFraActivity"
+         android:exported="false" />
+        <activity
+            android:name=".FacturaActivity"
             android:exported="false" />
         <activity
             android:name=".VerArticuloActivity"
@@ -31,7 +37,7 @@
             android:name=".VerPerfilActivity"
             android:exported="false" />
         <activity
-            android:name=".FacturaActivity"
+            android:name=".FacturaActivity2"
             android:exported="false" />
         <activity
             android:name=".PerfilActivity"

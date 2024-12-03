@@ -1,52 +1,43 @@
 package com.android.virodevdb;
-import static android.content.ContentValues.TAG;
-import android.app.AlertDialog;
+
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.Spinner;
 import android.widget.TextView;
+
 import androidx.activity.EdgeToEdge;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
-import java.util.HashMap;
-import java.util.Map;
+
+import java.util.Calendar;
+import java.util.Date;
 
 public class FacturaActivity extends AppCompatActivity {
 
-    private String strEmail;
+    private int anio;
+    private int mes;
+    private int dia;
 
-    //Variables TexView
-    private TextView tvClienteFra;
-    private TextView tvNumFra;
     private TextView tvFechaFra;
-    private TextView tvDetalleFra;
-    private TextView tvImporteFra;
-    private TextView tvIvaFra;
-    private TextView tvTotalFra;
 
-    //Variables String
-    private String strClienteFra;
-    private String strNumFra="0";
-    private String strFechaFra;
-    private String strDetalleFra;
-    private String strImporteFra;
-    private String strIvaFra;
-    private String strTotalFra;
-
-    private Button btnGuardar;
+    private Button btnModificar;
+    private Button btnSiguiente;
     private Button btnCancelar;
 
-    private String mensaje="";
+    private String strEmail;
+
+    private Date fechaActual;
+
+    private String fecha;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,201 +48,147 @@ public class FacturaActivity extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+
+
         });
 
-        //Recibe datosEmail datosPass
+        //Recibe datosEmail
         Intent recibir = getIntent();
         strEmail = recibir.getStringExtra("DatosEmail");
 
-        // Ejecuta Setup
-        Setup();
-    }
+        setup();
 
-    //Setup
-    private void Setup (){
+        }
 
-        //Variables botones
-        btnGuardar = findViewById(R.id.buttonGuardar);
-        btnCancelar = findViewById(R.id.buttonCancelar);
+        private void setup(){
 
-        //Find by ID
-        tvClienteFra = findViewById(R.id.etClienteFra);
-        tvNumFra = findViewById(R.id.etNumFra);
-        tvFechaFra = findViewById(R.id.etFechaFactura);
-        tvDetalleFra = findViewById(R.id.etDetalleFra);
-        tvImporteFra = findViewById(R.id.etImporteFra);
-        tvIvaFra = findViewById(R.id.etIvaFra);
-        tvTotalFra = findViewById(R.id.etTotalFra);
+            //Instancias
+            tvFechaFra= findViewById(R.id.textViewFechaFra);
+            btnModificar = findViewById(R.id.buttonModificar);
+            btnSiguiente = findViewById(R.id.buttonSiguiente);
+            btnCancelar = findViewById(R.id.buttonCancelar);
 
-        //Inserta en tvNumFra "0"
-        this.tvNumFra.setText(strNumFra);
+            //Listeners Botones
+            btnModificar.setOnClickListener(new listenerModificar());
+            btnSiguiente.setOnClickListener(new listenerSiguiente());
+            btnCancelar.setOnClickListener(new listenerCancelar());
 
-        //Listener botones
-        btnGuardar.setOnClickListener(new FacturaActivity.listenerGuardar());
-        btnCancelar.setOnClickListener(new FacturaActivity.listenerCancelar());
-    }
-    //Boton Guardar
+            mostrarFechaActual();
 
-        class listenerGuardar implements View.OnClickListener{
+            spinnerCliente();
+
+        }
+
+        private void spinnerCliente(){
+
+            Spinner spClientes = (Spinner) findViewById(R.id.spinnerArticulos);
+
+            String[] datos = new String[] {"DataSystemSL", "PCshop", "Antonio Garcia", "Bulevard Cash", "Laptop Nitza"};
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                    android.R.layout.simple_spinner_item, datos);
+
+            spClientes.setAdapter(adapter);
+        }
+
+
+         private void modificarFecha(){
+
+             Calendar cal = Calendar.getInstance();
+
+             anio = cal.get(Calendar.YEAR);
+             mes = cal.get(Calendar.MONTH);
+             dia = cal.get(Calendar.DAY_OF_MONTH);
+
+             DatePickerDialog dpd = new DatePickerDialog(FacturaActivity.this, new DatePickerDialog.OnDateSetListener() {
+                 @Override
+                 public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+
+                     fecha = dayOfMonth + "/" + (month+1) + "/" + year;
+
+                     tvFechaFra.setText(fecha);
+
+                 }
+             }, anio, mes, dia);
+
+             dpd.show();
+
+         }
+
+         private void mostrarFechaActual(){
+
+             Calendar cal = Calendar.getInstance();
+
+             fechaActual = cal.getTime();
+
+             anio = cal.get(Calendar.YEAR);
+             mes = cal.get(Calendar.MONTH);
+             dia = cal.get(Calendar.DAY_OF_MONTH);
+
+             fecha = dia+"/"+(mes+1)+"/"+anio;
+
+             tvFechaFra.setText(fecha);
+
+
+         }
+
+
+        //Listener boton Modificar
+        class listenerModificar implements View.OnClickListener{
 
             @Override
             public void onClick(View v) {
 
-                //Recoge datos de TextViews
-
-                strClienteFra = tvClienteFra.getText().toString();
-                strFechaFra = tvFechaFra.getText().toString();
-                strDetalleFra = tvDetalleFra.getText().toString();
-                strImporteFra = tvImporteFra.getText().toString();
-                strIvaFra = tvIvaFra.getText().toString();
-                strTotalFra = tvTotalFra.getText().toString();
-
-                //Crea la factura
-                inciarNuevaFactura();
-
+                modificarFecha();
             }
         }
 
-    private void inciarNuevaFactura(){
+        //Listener boton Siguiente
+        class listenerSiguiente implements View.OnClickListener{
 
-        //Inicializa FireStore
-
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-
-        DocumentReference docRef = db.collection("/users").document(strEmail).collection
-                ("facturas").document("idFacturas").collection
-                ("idFacturas").document(strNumFra);
-
-        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
-            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                if (task.isSuccessful()) {
-                    DocumentSnapshot document = task.getResult();
+            public void onClick(View v) {
 
-                    //Si el Doc existe
-                    if (document.exists()) {
-                        Log.d(TAG, "DocumentSnapshot data: " + document.getData());
-
-                        //Pide que se asigne nuevo Id a factura
-                        strNumFra = devuelveId(strNumFra);
-
-                        //Prueba de generar nueva factura
-                        inciarNuevaFactura();
-
-                        //Si no existe
-                    } else {
-                        Log.d(TAG, "No such document");
-                        creaIdFactura();
-                        creaNuevaFactura();
-                    }
-                } else {
-                    Log.d(TAG, "get failed with ", task.getException());
-                }
+                showClienteFra();
             }
-        });
-    }
-
-    //Calculo nuevos IdFra
-    private String devuelveId (String strNumFra){
-
-        int numIdFra;
-        String strIdFactura="";
-        try{
-            //Parse a Int strNumFra
-            numIdFra= Integer.valueOf(strNumFra);
-            numIdFra++;
-
-            //Parse a String numId
-            strIdFactura = Integer.toString(numIdFra);
-
         }
-        catch (NumberFormatException e){
-            System.out.println("Error");
+
+        //Muestra homeActivity
+        private void showClienteFra(){
+            //Crea Intents para  clienteFra
+
+            Intent i2 = new Intent(this, ArticulosFraActivity.class);
+
+            i2.putExtra("DatosEmail", strEmail);
+
+            startActivity(i2);
 
         }
 
-        //Devuelve String
-        return strIdFactura;
-    }
+        //Listener boton Cancelar
+        class listenerCancelar implements View.OnClickListener{
 
+            @Override
+            public void onClick(View v) {
 
-    private void creaIdFactura(){
+                showHomeActivity();
+            }
+        }
 
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        //Muestra homeActivity
+        private void showHomeActivity(){
+            //Crea Intents para volver homeActivity
 
-        // Create a new map idFacturas
-        Map<String, Object> idFacturas = new HashMap<>();
+            Intent i = new Intent(this, homeActivity.class);
 
-        // Datos de idFacturas
-        idFacturas.put("idFactura", strNumFra);
+            i.putExtra("DatosEmail", strEmail);
 
-        //Inserta datos en idFacturas
-        db.collection("/users").document(strEmail).collection
-                ("facturas").document("idFacturas").collection
-                ("idFacturas").document(strNumFra).set(idFacturas);
-        //Lanza alerta
-        mensaje = "ID FACTURA CREADO!";
-        showAlert();
-
-    }
-
-    private void creaNuevaFactura(){
-
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-
-        // Create a new map factura datosFactura
-        Map<String, Object> datosFactura = new HashMap<>();
-
-        // Datos de Factura
-        datosFactura.put("idCliente", strClienteFra);
-        datosFactura.put("numFactura", strNumFra);
-        datosFactura.put("fechaFactura", strFechaFra);
-        datosFactura.put("detalleFactura", strDetalleFra);
-        datosFactura.put("importeFactura", strImporteFra);
-        datosFactura.put("ivaFactura", strIvaFra);
-        datosFactura.put("totalFactura", strTotalFra);
-
-        //Inserta datos en Factura
-        db.collection("/users").document(strEmail).collection
-                ("facturas").document(strNumFra).set(datosFactura);
-
-        //Lanza alerta
-        mensaje = "FACTURA CREADA!";
-        showAlert();
-
-
-    }
-
-    //Lanza Alerta
-    public void showAlert(){
-
-        AlertDialog.Builder alerta = new AlertDialog.Builder(this);
-        alerta.setMessage(mensaje);
-        alerta.show();
-
-    }
-
-    //Boton Cancelar
-
-    class listenerCancelar implements View.OnClickListener{
-        @Override
-        public void onClick(View v) {
-
-            showHomeActivity();
+            startActivity(i);
 
         }
-    }
 
-    //Muestra homeActivity
-    private void showHomeActivity(){
-        //Crea Intents para volver homeActivity
-
-        Intent i = new Intent(this, homeActivity.class);
-
-        i.putExtra("DatosEmail", strEmail);
-
-        startActivity(i);
-
-    }
 
 }
+
+
+
+

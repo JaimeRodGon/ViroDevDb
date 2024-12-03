@@ -4,16 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
+
     android:layout_height="match_parent"
     android:background="@color/background"
+
     tools:context=".FacturaActivity">
 
 
     <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+
+        android:layout_width="410dp"
+        android:layout_height="705dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="30dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,80 +27,29 @@
         app:layout_constraintWidth_max="800dp">
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/textView8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             android:text="@string/NewFactura"
+
             android:textAlignment="center"
             android:textSize="24sp"
             android:layout_marginTop="25dp"
             android:layout_marginBottom="50dp"/>
 
-        <EditText
-            android:id="@+id/etClienteFra"
+        <TextView
+            android:id="@+id/textViewFechaFra"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:hint="@string/idCliente"
-            android:minHeight="50dp"
             android:textAlignment="center"
-            android:inputType="number|text"
-            android:autofillHints="any"
-            android:background="@color/textBoxs"/>
+            android:textSize="24sp" />
 
-        <EditText
-            android:id="@+id/etNumFra"
+        <Button
+            android:id="@+id/buttonModificar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/NFactura"
-            android:minHeight="50dp"
-            android:textAlignment="center"
-            android:layout_marginBottom="10dp"
-            android:inputType="number"
-            android:autofillHints="none"
-            android:background="@color/textBoxs"/>
 
-        <EditText
-            android:id="@+id/etFechaFactura"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autofillHints="date"
-            android:ems="10"
-            android:hint="@string/FechaFactura"
-            android:inputType="date"
-            android:minHeight="50dp"
-            android:textAlignment="center"
-            android:layout_marginBottom="10dp"
-            android:background="@color/textBoxs"/>
-
-        <EditText
-            android:id="@+id/etDetalleFra"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/detalle"
-            android:inputType="text"
-            android:autofillHints="any"
-            android:minHeight="50dp"
-            android:textAlignment="center"
-            android:layout_marginBottom="10dp"
-            android:background="@color/textBoxs"/>
-
-        <EditText
-            android:id="@+id/etImporteFra"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/importe"
-            android:inputType="number"
-            android:autofillHints="none"
-            android:minHeight="50dp"
-            android:textAlignment="center"
-            android:layout_marginBottom="10dp"
-            android:background="@color/textBoxs"/>
-
-        <EditText
-            android:id="@+id/etIvaFra"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:hint="@string/IVA"
             android:inputType="number"
             android:autofillHints="none"
@@ -103,41 +57,46 @@
             android:textAlignment="center"
             android:layout_marginBottom="10dp"
             android:background="@color/textBoxs"/>
+            android:text="Modificar fecha" />
 
-        <EditText
-            android:id="@+id/etTotalFra"
+        <TextView
+            android:id="@+id/textView9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/total"
-            android:inputType="number"
-            android:autofillHints="none"
-            android:minHeight="50dp"
+            android:text="CLIENTE"
             android:textAlignment="center"
-            android:layout_marginBottom="25dp"
-            android:background="@color/textBoxs"/>
+            android:textSize="24sp" />
 
+        <Spinner
+            android:id="@+id/spinnerArticulos"
+            android:layout_width="match_parent"
+            android:layout_height="60dp" />
 
-        <Button
-            android:id="@+id/buttonGuardar"
+        <CalendarView
+            android:id="@+id/calendarView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/guardar"
             android:layout_marginBottom="10dp"
             android:backgroundTint="@color/colorBoton"/>
+            android:visibility="invisible" />
+
 
         <Button
-            android:id="@+id/buttonVerFacturas"
+            android:id="@+id/buttonSiguiente"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="VER FACTURAS" />
+            android:text="Siguiente" />
 
         <Button
             android:id="@+id/buttonCancelar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             android:text="@string/cancel"
             android:layout_marginBottom="10dp"
             android:backgroundTint="@color/botonCancelar"/>
+
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
