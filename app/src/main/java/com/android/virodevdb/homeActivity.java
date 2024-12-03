@@ -18,6 +18,7 @@ public class homeActivity extends AppCompatActivity {
     private Button  btnFacturas;
     private Button  btnPerfil;
     private Button  btnArticulos;
+    private Button  btnClientes;
     private TextView tvEmail;
     private String strEmail;
 
@@ -41,6 +42,7 @@ public class homeActivity extends AppCompatActivity {
         btnFacturas = findViewById(R.id.buttonFacturas);
         btnPerfil = findViewById(R.id.buttonPerfil);
         btnArticulos = findViewById(R.id.buttonArticulos);
+        btnClientes = findViewById(R.id.buttonClientes);
 
         //Recibe datosEmail datosPass
         Intent recibir = getIntent();
@@ -62,6 +64,7 @@ public class homeActivity extends AppCompatActivity {
         btnFacturas.setOnClickListener(new homeActivity.listenerFacturas());
         btnPerfil.setOnClickListener(new homeActivity.listenerPerfil());
         btnArticulos.setOnClickListener(new homeActivity.listenerArticulos());
+        btnClientes.setOnClickListener(new homeActivity.listenerClientes());
 
 
     }
@@ -95,6 +98,15 @@ public class homeActivity extends AppCompatActivity {
         public void onClick(View v) {
 
             showDatosPerfilActivity(strEmail);
+        }
+    }
+
+    class listenerClientes implements View.OnClickListener{
+
+        @Override
+        public void onClick(View v) {
+
+            showClientesActivity(strEmail);
         }
     }
 
@@ -133,6 +145,18 @@ public class homeActivity extends AppCompatActivity {
         i2.putExtra("DatosEmail", strEmail);
 
         startActivity(i2);
+
+    }
+
+    private void showClientesActivity(String strEmail){
+
+        //Crea Intents para NuevaFacturaActivity
+
+        Intent i3 = new Intent(this, ClientesActivity.class);
+
+        i3.putExtra("DatosEmail", strEmail);
+
+        startActivity(i3);
 
     }
 

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VerClientesActivity">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- Encabezado -->
+        <TextView
+            android:id="@+id/textViewTitulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DETALLES DEL CLIENTE"
+            android:textSize="24sp"
+            android:textAlignment="center"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Campo: Empresa -->
+        <TextView
+            android:id="@+id/textViewClienteEmpresa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Empresa:"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/editTextClienteEmpresa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre de la empresa"
+            android:minHeight="50dp"
+            android:textAlignment="center"
+            android:inputType="text"
+            android:background="@color/textBoxs"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Campo: NIF -->
+        <TextView
+            android:id="@+id/textViewClienteNIF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="NIF:"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/editTextClienteNIF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="NIF del cliente"
+            android:minHeight="50dp"
+            android:textAlignment="center"
+            android:inputType="text"
+            android:background="@color/textBoxs"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Campo: Código Postal -->
+        <TextView
+            android:id="@+id/textViewClienteCP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Código Postal:"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/editTextClienteCP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Código postal"
+            android:inputType="number"
+            android:minHeight="50dp"
+            android:textAlignment="center"
+            android:background="@color/textBoxs"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Campo: Localidad -->
+        <TextView
+            android:id="@+id/textViewClienteLocalidad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Localidad:"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/editTextClienteLocalidad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Localidad"
+            android:inputType="text"
+            android:minHeight="50dp"
+            android:textAlignment="center"
+            android:background="@color/textBoxs"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Campo: Calle -->
+        <TextView
+            android:id="@+id/textViewClienteCalle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Calle:"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/editTextClienteCalle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Calle"
+            android:inputType="text"
+            android:minHeight="50dp"
+            android:textAlignment="center"
+            android:background="@color/textBoxs"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Campo: Información adicional -->
+        <TextView
+            android:id="@+id/textViewClienteInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Información Adicional:"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/editTextClienteInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Información adicional"
+            android:inputType="text"
+            android:minHeight="50dp"
+            android:textAlignment="center"
+            android:background="@color/textBoxs"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Botones -->
+        <Button
+            android:id="@+id/buttonNuevo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="NUEVO"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/buttonActualizar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="ACTUALIZAR"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/buttonEliminar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="ELIMINAR"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/buttonCancelar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CANCELAR"
+            android:layout_marginBottom="16dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonAnterior"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="ANTERIOR" />
+
+            <Button
+                android:id="@+id/buttonSiguiente"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="SIGUIENTE" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
