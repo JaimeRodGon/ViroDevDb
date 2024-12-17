@@ -1,0 +1,54 @@
+<resources>
+    <string name="app_name">AViroDevDb</string>
+    <string name="nameProyect">AVJ Soft S.A.</string>
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="email">Email</string>
+    <string name="Password">Contraseña</string>
+    <string name="Registrar">Registrarse</string>
+    <string name="Acceder">Acceder</string>
+    <string name="Menu">Menú</string>
+    <string name="Perfil">Perfil</string>
+    <string name="Facturas">Facturas</string>
+    <string name="Articulos">Articulos</string>
+    <string name="Clientes">Clientes</string>
+    <string name="LogOut">Cerrar Sesión</string>
+    <string name="informes">Informes</string>
+    <string name="actualizarPerfil">Actualizar Perfil</string>
+    <string name="nombre">Nombre</string>
+    <string name="apellido">Apellido</string>
+    <string name="domicilio">Dirección</string>
+    <string name="domicilioFiscal">Domicilio Fiscal</string>
+    <string name="cp">Codigo Postal</string>
+    <string name="telefono">Telefono</string>
+    <string name="guardar">Guardar</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="NewFactura">Nueva Factura</string>
+    <string name="idCliente">Identificador del Cliente</string>
+    <string name="NFactura">Numero de Factura</string>
+    <string name="FechaFactura">Fecha</string>
+    <string name="detalle">Detalle</string>
+    <string name="importe">Importe</string>
+    <string name="IVA">IVA</string>
+    <string name="total">Total</string>
+    <string name="NIF">NIF/CIF</string>
+    <string name="DatosPefil">Datos del Usuario</string>
+    <string name="btnSiguiente">Siguiente</string>
+    <string name="btnAnterior">Anterior</string>
+    <string name="btnNuevo">Nuevo</string>
+    <string name="btnActualizar">Actualizar</string>
+    <string name="btnContinuar">Continuar</string>
+    <string name="btnAnadir">Añadir</string>
+    <string name="txtTotalArticulos">Total articulos</string>
+    <string name="txtCliente">Cliente</string>
+    <string name="precio">0</string>
+    <string name="euro">€</string>
+    <string name="nuevaFra">Nueva Factura</string>
+    <string name="btnGenerarFra">Generar Factura</string>
+    <string name="txtAnadirArticulos">Añadir Articulos</string>
+
+
+</resources>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PerfilActivity"
+    android:background="@color/background">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textViewTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="50dp"
+                android:fontFamily="sans-serif-black"
+                android:text="@string/Perfil"
+                android:textAlignment="center"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:autofillHints="@string/email"
+                android:background="@color/textBoxs"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+                android:minHeight="50dp"
+                android:textAlignment="center" />
+
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:autofillHints="password"
+                android:background="@color/textBoxs"
+                android:hint="@string/Password"
+                android:inputType="textPassword"
+                android:minHeight="50dp"
+                android:textAlignment="center" />
+
+            <EditText
+                android:id="@+id/etNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:autofillHints="name"
+                android:background="@color/textBoxs"
+                android:hint="@string/nombre"
+                android:inputType="textPersonName"
+                android:minHeight="50dp"
+                android:textAlignment="center" />
+
+            <EditText
+                android:id="@+id/etApellidos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:autofillHints="name"
+                android:background="@color/textBoxs"
+                android:hint="@string/apellido"
+                android:inputType="textPersonName"
+                android:minHeight="50dp"
+                android:textAlignment="center" />
+
+            <EditText
+                android:id="@+id/etDniCif"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:autofillHints="none"
+                android:background="@color/textBoxs"
+                android:hint="@string/NIF"
+                android:inputType="textNoSuggestions"
+                android:minHeight="50dp"
+                android:textAlignment="center" />
+
+            <EditText
+                android:id="@+id/etDireccion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:autofillHints="postalAddress"
+                android:background="@color/textBoxs"
+                android:hint="@string/domicilio"
+                android:inputType="textPostalAddress"
+                android:minHeight="50dp"
+                android:textAlignment="center" />
+
+            <EditText
+                android:id="@+id/etCP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:autofillHints="none"
+                android:background="@color/textBoxs"
+                android:hint="@string/cp"
+                android:inputType="number"
+                android:minHeight="50dp"
+                android:textAlignment="center" />
+
+            <EditText
+                android:id="@+id/etTelefono"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:autofillHints="phone"
+                android:background="@color/textBoxs"
+                android:hint="@string/telefono"
+                android:inputType="phone"
+                android:minHeight="50dp"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/btnGuardarActualizaPerfil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="@color/colorBoton"
+                android:minHeight="50dp"
+                android:text="@string/guardar" />
+
+            <Button
+                android:id="@+id/buttonAtras"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:backgroundTint="@color/botonCancelar"
+                android:minHeight="50dp"
+                android:text="@string/cancel" />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

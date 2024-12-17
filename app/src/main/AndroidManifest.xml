@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ViroDevDb"
+        tools:targetApi="31">
+        <activity
+            android:name=".AnadirArticulosFraActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GenerarFacturaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".VerClientesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ClientesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ArticulosFraActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FacturaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".VerArticuloActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NuevoArticuloActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ActualizaPerfilActivity"
+            android:exported="false" />
+        <activity
+            android:name=".VerPerfilActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FacturaActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".PerfilActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PefilActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ViroDevDb" />
+        <activity
+            android:name=".homeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AuthActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

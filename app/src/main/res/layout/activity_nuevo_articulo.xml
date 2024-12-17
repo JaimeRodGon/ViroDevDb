@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".NuevoArticuloActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textViewTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="TextView"
+                tools:text="Email" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:text="ARTICULOS"
+                android:textAlignment="center"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/TexViewtArticuloId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="idArticulo"
+                android:minHeight="48dp"
+                android:textAlignment="center"
+                android:background="@color/textBoxs"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp" />
+
+            <EditText
+                android:id="@+id/editTexArticulorRef"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:hint="REFERENCIA"
+                android:minHeight="48dp"
+                android:textAlignment="center"
+                android:background="@color/textBoxs"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp" />
+
+            <EditText
+                android:id="@+id/editTexArticuloNombre"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:hint="ARTICULO"
+                android:minHeight="48dp"
+                android:textAlignment="center"
+                android:background="@color/textBoxs"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp" />
+
+            <EditText
+                android:id="@+id/editTexArticuloPrecio"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:hint="PRECIO"
+                android:minHeight="48dp"
+                android:textAlignment="center"
+                android:background="@color/textBoxs"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp" />
+
+            <Button
+                android:id="@+id/buttonGuardar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorBoton"
+                android:text="@string/guardar" />
+
+            <Button
+                android:id="@+id/buttonAtras"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:backgroundTint="@color/botonCancelar"
+                android:text="@string/cancel"
+                android:textColor="@color/Titulos" />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

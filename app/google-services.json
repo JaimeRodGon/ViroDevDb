@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "832593081895",
+    "project_id": "virodevdb",
+    "storage_bucket": "virodevdb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:832593081895:android:0971e2a068b0b8ff2e8002",
+        "android_client_info": {
+          "package_name": "com.android.virodevdb"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASEctlvqGCTlSfmZTOqPeZnNzZd_8ENIQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

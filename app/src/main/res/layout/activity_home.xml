@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".homeActivity"
+    >
+
+  <LinearLayout
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:layout_marginEnd="16dp"
+      android:orientation="vertical"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintWidth_max="800dp">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Menu"
+        android:textAlignment="center"
+        android:textSize="40sp"
+
+        android:layout_marginBottom="50dp"/>
+
+    <TextView
+        android:id="@+id/textViewTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="@string/email"
+        tools:text="Email"
+        />
+
+    <Button
+        android:id="@+id/buttonPerfil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Perfil"
+        android:layout_marginBottom="15dp"
+        android:backgroundTint="@color/colorBoton"
+        android:textColor="@color/Titulos"
+        android:textAllCaps="true"
+        />
+
+    <Button
+        android:id="@+id/buttonFacturas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Facturas"
+        android:layout_marginBottom="15dp"
+        android:backgroundTint="@color/colorBoton"
+        android:textColor="@color/Titulos"/>
+
+    <Button
+        android:id="@+id/buttonClientes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:enabled="true"
+        android:text="@string/Clientes"
+        android:layout_marginBottom="15dp"
+        android:backgroundTint="@color/colorBoton"
+        android:textColor="@color/Titulos"/>
+
+    <Button
+        android:id="@+id/buttonArticulos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:backgroundTint="@color/colorBoton"
+        android:enabled="true"
+        android:text="@string/Articulos"
+        android:textColor="@color/Titulos" />
+    <Button
+        android:id="@+id/buttonInformes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:text="@string/informes"
+        android:layout_marginBottom="15dp"
+        android:backgroundTint="@color/colorBoton"
+        android:textColor="@color/Titulos"/>
+
+    <Button
+        android:id="@+id/buttonCerrarPerfil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/LogOut"
+        android:layout_marginBottom="15dp"
+        android:backgroundTint="@color/botonCancelar"
+        android:textColor="@color/Titulos"/>
+
+  </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
