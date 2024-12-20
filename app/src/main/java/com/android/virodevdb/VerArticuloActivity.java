@@ -53,6 +53,7 @@ public class VerArticuloActivity extends AppCompatActivity {
     private int cantidadDocumentos;
     private String strNumDocs;
 
+    //Int de documentos
     private int numDoc=0;
 
 
@@ -73,8 +74,8 @@ public class VerArticuloActivity extends AppCompatActivity {
 
         btnCancelar =findViewById(R.id.buttonAtras);
         btnNuevo =findViewById(R.id.buttonNuevo);
-        btnSiguiente =findViewById(R.id.buttonSiguiente);
-        btnAnterior =findViewById(R.id.buttonAnterior);
+        btnSiguiente =findViewById(R.id.buttonSiguienteCl);
+        btnAnterior =findViewById(R.id.buttonAnteriorCl);
         tvIdArticulo = findViewById(R.id.textViewIdArticulo);
         tvRefArticulo = findViewById(R.id.textViewRefArticulo);
         tvNomArticulo = findViewById(R.id.textViewNomArticulo);
@@ -136,6 +137,8 @@ public class VerArticuloActivity extends AppCompatActivity {
                     }
                 });
     }
+
+    //Recoge datos del documento
     private void getDoc(String userId) {
 
         //Inicializa FireStore

@@ -33,12 +33,18 @@ public class AnadirArticulosFraActivity extends AppCompatActivity {
     private String idArticulo="0";
     private String refArticulo;
     private String nomArticulo;
-    private String strClienteFra;
+
     private String strFechaFra;
 
     private String precArticulo;
 
     private String mensaje="";
+
+    private String docId;
+
+    private String strClienteFra;
+    private String strClienteNombre;
+    private String strClienteNif;
 
     //Variables TextView
     private TextView tvTitulo;
@@ -73,8 +79,7 @@ public class AnadirArticulosFraActivity extends AppCompatActivity {
     private int intPrecio =0;
 
     //Contar Subcoleciones
-    private int cantidadDocumentos;
-    private int docActual = 1 ;
+    private int cantidadDocumentos;;
 
     private int numDoc=0;
 
@@ -94,16 +99,20 @@ public class AnadirArticulosFraActivity extends AppCompatActivity {
 
         Intent recibir = getIntent();
         strEmail = recibir.getStringExtra("DatosEmail");
-        strClienteFra = recibir.getStringExtra("clienteFactura");
         strFechaFra = recibir.getStringExtra("fechaFactura");
+
+        //Cliente
+        strClienteFra = recibir.getStringExtra("idCliente");
+        strClienteNombre= recibir.getStringExtra("nombreCliente");
+        strClienteNif = recibir.getStringExtra("nifCliente");
 
 
         //Instancia listViewArticulos
         lvArticulos = findViewById(R.id.listViewArticulos);
 
         btnAnadir =findViewById(R.id.buttonAnadir);
-        btnSiguiente =findViewById(R.id.buttonSiguiente);
-        btnAnterior =findViewById(R.id.buttonAnterior);
+        btnSiguiente =findViewById(R.id.buttonSiguienteCl);
+        btnAnterior =findViewById(R.id.buttonAnteriorCl);
         btnGenerar =findViewById(R.id.buttonGenerar);
         btnCancelar =findViewById(R.id.buttonAtras);
 
@@ -205,7 +214,7 @@ public class AnadirArticulosFraActivity extends AppCompatActivity {
 
                             // Procesar el documento (recoge campos)
                             if (thirdPostDocument != null) {
-                                String docId = thirdPostDocument.getString("idArticulos");
+                                docId = thirdPostDocument.getString("idArticulos");
                                 String docRef = thirdPostDocument.getString("refArticulo");
                                 String docNombre = thirdPostDocument.getString("nombreArticulo");
                                 String doctPrecio = thirdPostDocument.getString("precio");
@@ -285,7 +294,11 @@ public class AnadirArticulosFraActivity extends AppCompatActivity {
         i = new Intent(this, GenerarFacturaActivity.class);
 
         i.putExtra("DatosEmail", strEmail);
-        i.putExtra("clienteFactura", tvClienteFra.getText().toString());
+        i.putExtra("clienteFactura", strClienteFra);
+        i.putExtra("clienteNombre", strClienteNombre);
+        i.putExtra("clienteNif", strClienteNif);
+
+
         i.putExtra("fechaFactura", tvFechaFra.getText().toString());
         //Envia subtotal
         i.putExtra("subTotal", tvSubtotal.getText().toString());

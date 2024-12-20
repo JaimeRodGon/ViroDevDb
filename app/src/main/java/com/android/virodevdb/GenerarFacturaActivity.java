@@ -32,9 +32,11 @@ import java.util.Map;
 
 public class GenerarFacturaActivity extends AppCompatActivity {
 
-    private String strNumFra ="0", strEmail, strClienteFra, strFechaFra, mensaje, strSubTotal;
+    private String strNumFra ="0", strEmail, strClienteFra, strFechaFra, mensaje, strSubTotal,
+            strClienteNombre, strClienteNif;
 
-    private TextView tvSubTotal, tvFecha, tvCliente, tvNumFra, tvPerfil, tvNombre, tvApellidos, tvDniCif, tvEmail, tvDireccion, tvCp, tvTelefono;
+    private TextView tvSubTotal, tvFecha, tvNumFra, tvNombre, tvApellidos, tvDniCif, tvEmail, tvDireccion, tvCp, tvTelefono,
+    tvIdCliente, tvNombreCliente, tvNifCliente;
 
     private Button btnAtras, btnGenerar;
 
@@ -56,6 +58,9 @@ public class GenerarFacturaActivity extends AppCompatActivity {
     private String miCp;
     private String miTelefono;
 
+    //Int
+    private int intIdCliente;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,11 +73,32 @@ public class GenerarFacturaActivity extends AppCompatActivity {
             return insets;
         });
 
+        //Recibe datos
+        Intent recibir = getIntent();
+        strEmail = recibir.getStringExtra("DatosEmail");
+
+        strFechaFra = recibir.getStringExtra("fechaFactura");
+        strSubTotal = recibir.getStringExtra("subTotal");
+
+        strClienteFra = recibir.getStringExtra("clienteFactura");
+        strClienteNombre = recibir.getStringExtra("clienteNombre");
+        strClienteNif = recibir.getStringExtra("clienteNif");
+
+
+
+
+
         tvSubTotal =findViewById(R.id.textViewSubTotal);
-        tvCliente =findViewById(R.id.textViewCliente);
         tvFecha =findViewById(R.id.textViewFecha);
         tvNumFra =findViewById(R.id.textViewNumFra);
-        tvPerfil = findViewById(R.id.textViewPerfil);
+
+        //Cliente
+
+        tvIdCliente = findViewById(R.id.textViewIdCliente);
+        tvNombreCliente = findViewById(R.id.textViewNombreCliente);
+        tvNifCliente = findViewById(R.id.textViewNifCliente);
+
+
         btnAtras = findViewById(R.id.buttonAtras);
         btnGenerar = findViewById(R.id.buttonGenerar);
 
@@ -82,13 +108,6 @@ public class GenerarFacturaActivity extends AppCompatActivity {
         //creamos un arraylist para almacenar articulos
         alArticulos = new ArrayList<claseArticulo>();
 
-
-        //Recibe datosEmail
-        Intent recibir = getIntent();
-        strEmail = recibir.getStringExtra("DatosEmail");
-        strClienteFra = recibir.getStringExtra("clienteFactura");
-        strFechaFra = recibir.getStringExtra("fechaFactura");
-        strSubTotal = recibir.getStringExtra("subTotal");
 
         //Recibe arrayList articulos
         ArrayList<claseArticulo> alArticulos = (ArrayList<claseArticulo> ) getIntent().getSerializableExtra("arrayArticulos");
@@ -125,6 +144,8 @@ public class GenerarFacturaActivity extends AppCompatActivity {
 
     }
 
+
+    //Carga Perfil
     private void cargaPerfil(){
         //Inicializa FireStore
         FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -179,8 +200,14 @@ public class GenerarFacturaActivity extends AppCompatActivity {
         tvCp.setText(miCp);
         tvTelefono.setText(miTelefono);
 
-        //Mostramos datos de la factura generada
-        tvCliente.setText(strClienteFra);
+        //Datos Cliente
+        tvIdCliente.setText(strClienteFra);
+        tvNombreCliente.setText(strClienteNombre);
+        tvNifCliente.setText(strClienteNif);
+
+
+
+        //Datos factura
         tvFecha.setText(strFechaFra);
         tvSubTotal.setText(strSubTotal);
 

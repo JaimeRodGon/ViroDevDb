@@ -60,17 +60,58 @@
                 android:textColor="@color/Titulos" />
 
             <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/textViewClienteId"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/txtCliente"
-                android:textAlignment="center"
-                android:textSize="20sp" />
+                android:text="@string/idCliente" />
 
-            <Spinner
-                android:id="@+id/spinnerArticulos"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp" />
+            <TextView
+                android:id="@+id/textViewClienteNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/nombre" />
+
+            <TextView
+                android:id="@+id/textViewClienteNif"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/NIF" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/buttonAnteriorCl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:backgroundTint="@color/colorBoton"
+                    android:text="@string/btnAnterior"
+                    android:textColor="@color/Titulos" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/buttonSiguienteCl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:backgroundTint="@color/colorBoton"
+                    android:text="@string/btnSiguiente"
+                    android:textColor="@color/Titulos" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textViewColeccion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/total" />
 
             <CalendarView
                 android:id="@+id/calendarView"

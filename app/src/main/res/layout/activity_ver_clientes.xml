@@ -181,14 +181,14 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/buttonAnterior"
+                android:id="@+id/buttonAnteriorCl"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="ANTERIOR" />
 
             <Button
-                android:id="@+id/buttonSiguiente"
+                android:id="@+id/buttonSiguienteCl"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

@@ -95,17 +95,29 @@
                 android:textSize="12sp" />
 
             <TextView
-                android:id="@+id/textViewPerfil"
+                android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-black"
                 android:text="@string/txtCliente" />
 
             <TextView
-                android:id="@+id/textViewCliente"
+                android:id="@+id/textViewIdCliente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/idCliente" />
+
+            <TextView
+                android:id="@+id/textViewNombreCliente"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/nombre" />
+
+            <TextView
+                android:id="@+id/textViewNifCliente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/NIF" />
 
             <TextView
                 android:id="@+id/textViewFecha"
