@@ -32,8 +32,9 @@ import java.util.Map;
 
 public class GenerarFacturaActivity extends AppCompatActivity {
 
-    private String strNumFra ="0", strEmail, strClienteFra, strFechaFra, mensaje, strSubTotal,
+    private String strNumFra ="0", strEmail, strClienteFra, strFechaFra, mensaje, strSubTotal="0.00",
             strClienteNombre, strClienteNif;
+
 
     private TextView tvSubTotal, tvFecha, tvNumFra, tvNombre, tvApellidos, tvDniCif, tvEmail, tvDireccion, tvCp, tvTelefono,
     tvIdCliente, tvNombreCliente, tvNifCliente;
@@ -58,10 +59,6 @@ public class GenerarFacturaActivity extends AppCompatActivity {
     private String miCp;
     private String miTelefono;
 
-    //Int
-    private int intIdCliente;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,8 +80,6 @@ public class GenerarFacturaActivity extends AppCompatActivity {
         strClienteFra = recibir.getStringExtra("clienteFactura");
         strClienteNombre = recibir.getStringExtra("clienteNombre");
         strClienteNif = recibir.getStringExtra("clienteNif");
-
-
 
 
 

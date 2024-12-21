@@ -73,10 +73,10 @@ public class AnadirArticulosFraActivity extends AppCompatActivity {
 
 
     //Variables subTotal
-    private String strSubTotal="0";
+    private String strSubTotal="0.0";
     private TextView tvSubtotal;
-    private int intSubTotal= 0;
-    private int intPrecio =0;
+    private double dblSubTotal= 0.0;
+    private double dblPrecio =0.0;
 
     //Contar Subcoleciones
     private int cantidadDocumentos;;
@@ -332,9 +332,9 @@ public class AnadirArticulosFraActivity extends AppCompatActivity {
 
             //Calcula nuevo subtotal
 
-            intPrecio= Integer.valueOf(precArticulo);
-            intSubTotal = intSubTotal + intPrecio;
-            strSubTotal = Integer.toString(intSubTotal);
+            dblPrecio= Double.valueOf(precArticulo);
+            dblSubTotal = dblSubTotal + dblPrecio;
+            strSubTotal = Double.toString(dblSubTotal);
             tvSubtotal.setText(strSubTotal);
 
         }

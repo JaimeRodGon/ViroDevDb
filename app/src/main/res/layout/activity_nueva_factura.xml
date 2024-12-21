@@ -25,11 +25,7 @@
         <LinearLayout
 
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginEnd="50dp"
-            android:layout_marginBottom="30dp"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <TextView
@@ -54,9 +50,9 @@
                 android:id="@+id/buttonModificar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Modificar fecha"
                 android:layout_marginBottom="15dp"
                 android:backgroundTint="@color/colorBoton"
+                android:text="Modificar fecha"
                 android:textColor="@color/Titulos" />
 
             <TextView
@@ -136,10 +132,10 @@
                 android:id="@+id/buttonCancelar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/cancel"
                 android:layout_marginBottom="15dp"
                 android:backgroundTint="@color/botonCancelar"
-                android:textColor="@color/Titulos"/>
+                android:text="@string/cancel"
+                android:textColor="@color/Titulos" />
 
 
         </LinearLayout>
