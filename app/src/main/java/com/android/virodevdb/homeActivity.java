@@ -134,7 +134,7 @@ public class homeActivity extends AppCompatActivity {
 
         //Crea Intents para NuevaFacturaActivity
 
-        Intent i = new Intent(this, FacturaActivity.class);
+        Intent i = new Intent(this, VerFacturaActivity.class);
 
         i.putExtra("DatosEmail", strEmail);
 

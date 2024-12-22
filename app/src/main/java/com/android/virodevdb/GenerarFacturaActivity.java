@@ -25,6 +25,7 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -33,11 +34,12 @@ import java.util.Map;
 public class GenerarFacturaActivity extends AppCompatActivity {
 
     private String strNumFra ="0", strEmail, strClienteFra, strFechaFra, mensaje, strSubTotal="0.00",
-            strClienteNombre, strClienteNif;
+            strClienteNombre, strClienteNif, strIva, strTotal;
 
+    private double dblSubTotal, dblIva, dblTotal;
 
     private TextView tvSubTotal, tvFecha, tvNumFra, tvNombre, tvApellidos, tvDniCif, tvEmail, tvDireccion, tvCp, tvTelefono,
-    tvIdCliente, tvNombreCliente, tvNifCliente;
+    tvIdCliente, tvNombreCliente, tvNifCliente, tvIva, tvTotal;
 
     private Button btnAtras, btnGenerar;
 
@@ -59,6 +61,9 @@ public class GenerarFacturaActivity extends AppCompatActivity {
     private String miCp;
     private String miTelefono;
 
+
+    DecimalFormat formatoDbl = new DecimalFormat("#.00");
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,6 +74,8 @@ public class GenerarFacturaActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        DecimalFormat formatoDbl = new DecimalFormat("#.00");
 
         //Recibe datos
         Intent recibir = getIntent();
@@ -86,6 +93,10 @@ public class GenerarFacturaActivity extends AppCompatActivity {
         tvSubTotal =findViewById(R.id.textViewSubTotal);
         tvFecha =findViewById(R.id.textViewFecha);
         tvNumFra =findViewById(R.id.textViewNumFra);
+
+        tvIva = findViewById(R.id.textViewIva);
+        tvTotal = findViewById(R.id.textViewTotal);
+
 
         //Cliente
 
@@ -132,13 +143,35 @@ public class GenerarFacturaActivity extends AppCompatActivity {
     //setup
     public void setup(){
 
-        cargaPerfil();
+        CalculaTotalFactura();
+
 
         btnAtras.setOnClickListener(new GenerarFacturaActivity.listenerAtras());
         btnGenerar.setOnClickListener(new GenerarFacturaActivity.listenerGenerar());
 
     }
 
+    //Calcular Iva y TotalFra
+    private void CalculaTotalFactura() {
+
+        dblSubTotal = Double.valueOf(strSubTotal).doubleValue();
+        dblIva = dblSubTotal * 21 / 100;
+        dblTotal = dblSubTotal + dblIva;
+
+
+        try {
+            //strIva = new Double(dblIva).toString();
+            //strTotal = new Double(dblTotal).toString();
+
+            tvIva.setText(formatoDbl.format(dblIva));
+            tvTotal.setText(formatoDbl.format(dblTotal));
+        } catch (Exception e) {
+            Log.e("text", e.toString());
+
+
+        }
+        cargaPerfil();
+    }
 
     //Carga Perfil
     private void cargaPerfil(){
@@ -187,6 +220,8 @@ public class GenerarFacturaActivity extends AppCompatActivity {
 
     //Inserta los datos en TextViews
     private void insertaDatosTextViews(){
+
+        //Mis datos
         tvNombre.setText(miNombre);
         tvApellidos.setText(misApellidos);
         tvEmail.setText(strEmail);
@@ -199,8 +234,6 @@ public class GenerarFacturaActivity extends AppCompatActivity {
         tvIdCliente.setText(strClienteFra);
         tvNombreCliente.setText(strClienteNombre);
         tvNifCliente.setText(strClienteNif);
-
-
 
         //Datos factura
         tvFecha.setText(strFechaFra);
@@ -285,8 +318,8 @@ public class GenerarFacturaActivity extends AppCompatActivity {
 
         datosFactura.put("detalle", strAlArticulos);
         datosFactura.put("subtotal", strSubTotal);
-        //datosFactura.put("ivaFactura", strIvaFra);
-        //datosFactura.put("totalFactura", strTotalFra);
+        datosFactura.put("ivaFactura", formatoDbl.format(dblIva));
+        datosFactura.put("totalFactura", formatoDbl.format(dblTotal));
 
         //Inserta datos en Factura
         db.collection("/users").document(strEmail).collection
