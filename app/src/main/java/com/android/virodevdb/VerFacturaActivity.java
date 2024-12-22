@@ -248,9 +248,9 @@ public class VerFacturaActivity extends AppCompatActivity {
                                 tvFecha.setText(docFecha);
                                 tvCliente.setText(docCliente);
                                 tvDetalle.setText(docDetalle);
-                                tvSubtotal.setText(docSubtotal);
-                                tvIva.setText(docIva);
-                                tvTotal.setText(docTotal);
+                                tvSubtotal.setText("Subtotal: "+docSubtotal);
+                                tvIva.setText("Iva 21%: "+docIva);
+                                tvTotal.setText("Total: "+docTotal);
 
                             }
                         } else {
