@@ -3,6 +3,7 @@ package com.android.virodevdb;
 import static android.content.ContentValues.TAG;
 
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,6 +25,8 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.text.DecimalFormat;
+import java.text.ParseException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -54,6 +57,10 @@ public class NuevoArticuloActivity extends AppCompatActivity {
     //Variables botones
     private Button btnCancelar;
     private Button btnGuardar;
+
+    //Double format
+    DecimalFormat formatoDbl = new DecimalFormat("#.00");
+    private Double precDbl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,8 +114,7 @@ public class NuevoArticuloActivity extends AppCompatActivity {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
         DocumentReference docRef = db.collection("/users").document(strEmail).collection
-                ("articulos").document("idArticulos").collection
-                ("idArticulos").document(numArticulo);
+                ("articulos").document(numArticulo);
 
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
@@ -129,8 +135,7 @@ public class NuevoArticuloActivity extends AppCompatActivity {
                         //Si no existe
                     } else {
                         Log.d(TAG, "No such document");
-                        creaIdArticulo();
-                        creaNuevoArticulo();
+                        showdialog();
                     }
                 } else {
                     Log.d(TAG, "get failed with ", task.getException());
@@ -151,8 +156,22 @@ public class NuevoArticuloActivity extends AppCompatActivity {
             nomArticulo = etNomArticulo.getText().toString();
             precArticulo = etPrecArticulo.getText().toString();
 
+            //comprueba validez double
+            try {
+
+                //usa nueva Var para guardar importe double con formato
+                precDbl = Double.parseDouble(precArticulo);
+
+                //Inserta artículo
+                inciarNuevoArticulo();
+
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+                mensaje= "Precio artículo incorrecoto (ejemplo 35.27)";
+                showAlert();
+            }
             //Crea Articulo
-            inciarNuevoArticulo();
+
         }
     }
 
@@ -191,26 +210,6 @@ public class NuevoArticuloActivity extends AppCompatActivity {
     }
 
 
-    private void creaIdArticulo(){
-
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-
-        // Create a new map idFArticulos
-        Map<String, Object> idArticulos = new HashMap<>();
-
-        // Datos de idArticulos
-        idArticulos.put("idArticulos", numArticulo);
-
-        //Inserta datos en idArticulos
-        db.collection("/users").document(strEmail).collection
-                ("articulos").document("idArticulos").collection
-                ("idArticulos").document(numArticulo).set(idArticulos);
-        //Lanza alerta
-        mensaje = "ID ARTICULO CREADO!";
-        showAlert();
-
-    }
-
     private void creaNuevoArticulo(){
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -234,6 +233,30 @@ public class NuevoArticuloActivity extends AppCompatActivity {
         showAlert();
 
 
+    }
+    //Mustra dialogo
+    public void showdialog(){
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+
+// Configura el titulo.
+        alertDialogBuilder.setTitle("CONFIRMAR");
+
+// Configura el mensaje.
+        alertDialogBuilder
+                .setMessage("Quieres guardar el nuevo artículo?")
+                .setCancelable(false)
+                .setPositiveButton("Si",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog,int id) {
+
+                        //Si la respuesta es afirmativa aquí agrega tu función a realizar.
+                        creaNuevoArticulo();
+                    }
+                })
+                .setNegativeButton("No",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog,int id) {
+                        dialog.cancel();
+                    }
+                }).create().show();
     }
 
     //Lanza Alerta

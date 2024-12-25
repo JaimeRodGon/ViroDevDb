@@ -163,7 +163,7 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/buttonAnteriorCl"
+                    android:id="@+id/buttonAnterior"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="15dp"
@@ -176,7 +176,7 @@
                     android:layout_weight="1" />
 
                 <Button
-                    android:id="@+id/buttonSiguienteCl"
+                    android:id="@+id/buttonSiguiente"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="15dp"
@@ -188,7 +188,7 @@
             <ListView
                 android:id="@+id/listViewArticulos"
                 android:layout_width="match_parent"
-                android:layout_height="186dp"
+                android:layout_height="200dp"
                 android:nestedScrollingEnabled="true">
 
             </ListView>

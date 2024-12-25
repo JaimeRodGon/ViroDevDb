@@ -6,11 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -28,7 +25,6 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -87,8 +83,8 @@ public class FacturaActivity extends AppCompatActivity {
         tvClienteNif = findViewById(R.id.textViewClienteNif);
         tvColeccion = findViewById(R.id.textViewColeccion);
 
-        btnSiguienteCl = findViewById(R.id.buttonSiguienteCl);
-        btnAnteriorCl = findViewById(R.id.buttonAnteriorCl);
+        btnSiguienteCl = findViewById(R.id.buttonSiguiente);
+        btnAnteriorCl = findViewById(R.id.buttonAnterior);
         btnModificar = findViewById(R.id.buttonModificar);
         btnSiguiente = findViewById(R.id.buttonContinuar);
         btnCancelar = findViewById(R.id.buttonCancelar);
@@ -294,15 +290,6 @@ public class FacturaActivity extends AppCompatActivity {
 
             }
         }
-
-    //Lanza Alerta
-    public void showAlert(){
-
-        AlertDialog.Builder alerta = new AlertDialog.Builder(this);
-        alerta.setMessage(mensaje);
-        alerta.show();
-
-    }
 
 
         //Muestra homeActivity

@@ -3,6 +3,7 @@ package com.android.virodevdb;
 import static android.content.ContentValues.TAG;
 
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -352,8 +353,34 @@ public class GenerarFacturaActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
 
-            inciarNuevaFactura();
+
+            showdialog();
         }
+    }
+
+    //Mustra dialogo
+    public void showdialog(){
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+
+// Configura el titulo.
+        alertDialogBuilder.setTitle("CONFIRMAR");
+
+// Configura el mensaje.
+        alertDialogBuilder
+                .setMessage("Quieres generar nueva factura?")
+                .setCancelable(false)
+                .setPositiveButton("Si",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog,int id) {
+
+                        //Si la respuesta es afirmativa aquí agrega tu función a realizar.
+                        inciarNuevaFactura();
+                    }
+                })
+                .setNegativeButton("No",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog,int id) {
+                        dialog.cancel();
+                    }
+                }).create().show();
     }
 
     //Muestra anadirArticulosFra

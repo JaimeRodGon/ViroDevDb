@@ -53,30 +53,42 @@
                 android:id="@+id/textViewDetalle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Detalle" />
+                android:fontFamily="sans-serif-black"
+                android:text="Detalle"
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/textViewSubTotal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="SubTotal" />
+                android:fontFamily="sans-serif-black"
+                android:text="SubTotal"
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/textViewIva"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Iva" />
+                android:fontFamily="sans-serif-black"
+                android:text="Iva"
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/textViewTotal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Total" />
+                android:fontFamily="sans-serif-black"
+                android:text="Total"
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/textViewColeccion"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:orientation="horizontal"
+                android:gravity="center"
                 android:text="Coleccion" />
 
             <LinearLayout

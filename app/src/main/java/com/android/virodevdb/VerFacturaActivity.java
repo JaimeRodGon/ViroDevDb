@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -42,7 +44,6 @@ public class VerFacturaActivity extends AppCompatActivity {
 
     //Int de documentos
     private int numDoc=0;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -125,7 +126,6 @@ public class VerFacturaActivity extends AppCompatActivity {
 
                 getDoc(strEmail);
 
-
             }
 
         }
@@ -201,7 +201,7 @@ public class VerFacturaActivity extends AppCompatActivity {
                             cantidadDocumentos = querySnapshot.size();
 
                             strNumDocs= Integer.toString(cantidadDocumentos);
-                            tvColeccion.setText("Total articulos:"+strNumDocs);
+                            tvColeccion.setText("Total facturas:"+strNumDocs);
 
                             // Mostrar el resultado
                             Log.d("Firestore", "Cantidad de documentos en la subcolección: " + cantidadDocumentos);

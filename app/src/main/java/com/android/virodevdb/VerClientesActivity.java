@@ -75,8 +75,8 @@ public class VerClientesActivity extends AppCompatActivity {
     private void setup() {
         btnCancelar = findViewById(R.id.buttonAtras);
         btnNuevo = findViewById(R.id.buttonNuevo);
-        btnSiguiente = findViewById(R.id.buttonSiguienteCl);
-        btnAnterior = findViewById(R.id.buttonAnteriorCl);
+        btnSiguiente = findViewById(R.id.buttonSiguiente);
+        btnAnterior = findViewById(R.id.buttonAnterior);
 
         etEmpresa = findViewById(R.id.editTextClienteEmpresa);
         etNIF = findViewById(R.id.editTextClienteNIF);

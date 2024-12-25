@@ -24,6 +24,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class AnadirArticulosFraActivity extends AppCompatActivity {
@@ -83,6 +84,8 @@ public class AnadirArticulosFraActivity extends AppCompatActivity {
 
     private int numDoc=0;
 
+    DecimalFormat formatoDbl = new DecimalFormat("#.00");
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -111,8 +114,8 @@ public class AnadirArticulosFraActivity extends AppCompatActivity {
         lvArticulos = findViewById(R.id.listViewArticulos);
 
         btnAnadir =findViewById(R.id.buttonAnadir);
-        btnSiguiente =findViewById(R.id.buttonSiguienteCl);
-        btnAnterior =findViewById(R.id.buttonAnteriorCl);
+        btnSiguiente =findViewById(R.id.buttonSiguiente);
+        btnAnterior =findViewById(R.id.buttonAnterior);
         btnGenerar =findViewById(R.id.buttonGenerar);
         btnCancelar =findViewById(R.id.buttonAtras);
 
@@ -334,8 +337,11 @@ public class AnadirArticulosFraActivity extends AppCompatActivity {
 
             dblPrecio= Double.valueOf(precArticulo);
             dblSubTotal = dblSubTotal + dblPrecio;
+
+            //dblSubTotal = Double.valueOf(strSubTotal).doubleValue();
+
             strSubTotal = Double.toString(dblSubTotal);
-            tvSubtotal.setText(strSubTotal);
+            tvSubtotal.setText((formatoDbl.format(dblSubTotal)));
 
         }
     }

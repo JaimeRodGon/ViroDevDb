@@ -1,5 +1,7 @@
 package com.android.virodevdb;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -52,6 +54,11 @@ public class VerArticuloActivity extends AppCompatActivity {
     //Contar Subcoleciones
     private int cantidadDocumentos;
     private String strNumDocs;
+    private String docId;
+    private String docRef;
+    private String docNombre;
+    private String docPrecio;
+
 
     //Int de documentos
     private int numDoc=0;
@@ -72,10 +79,16 @@ public class VerArticuloActivity extends AppCompatActivity {
         Intent recibir = getIntent();
         strEmail = recibir.getStringExtra("DatosEmail");
 
+        //Instancias Btn
         btnCancelar =findViewById(R.id.buttonAtras);
         btnNuevo =findViewById(R.id.buttonNuevo);
-        btnSiguiente =findViewById(R.id.buttonSiguienteCl);
-        btnAnterior =findViewById(R.id.buttonAnteriorCl);
+        btnSiguiente =findViewById(R.id.buttonSiguiente);
+        btnAnterior =findViewById(R.id.buttonAnterior);
+        btnEliminar =findViewById(R.id.buttonEliminar);
+        btnActualizar =findViewById(R.id.buttonActualizar);
+
+
+        //Instancias TextView
         tvIdArticulo = findViewById(R.id.textViewIdArticulo);
         tvRefArticulo = findViewById(R.id.textViewRefArticulo);
         tvNomArticulo = findViewById(R.id.textViewNomArticulo);
@@ -100,6 +113,9 @@ public class VerArticuloActivity extends AppCompatActivity {
         btnCancelar.setOnClickListener(new VerArticuloActivity.listenerCancelar());
         btnSiguiente.setOnClickListener(new VerArticuloActivity.listenerSiguienteArt());
         btnAnterior.setOnClickListener(new VerArticuloActivity.listenerAnteriorArt());
+        btnEliminar.setOnClickListener(new VerArticuloActivity.listenerEliminar());
+        btnActualizar.setOnClickListener(new VerArticuloActivity.listenerActualizar());
+
 
     }
 
@@ -159,10 +175,10 @@ public class VerArticuloActivity extends AppCompatActivity {
 
                             // Procesar el documento (recoge campos)
                             if (thirdPostDocument != null) {
-                                String docId = thirdPostDocument.getString("idArticulos");
-                                String docRef = thirdPostDocument.getString("refArticulo");
-                                String docNombre = thirdPostDocument.getString("nombreArticulo");
-                                String doctPrecio = thirdPostDocument.getString("precio");
+                                docId = thirdPostDocument.getString("idArticulos");
+                                docRef = thirdPostDocument.getString("refArticulo");
+                                docNombre = thirdPostDocument.getString("nombreArticulo");
+                                docPrecio = thirdPostDocument.getString("precio");
                                 Log.d("Firestore", "Título del tercer post: " + docNombre);
 
 
@@ -170,7 +186,7 @@ public class VerArticuloActivity extends AppCompatActivity {
                                 tvIdArticulo.setText(docId);
                                 tvRefArticulo.setText(docRef);
                                 tvNomArticulo.setText(docNombre);
-                                tvPrecArticulo.setText(doctPrecio);
+                                tvPrecArticulo.setText(docPrecio);
                             }
                         } else {
                             Log.d("Firestore", "No hay suficientes documentos en la subcolección.");
@@ -182,6 +198,104 @@ public class VerArticuloActivity extends AppCompatActivity {
                 .addOnFailureListener(e -> {
                     Log.e("Firestore", "Error al obtener los documentos: ", e);
                 });
+    }
+
+    //Boton Eliminar Articulo
+    class listenerEliminar implements View.OnClickListener{
+
+        @Override
+        public void onClick(View v) {
+
+            showdialog();
+
+
+        }
+    }
+
+    //Boton Eliminar Articulo
+    class listenerActualizar implements View.OnClickListener{
+
+        @Override
+        public void onClick(View v) {
+
+            showActualizaArticulo();
+
+
+        }
+    }
+
+    //Muestra
+    private void showActualizaArticulo(){
+        //Crea Intents para actualizar
+
+        Intent i4 = new Intent(this, ActializaArticuloActivity.class);
+
+        i4.putExtra("DatosEmail", strEmail);
+        i4.putExtra("numArticulo", docId);
+        i4.putExtra("refArticulo", docRef);
+        i4.putExtra("nomArticulo", docNombre);
+        i4.putExtra("precArticulo", docPrecio);
+
+        startActivity(i4);
+
+    }
+
+    //Eliminar artículo
+    public void eliminarArticulo(){
+
+        //Inicializa FireStore
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        db.collection("/users") // Colección principal
+                .document(strEmail) // Documento principal
+                .collection("/articulos") // Subcolección
+                .document(docId) // Documento a eliminar en la subcolección
+                .delete() // Eliminar documento de la subcolección
+                .addOnSuccessListener(aVoid -> {
+
+                    // Acción si la eliminación fue exitosa
+                    mensaje="El artículo ha sido elimnado";
+                    showAlert();
+
+                    //vuelve numDoc a posición 0
+                    numDoc = 0;
+                    //Ejecuta setup
+                    setup();
+
+                    Log.d("Firestore", "Documento de la subcolección eliminado exitosamente");
+                })
+                .addOnFailureListener(e -> {
+                    // Acción si hubo un error
+                    Log.e("Firestore", "Error al eliminar el documento de la subcolección", e);
+                });
+
+
+    }
+
+    //Eliminar Articulo
+    //Mustra dialogo
+    public void showdialog(){
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+
+// Configura el titulo.
+        alertDialogBuilder.setTitle("CONFIRMAR");
+
+// Configura el mensaje.
+        alertDialogBuilder
+                .setMessage("Quieres eliminar el artículo?")
+                .setCancelable(false)
+                .setPositiveButton("Si",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog,int id) {
+
+                        //Si la respuesta es afirmativa aquí agrega tu función a realizar.
+                        eliminarArticulo();
+                    }
+                })
+                .setNegativeButton("No",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog,int id) {
+                        dialog.cancel();
+                    }
+                }).create().show();
     }
 
 
@@ -266,6 +380,15 @@ public class VerArticuloActivity extends AppCompatActivity {
         i.putExtra("DatosEmail", strEmail);
 
         startActivity(i);
+
+    }
+
+    //Lanza Alerta
+    public void showAlert(){
+
+        AlertDialog.Builder alerta = new AlertDialog.Builder(this);
+        alerta.setMessage(mensaje);
+        alerta.show();
 
     }
 }
