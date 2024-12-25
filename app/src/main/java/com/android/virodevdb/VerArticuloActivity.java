@@ -24,6 +24,8 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.text.DecimalFormat;
+
 
 public class VerArticuloActivity extends AppCompatActivity {
 
@@ -62,6 +64,10 @@ public class VerArticuloActivity extends AppCompatActivity {
 
     //Int de documentos
     private int numDoc=0;
+
+    //Double format
+    DecimalFormat formatoDbl = new DecimalFormat("#.##");
+    private Double precDbl;
 
 
     @Override

@@ -62,6 +62,8 @@ public class NuevoArticuloActivity extends AppCompatActivity {
     DecimalFormat formatoDbl = new DecimalFormat("#.00");
     private Double precDbl;
 
+    private Double newPrecDbl;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -155,6 +157,11 @@ public class NuevoArticuloActivity extends AppCompatActivity {
             refArticulo = etRefArticulo.getText().toString();
             nomArticulo = etNomArticulo.getText().toString();
             precArticulo = etPrecArticulo.getText().toString();
+
+
+            double dblPrecArti = Double.valueOf(precArticulo).doubleValue();
+
+            precArticulo = formatoDbl.format(dblPrecArti);
 
             //comprueba validez double
             try {
