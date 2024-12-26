@@ -59,10 +59,11 @@ public class NuevoArticuloActivity extends AppCompatActivity {
     private Button btnGuardar;
 
     //Double format
-    DecimalFormat formatoDbl = new DecimalFormat("#.00");
+    private DecimalFormat formatoDbl = new DecimalFormat("#.00");
     private Double precDbl;
 
-    private Double newPrecDbl;
+    private String precDbl2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -162,10 +163,10 @@ public class NuevoArticuloActivity extends AppCompatActivity {
             try {
 
                 //usa nueva Var para guardar importe double con formato
-                precDbl = Double.parseDouble(precArticulo);
+                precDbl = Double.parseDouble(etPrecArticulo.getText().toString());
 
                 //Aplica formato
-                String precDbl2 = formatoDbl.format(precDbl);
+                precDbl2 = formatoDbl.format(precDbl);
 
                 //Modifica precio articulo
                 precArticulo =(String.valueOf(precDbl2));

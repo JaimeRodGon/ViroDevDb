@@ -31,9 +31,6 @@
             android:name=".ClientesActivity"
             android:exported="false" />
         <activity
-            android:name=".ArticulosFraActivity"
-            android:exported="false" />
-        <activity
             android:name=".FacturaActivity"
             android:exported="false" />
         <activity
@@ -49,13 +46,7 @@
             android:name=".VerPerfilActivity"
             android:exported="false" />
         <activity
-            android:name=".FacturaActivity2"
-            android:exported="false" />
-        <activity
             android:name=".PerfilActivity"
-            android:exported="false" />
-        <activity
-            android:name=".PefilActivity"
             android:exported="false"
             android:theme="@style/Theme.ViroDevDb" />
         <activity

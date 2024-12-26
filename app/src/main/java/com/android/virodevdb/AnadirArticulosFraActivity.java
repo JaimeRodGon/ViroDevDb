@@ -328,10 +328,6 @@ public class AnadirArticulosFraActivity extends AppCompatActivity {
             precArticulo = tvPrecArticulo.getText().toString();
             strSubTotal = tvSubtotal.getText().toString();
 
-            alArticulos.add(new claseArticulo("Id:" + idArticulo, "Ref:" + refArticulo,
-                    "Nombre:" + nomArticulo, "Precio:" + precArticulo + "€"));
-            adaptador1.notifyDataSetChanged();
-
             //Calcula nuevo subtotal
 
             dblSubTotal = Double.valueOf(tvSubtotal.getText().toString());
@@ -339,13 +335,15 @@ public class AnadirArticulosFraActivity extends AppCompatActivity {
 
             dblSubTotal = dblSubTotal + dblPrecio;
 
-            //Aplica formato
-            String subtotal2 = formatoDbl.format(dblSubTotal);
-
             //Modifica precio articulo
-            strSubTotal = subtotal2;
+            strSubTotal = Double.toString(dblSubTotal);
 
+            //Inserta datos en subtotal
             tvSubtotal.setText(strSubTotal);
+
+            alArticulos.add(new claseArticulo("Id:" + idArticulo, "Ref:" + refArticulo,
+                    "Nombre:" + nomArticulo, "Precio:" + precArticulo + "€"));
+            adaptador1.notifyDataSetChanged();
 
 
         }
