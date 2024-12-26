@@ -155,7 +155,7 @@ public class GenerarFacturaActivity extends AppCompatActivity {
     //Calcular Iva y TotalFra
     private void CalculaTotalFactura() {
 
-        dblSubTotal = Double.valueOf(strSubTotal).doubleValue();
+        dblSubTotal = Double.valueOf(strSubTotal);
         dblIva = dblSubTotal * 21 / 100;
         dblTotal = dblSubTotal + dblIva;
 

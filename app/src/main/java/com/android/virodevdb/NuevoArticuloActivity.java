@@ -158,16 +158,17 @@ public class NuevoArticuloActivity extends AppCompatActivity {
             nomArticulo = etNomArticulo.getText().toString();
             precArticulo = etPrecArticulo.getText().toString();
 
-
-            double dblPrecArti = Double.valueOf(precArticulo).doubleValue();
-
-            precArticulo = formatoDbl.format(dblPrecArti);
-
             //comprueba validez double
             try {
 
                 //usa nueva Var para guardar importe double con formato
                 precDbl = Double.parseDouble(precArticulo);
+
+                //Aplica formato
+                String precDbl2 = formatoDbl.format(precDbl);
+
+                //Modifica precio articulo
+                precArticulo =(String.valueOf(precDbl2));
 
                 //Inserta artículo
                 inciarNuevoArticulo();

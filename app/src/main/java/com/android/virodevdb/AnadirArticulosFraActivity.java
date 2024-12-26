@@ -74,17 +74,17 @@ public class AnadirArticulosFraActivity extends AppCompatActivity {
 
 
     //Variables subTotal
-    private String strSubTotal="0.0";
+    private String strSubTotal="0.00";
     private TextView tvSubtotal;
-    private double dblSubTotal= 0.0;
-    private double dblPrecio =0.0;
+    private double dblSubTotal= 0.00;
+    private double dblPrecio =0.00;
 
     //Contar Subcoleciones
     private int cantidadDocumentos;;
 
     private int numDoc=0;
 
-    DecimalFormat formatoDbl = new DecimalFormat("#.##");
+    DecimalFormat formatoDbl = new DecimalFormat("#.00");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -220,7 +220,7 @@ public class AnadirArticulosFraActivity extends AppCompatActivity {
                                 docId = thirdPostDocument.getString("idArticulos");
                                 String docRef = thirdPostDocument.getString("refArticulo");
                                 String docNombre = thirdPostDocument.getString("nombreArticulo");
-                                String doctPrecio = thirdPostDocument.getString("precio");
+                                String docPrecio = thirdPostDocument.getString("precio");
                                 Log.d("Firestore", "Título del tercer post: " + docNombre);
 
 
@@ -228,7 +228,7 @@ public class AnadirArticulosFraActivity extends AppCompatActivity {
                                 tvIdArticulo.setText(docId);
                                 tvRefArticulo.setText(docRef);
                                 tvNomArticulo.setText(docNombre);
-                                tvPrecArticulo.setText(doctPrecio);
+                                tvPrecArticulo.setText(docPrecio);
                             }
                         } else {
                             Log.d("Firestore", "No hay suficientes documentos en la subcolección.");
@@ -334,14 +334,18 @@ public class AnadirArticulosFraActivity extends AppCompatActivity {
 
             //Calcula nuevo subtotal
 
-            dblPrecio= Double.valueOf(precArticulo);
+            dblSubTotal = Double.valueOf(tvSubtotal.getText().toString());
+            dblPrecio = Double.valueOf(tvPrecArticulo.getText().toString());
+
             dblSubTotal = dblSubTotal + dblPrecio;
 
-            //dblSubTotal = Double.valueOf(strSubTotal).doubleValue();
+            //Aplica formato
+            String subtotal2 = formatoDbl.format(dblSubTotal);
 
-            strSubTotal = Double.toString(dblSubTotal);
-            tvSubtotal.setText(formatoDbl.format(dblSubTotal));
+            //Modifica precio articulo
+            strSubTotal = subtotal2;
 
+            tvSubtotal.setText(strSubTotal);
 
 
         }
