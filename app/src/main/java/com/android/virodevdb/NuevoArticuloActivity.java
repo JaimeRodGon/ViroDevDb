@@ -169,7 +169,7 @@ public class NuevoArticuloActivity extends AppCompatActivity {
                 precDbl2 = formatoDbl.format(precDbl);
 
                 //Modifica precio articulo
-                precArticulo =(String.valueOf(precDbl2));
+                precArticulo =(String.valueOf(precDbl2.replaceAll(",",".")));
 
                 //Inserta artículo
                 inciarNuevoArticulo();

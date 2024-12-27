@@ -45,6 +45,7 @@ public class ActializaArticuloActivity extends AppCompatActivity {
     //Double format
     DecimalFormat formatoDbl = new DecimalFormat("#.00");
     private Double precDbl;
+    private String precDbl2;
 
 
 
@@ -166,6 +167,12 @@ public class ActializaArticuloActivity extends AppCompatActivity {
 
                 //usa nueva Var para guardar importe double con formato
                 precDbl = Double.parseDouble(strPrecArticulo);
+
+                //Aplica formato
+                precDbl2 = formatoDbl.format(precDbl);
+
+                //Modifica precio articulo
+                strPrecArticulo =(String.valueOf(precDbl2.replaceAll(",",".")));
 
                 //Muestra dialogo
                 showdialog();
