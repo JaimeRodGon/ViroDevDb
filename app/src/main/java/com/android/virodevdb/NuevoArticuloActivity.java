@@ -178,6 +178,7 @@ public class NuevoArticuloActivity extends AppCompatActivity {
                 e.printStackTrace();
                 mensaje= "Precio artículo incorrecoto (ejemplo 35.27)";
                 showAlert();
+
             }
             //Crea Articulo
 
@@ -240,6 +241,7 @@ public class NuevoArticuloActivity extends AppCompatActivity {
         //Lanza alerta
             mensaje = "ARTICULO CREADO!";
         showAlert();
+        showVerArticuloActivity();
 
 
     }
@@ -259,6 +261,7 @@ public class NuevoArticuloActivity extends AppCompatActivity {
 
                         //Si la respuesta es afirmativa aquí agrega tu función a realizar.
                         creaNuevoArticulo();
+
                     }
                 })
                 .setNegativeButton("No",new DialogInterface.OnClickListener() {
@@ -274,7 +277,7 @@ public class NuevoArticuloActivity extends AppCompatActivity {
         AlertDialog.Builder alerta = new AlertDialog.Builder(this);
         alerta.setMessage(mensaje);
         alerta.show();
-        showVerArticuloActivity();
+
 
     }
 

@@ -116,7 +116,7 @@ public class ActializaArticuloActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog,int id) {
 
                         //Si la respuesta es afirmativa aquí agrega tu función a realizar.
-                        ActualizaArticulo();;
+                        ActualizaArticulo();
                     }
                 })
                 .setNegativeButton("No",new DialogInterface.OnClickListener() {
@@ -181,6 +181,7 @@ public class ActializaArticuloActivity extends AppCompatActivity {
                 e.printStackTrace();
                 mensaje= "Precio artículo incorrecoto (ejemplo 35.27)";
                 showAlert();
+
             }
             //Crea Articulo
 
