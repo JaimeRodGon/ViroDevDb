@@ -208,6 +208,7 @@ public class ActializaArticuloActivity extends AppCompatActivity {
         //Lanza alerta
         mensaje = "ARTICULO ACTUALIZADO!";
         showAlert();
+        showVerArticulos();
 
 
     }

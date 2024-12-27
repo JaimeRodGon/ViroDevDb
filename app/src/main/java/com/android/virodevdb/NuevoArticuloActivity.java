@@ -274,6 +274,7 @@ public class NuevoArticuloActivity extends AppCompatActivity {
         AlertDialog.Builder alerta = new AlertDialog.Builder(this);
         alerta.setMessage(mensaje);
         alerta.show();
+        showVerArticuloActivity();
 
     }
 
