@@ -84,7 +84,11 @@ public class AnadirArticulosFraActivity extends AppCompatActivity {
 
     private int numDoc=0;
 
-    DecimalFormat formatoDbl = new DecimalFormat("#.00");
+    //Double format
+    private DecimalFormat formatoDbl = new DecimalFormat("#.00");
+    private Double precDbl;
+
+    private String precDbl2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -335,11 +339,17 @@ public class AnadirArticulosFraActivity extends AppCompatActivity {
 
             dblSubTotal = dblSubTotal + dblPrecio;
 
+            //Aplica formato
+            precDbl2 = formatoDbl.format(dblSubTotal);
+
             //Modifica precio articulo
-            strSubTotal = Double.toString(dblSubTotal);
+            strSubTotal =(String.valueOf(precDbl2.replaceAll(",",".")));
 
             //Inserta datos en subtotal
             tvSubtotal.setText(strSubTotal);
+
+            //Modifica precio articulo
+            //strSubTotal = tvSubtotal.getText().toString();
 
             alArticulos.add(new claseArticulo("Id:" + idArticulo, "Ref:" + refArticulo,
                     "Nombre:" + nomArticulo, "Precio:" + precArticulo + "€"));

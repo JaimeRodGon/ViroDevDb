@@ -66,7 +66,7 @@ public class VerArticuloActivity extends AppCompatActivity {
     private int numDoc=0;
 
     //Double format
-    DecimalFormat formatoDbl = new DecimalFormat("#.##");
+    DecimalFormat formatoDbl = new DecimalFormat("#.00");
     private Double precDbl;
 
 
