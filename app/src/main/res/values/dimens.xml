@@ -1,4 +1,6 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="anchoBoton">320dp</dimen>
+    <dimen name="margin_left_crear_perfil">40dp</dimen>
+    <dimen name="margin_righ_crear_perfil">40dp</dimen>
 </resources>

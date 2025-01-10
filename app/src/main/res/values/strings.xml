@@ -10,7 +10,7 @@
     <string name="Registrar">Registrarse</string>
     <string name="Acceder">Acceder</string>
     <string name="Menu">Menú</string>
-    <string name="Perfil">Perfil</string>
+    <string name="Perfil">Crear Perfil</string>
     <string name="Facturas">Facturas</string>
     <string name="Articulos">Articulos</string>
     <string name="Clientes">Clientes</string>
@@ -49,6 +49,11 @@
     <string name="nuevaFra">Nueva Factura</string>
     <string name="btnGenerarFra">Generar Factura</string>
     <string name="txtAnadirArticulos">Añadir Articulos</string>
+    <string name="avatar">avatar</string>
+    <string name="nuevoCliente">Nuevo Cliente</string>
+    <string name="nuevaEmpresa">Nueva Empresa</string>
+    <string name="comunidad">Comunidad</string>
+    <string name="infoAd">Información adicional</string>
 
 
 </resources>

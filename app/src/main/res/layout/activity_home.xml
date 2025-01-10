@@ -12,63 +12,72 @@
 
   <LinearLayout
       android:layout_width="0dp"
-      android:layout_height="wrap_content"
+      android:layout_height="0dp"
       android:layout_marginStart="16dp"
       android:layout_marginEnd="16dp"
       android:orientation="vertical"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="1.0"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.952"
       app:layout_constraintWidth_max="800dp">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:alpha="0.9"
+        app:srcCompat="@drawable/avatar_foreground" />
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="match_parent"
+        android:layout_width="388dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
         android:text="@string/Menu"
         android:textAlignment="center"
-        android:textSize="40sp"
+        android:textSize="40sp" />
 
-        android:layout_marginBottom="50dp"/>
 
     <TextView
         android:id="@+id/textViewTitulo"
         android:layout_width="match_parent"
         android:layout_height="40dp"
+        android:alpha="0"
         android:text="@string/email"
-        tools:text="Email"
-        />
+        tools:text="Email" />
 
     <Button
         android:id="@+id/buttonPerfil"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/Perfil"
         android:layout_marginBottom="15dp"
         android:backgroundTint="@color/colorBoton"
-        android:textColor="@color/Titulos"
+        android:text="@string/Perfil"
         android:textAllCaps="true"
-        />
+        android:textColor="@color/Titulos" />
 
     <Button
         android:id="@+id/buttonFacturas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/Facturas"
         android:layout_marginBottom="15dp"
         android:backgroundTint="@color/colorBoton"
-        android:textColor="@color/Titulos"/>
+        android:text="@string/Facturas"
+        android:textColor="@color/Titulos" />
 
     <Button
         android:id="@+id/buttonClientes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:enabled="true"
-        android:text="@string/Clientes"
         android:layout_marginBottom="15dp"
         android:backgroundTint="@color/colorBoton"
-        android:textColor="@color/Titulos"/>
+        android:enabled="true"
+        android:text="@string/Clientes"
+        android:textColor="@color/Titulos" />
 
     <Button
         android:id="@+id/buttonArticulos"
@@ -79,24 +88,25 @@
         android:enabled="true"
         android:text="@string/Articulos"
         android:textColor="@color/Titulos" />
+
     <Button
         android:id="@+id/buttonInformes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:enabled="false"
-        android:text="@string/informes"
         android:layout_marginBottom="15dp"
         android:backgroundTint="@color/colorBoton"
-        android:textColor="@color/Titulos"/>
+        android:enabled="false"
+        android:text="@string/informes"
+        android:textColor="@color/Titulos" />
 
     <Button
         android:id="@+id/buttonCerrarPerfil"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/LogOut"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="10dp"
         android:backgroundTint="@color/botonCancelar"
-        android:textColor="@color/Titulos"/>
+        android:text="@string/LogOut"
+        android:textColor="@color/Titulos" />
 
   </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

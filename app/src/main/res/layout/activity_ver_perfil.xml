@@ -23,79 +23,93 @@
                 android:id="@+id/textView4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="55dp"
                 android:layout_marginBottom="70dp"
                 android:fontFamily="sans-serif-black"
                 android:text="@string/DatosPefil"
                 android:textAlignment="center"
-                android:textSize="20sp" />
+                android:textSize="35sp" />
 
             <TextView
                 android:id="@+id/textViewNombre"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
                 android:layout_marginBottom="25dp"
-                android:background="@color/textBoxs"
+                android:layout_marginStart="@dimen/margin_left_crear_perfil"
+                android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
+                android:background="@drawable/redondeo_bordes"
                 android:text="@string/nombre"
                 android:textAlignment="center"
                 android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/textViewApellidos"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
                 android:layout_marginBottom="25dp"
-                android:background="@color/textBoxs"
+                android:layout_marginStart="@dimen/margin_left_crear_perfil"
+                android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
+                android:background="@drawable/redondeo_bordes"
                 android:text="@string/apellido"
                 android:textAlignment="center"
                 android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/textViewEmail2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
                 android:layout_marginBottom="25dp"
-                android:background="@color/textBoxs"
+                android:layout_marginStart="@dimen/margin_left_crear_perfil"
+                android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
+                android:background="@drawable/redondeo_bordes"
                 android:text="@string/email"
                 android:textAlignment="center"
                 android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/textViewTitulo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
                 android:layout_marginBottom="25dp"
-                android:background="@color/textBoxs"
+                android:layout_marginStart="@dimen/margin_left_crear_perfil"
+                android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
+                android:background="@drawable/redondeo_bordes"
                 android:text="@string/NIF"
                 android:textAlignment="center"
                 android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/textViewDireccion"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
                 android:layout_marginBottom="25dp"
-                android:background="@color/textBoxs"
+                android:layout_marginStart="@dimen/margin_left_crear_perfil"
+                android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
+                android:background="@drawable/redondeo_bordes"
                 android:text="@string/domicilio"
                 android:textAlignment="center"
                 android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/textViewCp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
                 android:layout_marginBottom="25dp"
-                android:background="@color/textBoxs"
+                android:layout_marginStart="@dimen/margin_left_crear_perfil"
+                android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
+                android:background="@drawable/redondeo_bordes"
                 android:text="@string/cp"
                 android:textAlignment="center"
                 android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/textViewTelefono"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
                 android:layout_marginBottom="25dp"
-                android:background="@color/textBoxs"
+                android:layout_marginStart="@dimen/margin_left_crear_perfil"
+                android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
+                android:background="@drawable/redondeo_bordes"
                 android:text="@string/telefono"
                 android:textAlignment="center"
                 android:textSize="20sp" />
@@ -106,16 +120,32 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
                 android:layout_marginBottom="15dp"
+                android:layout_marginStart="@dimen/margin_left_crear_perfil"
+                android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
                 android:backgroundTint="@color/colorBoton"
                 android:text="@string/actualizarPerfil" />
 
-            <Button
-                android:id="@+id/buttonCerrarPerfil"
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
-                android:backgroundTint="@color/botonCancelar"
-                android:text="Cancelar" />
+                android:layout_height="match_parent">
+                <Button
+                    android:id="@+id/buttonCerrarPerfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_left_crear_perfil"
+                    android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
+                    android:layout_marginBottom="15dp"
+                    android:alpha="0"
+                    android:backgroundTint="@color/botonCancelar"
+                    android:text="@string/cancel" />
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="376dp"
+                    android:layout_height="57dp"
+                    android:layout_marginStart="20dp"
+                    app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+            </FrameLayout>
         </LinearLayout>
     </ScrollView>
 
