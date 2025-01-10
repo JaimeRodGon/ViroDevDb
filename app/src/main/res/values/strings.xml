@@ -54,6 +54,7 @@
     <string name="nuevaEmpresa">Nueva Empresa</string>
     <string name="comunidad">Comunidad</string>
     <string name="infoAd">Información adicional</string>
+    <string name="direccion">Dirección</string>
 
 
 </resources>

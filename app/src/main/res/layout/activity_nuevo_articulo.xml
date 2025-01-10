@@ -15,43 +15,54 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:id="@+id/textViewTitulo"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:text="TextView"
-                tools:text="Email" />
+                tools:text="Email"
+                android:alpha="0"/>
 
             <TextView
                 android:id="@+id/textView11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-black"
-                android:text="ARTICULOS"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="50dp"
+                android:text="@string/Articulos"
                 android:textAlignment="center"
-                android:textSize="20sp" />
+                android:textSize="30sp" />
 
             <TextView
                 android:id="@+id/TexViewtArticuloId"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="idArticulo"
+                android:layout_height="50dp"
+                android:layout_marginStart="@dimen/margin_left_crear_perfil"
+                android:layout_marginTop="100dp"
+                android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/redondeo_bordes"
+                android:hint="@string/Articulos"
                 android:minHeight="48dp"
-                android:textAlignment="center"
-                android:background="@color/textBoxs"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp" />
+                android:textAlignment="center" />
 
             <EditText
                 android:id="@+id/editTexArticulorRef"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
+                android:layout_marginStart="@dimen/margin_left_crear_perfil"
+                android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
                 android:hint="REFERENCIA"
                 android:minHeight="48dp"
                 android:textAlignment="center"
-                android:background="@color/textBoxs"
+                android:background="@drawable/redondeo_bordes"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp" />
 
@@ -59,10 +70,12 @@
                 android:id="@+id/editTexArticuloNombre"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:hint="ARTICULO"
+                android:layout_marginStart="@dimen/margin_left_crear_perfil"
+                android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
+                android:hint="@string/Articulos"
                 android:minHeight="48dp"
                 android:textAlignment="center"
-                android:background="@color/textBoxs"
+                android:background="@drawable/redondeo_bordes"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp" />
 
@@ -70,28 +83,44 @@
                 android:id="@+id/editTexArticuloPrecio"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:hint="PRECIO"
+                android:layout_marginStart="@dimen/margin_left_crear_perfil"
+                android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
+                android:hint="@string/precio"
                 android:minHeight="48dp"
                 android:textAlignment="center"
-                android:background="@color/textBoxs"
+                android:background="@drawable/redondeo_bordes"
                 android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp" />
+                android:layout_marginBottom="150dp" />
 
             <Button
                 android:id="@+id/buttonGuardar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorBoton"
-                android:text="@string/guardar" />
-
-            <Button
-                android:id="@+id/buttonAtras"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginStart="@dimen/margin_left_crear_perfil"
+                android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
                 android:layout_marginBottom="15dp"
-                android:backgroundTint="@color/botonCancelar"
-                android:text="@string/cancel"
-                android:textColor="@color/Titulos" />
+                android:backgroundTint="@color/colorBoton"
+                android:text="@string/guardar"
+                />
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <Button
+                    android:id="@+id/buttonAtras"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:backgroundTint="@color/botonCancelar"
+                    android:text="@string/cancel"
+                    android:textColor="@color/Titulos"
+                    android:alpha="0"/>
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="57dp"
+                    app:srcCompat="@android:drawable/ic_delete" />
+            </FrameLayout>
         </LinearLayout>
     </ScrollView>
 

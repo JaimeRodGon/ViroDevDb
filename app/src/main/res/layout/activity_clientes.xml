@@ -127,14 +127,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/Clientes" />
-
-        <Button
-            android:id="@+id/buttonAtras"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:backgroundTint="@color/botonCancelar"
-            android:text="@string/cancel" />
+            android:layout_height="match_parent">
+            <Button
+                android:id="@+id/buttonAtras"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="@color/botonCancelar"
+                android:alpha="0"
+                android:text="@string/cancel" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="57dp"
+                app:srcCompat="@android:drawable/ic_delete" />
+        </FrameLayout>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
