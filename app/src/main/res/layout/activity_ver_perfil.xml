@@ -23,8 +23,8 @@
                 android:id="@+id/textView4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="55dp"
-                android:layout_marginBottom="70dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginBottom="60dp"
                 android:fontFamily="sans-serif-black"
                 android:text="@string/DatosPefil"
                 android:textAlignment="center"
@@ -113,21 +113,45 @@
                 android:text="@string/telefono"
                 android:textAlignment="center"
                 android:textSize="20sp" />
-
-            <Button
-                android:id="@+id/buttonAcutalizaPerfil"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:layout_marginBottom="15dp"
-                android:layout_marginStart="@dimen/margin_left_crear_perfil"
-                android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
-                android:backgroundTint="@color/colorBoton"
-                android:text="@string/actualizarPerfil" />
-
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/buttonAcutalizaPerfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_left_crear_perfil"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
+                    android:layout_marginBottom="15dp"
+                    android:backgroundTint="@color/colorBoton"
+                    android:alpha="0"
+                    android:text="@string/actualizarPerfil" />
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="65dp"
+                    android:layout_marginStart="140dp"
+                    android:textAllCaps="true"
+                    android:textSize="15sp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="@string/actualizarPerfil" />
+
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:contentDescription="@string/actualizarPerfil"
+                    app:srcCompat="@mipmap/update_round" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp">
                 <Button
                     android:id="@+id/buttonCerrarPerfil"
                     android:layout_width="match_parent"
@@ -139,11 +163,22 @@
                     android:backgroundTint="@color/botonCancelar"
                     android:text="@string/cancel" />
 
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginStart="170dp"
+                    android:textAllCaps="true"
+                    android:textSize="15sp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="@string/cancel" />
+
                 <ImageView
                     android:id="@+id/imageView2"
                     android:layout_width="376dp"
                     android:layout_height="57dp"
                     android:layout_marginStart="20dp"
+                    android:contentDescription="@string/eliminar"
                     app:srcCompat="@android:drawable/ic_delete" />
             </FrameLayout>
         </LinearLayout>
