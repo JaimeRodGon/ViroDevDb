@@ -65,6 +65,11 @@
     <string name="nuevoArticulo">Nuevo Producto</string>
     <string name="actualizaArticulo">Actualizar articulo</string>
     <string name="borrarArticulo">Borrar Articulo</string>
+    <string name="logo">Logo</string>
+    <string name="menu">menu</string>
+    <string name="textview">TextView</string>
+    <string name="modificar_fecha">Modificar fecha</string>
+    <string name="subtotal">SubTotal</string>
 
 
 </resources>

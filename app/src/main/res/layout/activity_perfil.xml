@@ -23,18 +23,18 @@
                 android:id="@+id/textViewTitulo"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="60dp"
                 android:layout_marginBottom="50dp"
                 android:fontFamily="sans-serif-black"
                 android:text="@string/Perfil"
                 android:textAlignment="center"
-                android:textSize="25sp" />
+                android:textSize="35sp" />
 
             <EditText
                 android:id="@+id/etEmail"
                 android:layout_width="325dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="20dp"
                 android:layout_marginStart="@dimen/margin_left_crear_perfil"
                 android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
                 android:autofillHints="@string/email"
@@ -48,7 +48,7 @@
                 android:id="@+id/etPassword"
                 android:layout_width="325dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="20dp"
                 android:layout_marginStart="@dimen/margin_left_crear_perfil"
                 android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
                 android:autofillHints="password"
@@ -62,7 +62,7 @@
                 android:id="@+id/etNombre"
                 android:layout_width="325dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="20dp"
                 android:layout_marginStart="@dimen/margin_left_crear_perfil"
                 android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
                 android:autofillHints="name"
@@ -76,7 +76,7 @@
                 android:id="@+id/etApellidos"
                 android:layout_width="325dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="20dp"
                 android:layout_marginStart="@dimen/margin_left_crear_perfil"
                 android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
                 android:autofillHints="name"
@@ -90,7 +90,7 @@
                 android:id="@+id/etDniCif"
                 android:layout_width="325dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="20dp"
                 android:layout_marginStart="@dimen/margin_left_crear_perfil"
                 android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
                 android:autofillHints="none"
@@ -104,7 +104,7 @@
                 android:id="@+id/etDireccion"
                 android:layout_width="325dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="20dp"
                 android:layout_marginStart="@dimen/margin_left_crear_perfil"
                 android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
                 android:autofillHints="postalAddress"
@@ -118,7 +118,7 @@
                 android:id="@+id/etCP"
                 android:layout_width="325dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="20dp"
                 android:layout_marginStart="@dimen/margin_left_crear_perfil"
                 android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
                 android:autofillHints="none"
@@ -132,7 +132,7 @@
                 android:id="@+id/etTelefono"
                 android:layout_width="325dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="20dp"
                 android:layout_marginStart="@dimen/margin_left_crear_perfil"
                 android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
                 android:autofillHints="phone"
@@ -141,17 +141,30 @@
                 android:inputType="phone"
                 android:minHeight="50dp"
                 android:textAlignment="center" />
+            <FrameLayout
+                android:layout_width="380dp"
+                android:layout_height="60dp"
+                android:layout_marginBottom="20dp">
+                <Button
+                    android:id="@+id/btnGuardarActualizaPerfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_left_crear_perfil"
+                    android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@color/colorBoton"
+                    android:minHeight="70dp"
+                    android:text="@string/guardar"
+                    android:alpha="0"/>
+                <ImageView
+                    android:id="@+id/guardar"
+                    android:layout_width="380dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_height="60dp"
+                    android:contentDescription="@string/guardar"
+                    app:srcCompat="@mipmap/save_product_round" />
 
-            <Button
-                android:id="@+id/btnGuardarActualizaPerfil"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_left_crear_perfil"
-                android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
-                android:layout_marginBottom="10dp"
-                android:backgroundTint="@color/colorBoton"
-                android:minHeight="50dp"
-                android:text="@string/guardar" />
+            </FrameLayout>
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -172,7 +185,7 @@
                     android:layout_width="376dp"
                     android:layout_height="57dp"
                     android:layout_marginStart="20dp"
-                    app:srcCompat="@android:drawable/ic_delete" />
+                    app:srcCompat="@mipmap/menu_product_round" />
             </FrameLayout>
         </LinearLayout>
     </ScrollView>

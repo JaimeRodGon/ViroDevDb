@@ -25,7 +25,7 @@
                 android:id="@+id/textViewTitulo"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:text="TextView"
+                android:text="@string/textview"
                 tools:text="Email"
                 android:alpha="0"/>
 
@@ -38,7 +38,7 @@
                 android:layout_marginBottom="50dp"
                 android:text="@string/Articulos"
                 android:textAlignment="center"
-                android:textSize="30sp" />
+                android:textSize="35sp" />
 
             <TextView
                 android:id="@+id/TexViewtArticuloId"
@@ -90,8 +90,11 @@
                 android:textAlignment="center"
                 android:background="@drawable/redondeo_bordes"
                 android:layout_marginTop="15dp"
-                android:layout_marginBottom="150dp" />
-
+                android:layout_marginBottom="110dp" />
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="20dp">
             <Button
                 android:id="@+id/buttonGuardar"
                 android:layout_width="match_parent"
@@ -101,10 +104,18 @@
                 android:layout_marginBottom="15dp"
                 android:backgroundTint="@color/colorBoton"
                 android:text="@string/guardar"
+                android:alpha="0"
                 />
+                <ImageView
+                    android:id="@+id/guardar"
+                    android:layout_width="match_parent"
+                    android:layout_height="57dp"
+                    app:srcCompat="@mipmap/save_product_round" />
+            </FrameLayout>
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                >
                 <Button
                     android:id="@+id/buttonAtras"
                     android:layout_width="match_parent"
@@ -119,7 +130,8 @@
                     android:id="@+id/imageView2"
                     android:layout_width="match_parent"
                     android:layout_height="57dp"
-                    app:srcCompat="@android:drawable/ic_delete" />
+                    android:contentDescription="@string/menu"
+                    app:srcCompat="@mipmap/menu_product_round" />
             </FrameLayout>
         </LinearLayout>
     </ScrollView>

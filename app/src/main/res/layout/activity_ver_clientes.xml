@@ -29,7 +29,7 @@
             android:textSize="30sp"
             android:textAlignment="center"
             android:layout_marginTop="30dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="20dp"
             android:fontFamily="sans-serif-black"/>
 
         <!-- Campo: Empresa -->
@@ -219,7 +219,7 @@
                 android:layout_width="375dp"
                 android:layout_height="75dp"
                 android:contentDescription="@string/cancel"
-                app:srcCompat="@android:drawable/ic_delete"/>
+                app:srcCompat="@mipmap/menu_product_round"/>
         </FrameLayout>
 
         <LinearLayout

@@ -24,8 +24,9 @@
             android:id="@+id/textView5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:layout_marginBottom="50dp"
+            android:fontFamily="sans-serif-black"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="35dp"
             android:text="@string/nuevoCliente"
             android:textAlignment="center"
             android:textSize="35sp" />
@@ -34,7 +35,7 @@
             android:id="@+id/etClienteFra"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="20dp"
             android:autofillHints=""
             android:background="@drawable/redondeo_bordes"
             android:hint="@string/nuevaEmpresa"
@@ -46,7 +47,7 @@
             android:id="@+id/etNumFra"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="20dp"
             android:autofillHints=""
             android:background="@drawable/redondeo_bordes"
             android:hint="@string/idCliente"
@@ -58,7 +59,7 @@
             android:id="@+id/etNIF"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="20dp"
             android:autofillHints=""
             android:background="@drawable/redondeo_bordes"
             android:hint="@string/NIF"
@@ -70,7 +71,7 @@
             android:id="@+id/etCodigoPostal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="20dp"
             android:autofillHints=""
             android:background="@drawable/redondeo_bordes"
             android:hint="@string/cp"
@@ -82,7 +83,7 @@
             android:id="@+id/etLocalidad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="20dp"
             android:autofillHints=""
             android:background="@drawable/redondeo_bordes"
             android:hint="@string/comunidad"
@@ -94,7 +95,7 @@
             android:id="@+id/etCalle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="20dp"
             android:autofillHints=""
             android:background="@drawable/redondeo_bordes"
             android:hint="@string/domicilio"
@@ -106,27 +107,49 @@
             android:id="@+id/etInfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="20dp"
             android:autofillHints=""
             android:background="@drawable/redondeo_bordes"
             android:hint="@string/infoAd"
             android:inputType="textMultiLine"
             android:minHeight="50dp"
             android:textAlignment="center" />
-
-        <Button
-            android:id="@+id/buttonGuardar"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:backgroundTint="@color/colorBoton"
-            android:text="@string/guardar" />
+            android:layout_height="70dp"
+            android:layout_marginBottom="10dp">
+            <Button
+                android:id="@+id/buttonGuardar"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:backgroundTint="@color/colorBoton"
+                android:text="@string/guardar"
+                android:alpha="0"/>
 
-        <Button
-            android:id="@+id/buttonVerClientes"
+            <ImageView
+                android:id="@+id/guardar"
+                android:layout_width="391dp"
+                android:layout_height="60dp"
+                android:contentDescription="@string/guardar"
+                app:srcCompat="@mipmap/save_product_round" />
+        </FrameLayout>
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/Clientes" />
+            android:layout_height="70dp">
+            <Button
+                android:id="@+id/buttonVerClientes"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_marginBottom="20dp"
+                android:text="@string/Clientes"
+                android:alpha="0"/>
+            <ImageView
+                android:id="@+id/clientes"
+                android:layout_width="391dp"
+                android:layout_height="65dp"
+                android:contentDescription="@string/guardar"
+                app:srcCompat="@mipmap/clientes_product_round" />
+        </FrameLayout>
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -140,10 +163,12 @@
                 android:text="@string/cancel" />
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/menu"
                 android:layout_width="match_parent"
-                android:layout_height="57dp"
-                app:srcCompat="@android:drawable/ic_delete" />
+                android:layout_height="60dp"
+                android:layout_marginTop="15dp"
+                android:contentDescription="@string/Menu"
+                app:srcCompat="@mipmap/menu_product_round" />
         </FrameLayout>
 
     </LinearLayout>

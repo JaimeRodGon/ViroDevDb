@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,31 +27,35 @@
                 android:id="@+id/textViewNombre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:fontFamily="sans-serif-black"
                 android:text="@string/nombre"
-                android:background="@color/textBoxs"
+                android:background="@drawable/redondeo_bordes"
                 android:textAlignment="center"
-                android:textSize="12sp" />
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/textViewApellidos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-black"
+                android:layout_marginBottom="10dp"
                 android:text="@string/apellido"
-                android:background="@color/textBoxs"
+                android:background="@drawable/redondeo_bordes"
                 android:textAlignment="center"
-                android:textSize="12sp" />
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/textViewTitulo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-black"
+                android:layout_marginBottom="10dp"
                 android:text="@string/email"
-                android:background="@color/textBoxs"
+                android:background="@drawable/redondeo_bordes"
                 android:textAlignment="center"
-                android:textSize="12sp" />
+                android:textSize="15sp" />
 
 
             <TextView
@@ -59,87 +63,99 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-black"
+                android:layout_marginBottom="10dp"
                 android:text="@string/NIF"
-                android:background="@color/textBoxs"
+                android:background="@drawable/redondeo_bordes"
                 android:textAlignment="center"
-                android:textSize="12sp" />
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/textViewDireccion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-black"
+                android:layout_marginBottom="10dp"
                 android:text="@string/domicilio"
-                android:background="@color/textBoxs"
+                android:background="@drawable/redondeo_bordes"
                 android:textAlignment="center"
-                android:textSize="12sp" />
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/textViewCp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-black"
+                android:layout_marginBottom="10dp"
                 android:text="@string/cp"
-                android:background="@color/textBoxs"
+                android:background="@drawable/redondeo_bordes"
                 android:textAlignment="center"
-                android:textSize="12sp" />
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/textViewTelefono"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-black"
+                android:layout_marginBottom="10dp"
                 android:text="@string/telefono"
-                android:background="@color/textBoxs"
+                android:background="@drawable/redondeo_bordes"
                 android:textAlignment="center"
-                android:textSize="12sp" />
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/textViewPerfil"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 android:fontFamily="sans-serif-black"
-                android:text="@string/txtCliente" />
+                android:text="@string/txtCliente"
+                />
 
             <TextView
                 android:id="@+id/textViewCliente"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 android:text="@string/nombre" />
 
             <TextView
                 android:id="@+id/textViewFecha"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 android:text="@string/FechaFactura" />
 
             <TextView
                 android:id="@+id/textViewNumFra"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 android:text="@string/NFactura" />
 
             <ListView
                 android:id="@+id/listViewArticulos"
                 android:layout_width="match_parent"
                 android:layout_height="195dp"
-                android:nestedScrollingEnabled="true">
+                android:nestedScrollingEnabled="true"
+                android:layout_marginBottom="10dp">
 
             </ListView>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                >
 
                 <TextView
                     android:id="@+id/textViewSubTotal"
                     android:layout_width="207dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
                     android:fontFamily="sans-serif-black"
-                    android:text="SubTotal"
+                    android:text="@string/subtotal"
                     android:textAlignment="textEnd"
-                    android:textSize="20sp" />
+                    android:textSize="25sp" />
 
                 <TextView
                     android:id="@+id/textView16"
@@ -148,25 +164,50 @@
                     android:layout_weight="1"
                     android:fontFamily="sans-serif-black"
                     android:text="@string/euro"
-                    android:textSize="20sp" />
+                    android:textSize="25sp"
+                    android:layout_marginBottom="10dp"/>
             </LinearLayout>
-
-            <Button
-                android:id="@+id/buttonGenerar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/btnGenerarFra"
-                android:layout_marginBottom="15dp"
-                android:backgroundTint="@color/colorBoton"/>
-
-            <Button
-                android:id="@+id/buttonAtras"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/cancel"
-                android:layout_marginBottom="15dp"
-                android:backgroundTint="@color/botonCancelar"
-                android:textColor="@color/Titulos"/>
+            <FrameLayout
+                android:layout_width="380dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="10dp">
+                <Button
+                    android:id="@+id/buttonGenerar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/btnGenerarFra"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:backgroundTint="@color/colorBoton"
+                    android:alpha="0"/>
+                <ImageView
+                    android:id="@+id/addFactura"
+                    android:layout_width="380dp"
+                    android:layout_height="65dp"
+                    android:contentDescription="@string/NewFactura"
+                    app:srcCompat="@mipmap/add_factura_product_round" />
+            </FrameLayout>
+            <FrameLayout
+                android:layout_width="380dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="10dp">
+                <Button
+                    android:id="@+id/buttonAtras"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cancel"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:backgroundTint="@color/botonCancelar"
+                    android:textColor="@color/Titulos"
+                    android:alpha="0"/>
+                <ImageView
+                    android:id="@+id/buttonCancelar"
+                    android:layout_width="380dp"
+                    android:layout_height="65dp"
+                    android:contentDescription="@string/cancel"
+                    app:srcCompat="@mipmap/menu_product_round"/>
+            </FrameLayout>
 
         </LinearLayout>
     </ScrollView>

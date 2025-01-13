@@ -23,8 +23,8 @@
                 android:id="@+id/textView4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="35dp"
-                android:layout_marginBottom="60dp"
+                android:layout_marginTop="45dp"
+                android:layout_marginBottom="50dp"
                 android:fontFamily="sans-serif-black"
                 android:text="@string/DatosPefil"
                 android:textAlignment="center"
@@ -179,7 +179,7 @@
                     android:layout_height="57dp"
                     android:layout_marginStart="20dp"
                     android:contentDescription="@string/eliminar"
-                    app:srcCompat="@android:drawable/ic_delete" />
+                    app:srcCompat="@mipmap/menu_product_round" />
             </FrameLayout>
         </LinearLayout>
     </ScrollView>
