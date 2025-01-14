@@ -158,9 +158,18 @@
                 <ImageView
                     android:id="@+id/nuevoProducto"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
+                    android:layout_height="55dp"
                     android:contentDescription="@string/nuevoArticulo"
                     app:srcCompat="@mipmap/new_product" />
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="52dp"
+                    android:layout_marginStart="107dp"
+                    android:textAllCaps="true"
+                    android:textSize="15sp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="@string/agregar" />
             </FrameLayout>
             <FrameLayout
                 android:layout_width="275dp"
@@ -171,20 +180,30 @@
                     android:id="@+id/buttonActualizar"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
-                    android:layout_marginTop="10dp"
+
                     android:enabled="false"
                     android:text="@string/btnActualizar"
                     android:layout_marginBottom="15dp"
                     android:backgroundTint="@color/colorBoton"
                     android:textColor="@color/Titulos"
                     android:alpha="0"/>
+
                 <ImageView
                     android:id="@+id/actualizaProducto"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="40dp"
                     android:layout_marginTop="10dp"
                     android:contentDescription="@string/actualizaArticulo"
                     app:srcCompat="@mipmap/update_product_round" />
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginStart="90dp"
+                    android:textAllCaps="true"
+                    android:textSize="15sp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="@string/actualizaArticulo" />
             </FrameLayout>
             <FrameLayout
                 android:layout_width="275dp"
@@ -203,11 +222,20 @@
                 <ImageView
                     android:id="@+id/borrarProducto"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="45dp"
                     android:layout_marginTop="10dp"
                     android:alpha="0.9"
                     android:contentDescription="@string/borrarArticulo"
                     app:srcCompat="@mipmap/delete_product_round" />
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="52dp"
+                    android:layout_marginStart="107dp"
+                    android:textAllCaps="true"
+                    android:textSize="15sp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="@string/eliminar" />
             </FrameLayout>
             <FrameLayout
                 android:layout_width="275dp"

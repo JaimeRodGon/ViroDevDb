@@ -176,10 +176,19 @@
             <ImageView
                 android:id="@+id/NuevaEmpresa"
                 android:layout_width="385dp"
-                android:layout_height="85dp"
+                android:layout_height="65dp"
                 android:alpha="0.9"
                 android:contentDescription="@string/nuevaEmpresa"
                 app:srcCompat="@drawable/avatarbussines_foreground" />
+            <TextView
+                android:layout_width="220dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="52dp"
+                android:layout_marginStart="130dp"
+                android:textAllCaps="true"
+                android:textSize="15sp"
+                android:fontFamily="sans-serif-black"
+                android:text="@string/nuevaEmpresa" />
         </FrameLayout>
 
         <Button

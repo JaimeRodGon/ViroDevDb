@@ -156,6 +156,8 @@
                 <FrameLayout
                     android:layout_width="360dp"
                     android:layout_height="70dp">
+
+
                     <Button
                     android:id="@+id/buttonAnadir"
                     android:layout_width="match_parent"
@@ -169,9 +171,19 @@
                     <ImageView
                         android:id="@+id/addFactura"
                         android:layout_width="375dp"
-                        android:layout_height="75dp"
+                        android:layout_height="65dp"
                         android:contentDescription="@string/NewFactura"
                         app:srcCompat="@mipmap/add_factura_product_round" />
+
+                    <TextView
+                        android:layout_width="120dp"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="52dp"
+                        android:layout_marginStart="150dp"
+                        android:textAllCaps="true"
+                        android:textSize="15sp"
+                        android:fontFamily="sans-serif-black"
+                        android:text="@string/agregar" />
 
                 </FrameLayout>
 

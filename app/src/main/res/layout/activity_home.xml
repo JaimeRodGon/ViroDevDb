@@ -65,12 +65,22 @@
           android:textAllCaps="true"
           android:textColor="@color/Titulos"
           android:alpha="0"/>
-        <ImageView
-            android:id="@+id/PERFIL"
-            android:layout_width="380dp"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/guardar"
-            app:srcCompat="@mipmap/perfil_product_round" />
+
+      <ImageView
+          android:id="@+id/PERFIL"
+          android:layout_width="380dp"
+          android:layout_height="60dp"
+          android:contentDescription="@string/guardar"
+          app:srcCompat="@mipmap/perfil_product_round" />
+      <TextView
+          android:layout_width="120dp"
+          android:layout_height="20dp"
+          android:layout_marginTop="52dp"
+          android:layout_marginStart="165dp"
+          android:textAllCaps="true"
+          android:textSize="15sp"
+          android:fontFamily="sans-serif-black"
+          android:text="@string/verPerfil" />
     </FrameLayout>
     <FrameLayout
         android:layout_width="370dp"
@@ -89,9 +99,18 @@
       <ImageView
           android:id="@+id/factura"
           android:layout_width="380dp"
-          android:layout_height="wrap_content"
-          android:contentDescription="@string/guardar"
+          android:layout_height="65dp"
+          android:contentDescription="@string/Facturas"
           app:srcCompat="@mipmap/facturas_product_round" />
+      <TextView
+          android:layout_width="120dp"
+          android:layout_height="20dp"
+          android:layout_marginTop="52dp"
+          android:layout_marginStart="155dp"
+          android:textAllCaps="true"
+          android:textSize="15sp"
+          android:fontFamily="sans-serif-black"
+          android:text="@string/Facturas" />
     </FrameLayout>
 
     <FrameLayout
@@ -111,9 +130,19 @@
       <ImageView
           android:id="@+id/clientes"
           android:layout_width="380dp"
-          android:layout_height="wrap_content"
-          android:contentDescription="@string/guardar"
+          android:layout_height="65dp"
+          android:contentDescription="@string/Clientes"
           app:srcCompat="@mipmap/clientes_product_round" />
+
+      <TextView
+          android:layout_width="120dp"
+          android:layout_height="20dp"
+          android:layout_marginTop="52dp"
+          android:layout_marginStart="155dp"
+          android:textAllCaps="true"
+          android:textSize="15sp"
+          android:fontFamily="sans-serif-black"
+          android:text="@string/Clientes" />
     </FrameLayout>
 
     <FrameLayout
@@ -134,8 +163,17 @@
           android:id="@+id/productos"
           android:layout_width="380dp"
           android:layout_height="wrap_content"
-          android:contentDescription="@string/guardar"
+          android:contentDescription="@string/Articulos"
           app:srcCompat="@mipmap/articulos_product_round" />
+      <TextView
+          android:layout_width="120dp"
+          android:layout_height="20dp"
+          android:layout_marginTop="52dp"
+          android:layout_marginStart="155dp"
+          android:textAllCaps="true"
+          android:textSize="15sp"
+          android:fontFamily="sans-serif-black"
+          android:text="@string/Articulos" />
     </FrameLayout>
 
     <Button
