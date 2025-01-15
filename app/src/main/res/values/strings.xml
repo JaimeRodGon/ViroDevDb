@@ -74,6 +74,9 @@
     <string name="verPerfil">Perfil</string>
     <string name="eliminarwip">Eliminar (WIP)</string>
     <string name="premium">Premium</string>
+    <string name="refArticulo">Referencia Articulo</string>
+    <string name="idFactura">Id Factura</string>
+    <string name="coleccion">Coleccion</string>
 
 
 </resources>

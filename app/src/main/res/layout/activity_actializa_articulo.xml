@@ -5,7 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActializaArticuloActivity">
+    tools:context=".ActializaArticuloActivity"
+    android:background="@color/background">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -28,45 +29,87 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-black"
-                android:text="ACTUALIZAR ARTICULO"
+                android:text="@string/actualizaArticulo"
                 android:textAlignment="center"
-                android:textSize="20sp" />
+                android:textSize="35sp"
+                android:layout_marginTop="50dp"/>
 
             <TextView
                 android:id="@+id/textViewNumArt"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:layout_height="0dp"
+                android:text="@string/textview"
+                />
 
             <EditText
                 android:id="@+id/editTextRef"
+                android:text="@string/refArticulo"
+                android:layout_marginTop="100dp"
+                android:layout_marginBottom="25dp"
+                android:textAlignment="center"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:editable="true" />
+                android:layout_height="50dp"
+                android:background="@drawable/redondeo_bordes"
+                />
 
             <EditText
                 android:id="@+id/editTextNom"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:editable="true" />
+                android:layout_height="50dp"
+                android:background="@drawable/redondeo_bordes"
+                android:textAlignment="center"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="25dp"
+                android:text="@string/nombreArticulo"/>
 
             <EditText
                 android:id="@+id/editTextPrec"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:editable="true" />
+                android:layout_height="60dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="25dp"
+                android:textAlignment="center"
+                android:background="@drawable/redondeo_bordes"
+                android:text="@string/precioArticulo"/>
+            <FrameLayout
+                android:layout_width="370dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="50dp">
+                <Button
+                    android:id="@+id/buttonGuardar"
+                    android:layout_width="370dp"
+                    android:layout_height="70dp"
+                    android:text="@string/guardar"
+                    android:alpha="0"/>
+                <ImageView
+                    android:id="@+id/guardar"
+                    android:layout_width="380dp"
+                    android:layout_height="70dp"
+                    android:contentDescription="@string/guardar"
+                    app:srcCompat="@mipmap/save_product_round" />
 
-            <Button
-                android:id="@+id/buttonGuardar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/guardar" />
+            </FrameLayout>
+            <FrameLayout
+                android:layout_width="370dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="50dp">
+                <Button
+                    android:id="@+id/buttonCancelar"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:text="@string/cancel"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginBottom="25dp"
+                    android:alpha="0"/>
+                <ImageView
+                    android:id="@+id/buttonCancelarImagen"
+                    android:layout_width="370dp"
+                    android:layout_height="65dp"
+                    android:layout_marginTop="30dp"
+                    android:contentDescription="@string/cancel"
+                    app:srcCompat="@mipmap/menu_product_round"/>
+            </FrameLayout>
 
-            <Button
-                android:id="@+id/buttonCancelar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/cancel" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
