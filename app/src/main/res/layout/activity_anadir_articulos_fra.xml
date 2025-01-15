@@ -233,7 +233,9 @@
                 android:id="@+id/listViewArticulos"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
+
                 android:layout_marginBottom="30dp"
+
                 android:nestedScrollingEnabled="true">
 
             </ListView>

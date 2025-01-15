@@ -153,6 +153,7 @@
                     android:text="@string/btnNuevo"
                     android:layout_marginBottom="15dp"
                     android:backgroundTint="@color/colorBoton"
+
                     android:textColor="@color/Titulos"
                     android:alpha="0"/>
                 <ImageView
@@ -180,7 +181,6 @@
                     android:id="@+id/buttonActualizar"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
-
                     android:enabled="false"
                     android:text="@string/btnActualizar"
                     android:layout_marginBottom="15dp"

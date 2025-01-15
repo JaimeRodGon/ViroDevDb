@@ -3,6 +3,7 @@ package com.android.virodevdb;
 import static android.content.ContentValues.TAG;
 
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -25,6 +26,7 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -32,9 +34,13 @@ import java.util.Map;
 
 public class GenerarFacturaActivity extends AppCompatActivity {
 
-    private String strNumFra ="0", strEmail, strClienteFra, strFechaFra, mensaje, strSubTotal;
+    private String strNumFra ="0", strEmail, strClienteFra, strFechaFra, mensaje, strSubTotal="0.00",
+            strClienteNombre, strClienteNif, strIva, strTotal;
 
-    private TextView tvSubTotal, tvFecha, tvCliente, tvNumFra, tvPerfil, tvNombre, tvApellidos, tvDniCif, tvEmail, tvDireccion, tvCp, tvTelefono;
+    private double dblSubTotal, dblIva, dblTotal;
+
+    private TextView tvSubTotal, tvFecha, tvNumFra, tvNombre, tvApellidos, tvDniCif, tvEmail, tvDireccion, tvCp, tvTelefono,
+    tvIdCliente, tvNombreCliente, tvNifCliente, tvIva, tvTotal;
 
     private Button btnAtras, btnGenerar;
 
@@ -57,6 +63,8 @@ public class GenerarFacturaActivity extends AppCompatActivity {
     private String miTelefono;
 
 
+    DecimalFormat formatoDbl = new DecimalFormat("#.00");
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,11 +76,36 @@ public class GenerarFacturaActivity extends AppCompatActivity {
             return insets;
         });
 
+        DecimalFormat formatoDbl = new DecimalFormat("#.00");
+
+        //Recibe datos
+        Intent recibir = getIntent();
+        strEmail = recibir.getStringExtra("DatosEmail");
+
+        strFechaFra = recibir.getStringExtra("fechaFactura");
+        strSubTotal = recibir.getStringExtra("subTotal");
+
+        strClienteFra = recibir.getStringExtra("clienteFactura");
+        strClienteNombre = recibir.getStringExtra("clienteNombre");
+        strClienteNif = recibir.getStringExtra("clienteNif");
+
+
+
         tvSubTotal =findViewById(R.id.textViewSubTotal);
-        tvCliente =findViewById(R.id.textViewCliente);
         tvFecha =findViewById(R.id.textViewFecha);
         tvNumFra =findViewById(R.id.textViewNumFra);
-        tvPerfil = findViewById(R.id.textViewPerfil);
+
+        tvIva = findViewById(R.id.textViewIva);
+        tvTotal = findViewById(R.id.textViewTotal);
+
+
+        //Cliente
+
+        tvIdCliente = findViewById(R.id.textViewIdCliente);
+        tvNombreCliente = findViewById(R.id.textViewNombreCliente);
+        tvNifCliente = findViewById(R.id.textViewNifCliente);
+
+
         btnAtras = findViewById(R.id.buttonAtras);
         btnGenerar = findViewById(R.id.buttonGenerar);
 
@@ -82,13 +115,6 @@ public class GenerarFacturaActivity extends AppCompatActivity {
         //creamos un arraylist para almacenar articulos
         alArticulos = new ArrayList<claseArticulo>();
 
-
-        //Recibe datosEmail
-        Intent recibir = getIntent();
-        strEmail = recibir.getStringExtra("DatosEmail");
-        strClienteFra = recibir.getStringExtra("clienteFactura");
-        strFechaFra = recibir.getStringExtra("fechaFactura");
-        strSubTotal = recibir.getStringExtra("subTotal");
 
         //Recibe arrayList articulos
         ArrayList<claseArticulo> alArticulos = (ArrayList<claseArticulo> ) getIntent().getSerializableExtra("arrayArticulos");
@@ -118,13 +144,37 @@ public class GenerarFacturaActivity extends AppCompatActivity {
     //setup
     public void setup(){
 
-        cargaPerfil();
+        CalculaTotalFactura();
+
 
         btnAtras.setOnClickListener(new GenerarFacturaActivity.listenerAtras());
         btnGenerar.setOnClickListener(new GenerarFacturaActivity.listenerGenerar());
 
     }
 
+    //Calcular Iva y TotalFra
+    private void CalculaTotalFactura() {
+
+        dblSubTotal = Double.valueOf(strSubTotal);
+        dblIva = dblSubTotal * 21 / 100;
+        dblTotal = dblSubTotal + dblIva;
+
+
+        try {
+            //strIva = new Double(dblIva).toString();
+            //strTotal = new Double(dblTotal).toString();
+
+            tvIva.setText(formatoDbl.format(dblIva));
+            tvTotal.setText(formatoDbl.format(dblTotal));
+        } catch (Exception e) {
+            Log.e("text", e.toString());
+
+
+        }
+        cargaPerfil();
+    }
+
+    //Carga Perfil
     private void cargaPerfil(){
         //Inicializa FireStore
         FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -171,6 +221,8 @@ public class GenerarFacturaActivity extends AppCompatActivity {
 
     //Inserta los datos en TextViews
     private void insertaDatosTextViews(){
+
+        //Mis datos
         tvNombre.setText(miNombre);
         tvApellidos.setText(misApellidos);
         tvEmail.setText(strEmail);
@@ -179,8 +231,12 @@ public class GenerarFacturaActivity extends AppCompatActivity {
         tvCp.setText(miCp);
         tvTelefono.setText(miTelefono);
 
-        //Mostramos datos de la factura generada
-        tvCliente.setText(strClienteFra);
+        //Datos Cliente
+        tvIdCliente.setText(strClienteFra);
+        tvNombreCliente.setText(strClienteNombre);
+        tvNifCliente.setText(strClienteNif);
+
+        //Datos factura
         tvFecha.setText(strFechaFra);
         tvSubTotal.setText(strSubTotal);
 
@@ -263,8 +319,8 @@ public class GenerarFacturaActivity extends AppCompatActivity {
 
         datosFactura.put("detalle", strAlArticulos);
         datosFactura.put("subtotal", strSubTotal);
-        //datosFactura.put("ivaFactura", strIvaFra);
-        //datosFactura.put("totalFactura", strTotalFra);
+        datosFactura.put("ivaFactura", formatoDbl.format(dblIva));
+        datosFactura.put("totalFactura", formatoDbl.format(dblTotal));
 
         //Inserta datos en Factura
         db.collection("/users").document(strEmail).collection
@@ -297,8 +353,34 @@ public class GenerarFacturaActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
 
-            inciarNuevaFactura();
+
+            showdialog();
         }
+    }
+
+    //Mustra dialogo
+    public void showdialog(){
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+
+// Configura el titulo.
+        alertDialogBuilder.setTitle("CONFIRMAR");
+
+// Configura el mensaje.
+        alertDialogBuilder
+                .setMessage("Quieres generar nueva factura?")
+                .setCancelable(false)
+                .setPositiveButton("Si",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog,int id) {
+
+                        //Si la respuesta es afirmativa aquí agrega tu función a realizar.
+                        inciarNuevaFactura();
+                    }
+                })
+                .setNegativeButton("No",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog,int id) {
+                        dialog.cancel();
+                    }
+                }).create().show();
     }
 
     //Muestra anadirArticulosFra

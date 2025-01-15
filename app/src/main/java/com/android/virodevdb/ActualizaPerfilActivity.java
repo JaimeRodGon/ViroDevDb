@@ -3,6 +3,7 @@ package com.android.virodevdb;
 import static android.content.ContentValues.TAG;
 
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -182,7 +183,7 @@ public class ActualizaPerfilActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
 
-            crearDocsPerfil();
+            showdialog();
 
         }
     }
@@ -207,6 +208,31 @@ public class ActualizaPerfilActivity extends AppCompatActivity {
 
         startActivity(i);
 
+    }
+
+    //Muestra dialogo
+    public void showdialog(){
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+
+// Configura el titulo.
+        alertDialogBuilder.setTitle("CONFIRMAR");
+
+// Configura el mensaje.
+        alertDialogBuilder
+                .setMessage("Quieres modificar el perfil?")
+                .setCancelable(false)
+                .setPositiveButton("Si",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog,int id) {
+
+                        //Si la respuesta es afirmativa aquí agrega tu función a realizar.
+                        crearDocsPerfil();
+                    }
+                })
+                .setNegativeButton("No",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog,int id) {
+                        dialog.cancel();
+                    }
+                }).create().show();
     }
     //Lanza Alerta
     public void showAlert(){

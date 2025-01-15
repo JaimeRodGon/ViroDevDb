@@ -13,10 +13,6 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-//Prueba Push 21/24
-
-
-
 public class homeActivity extends AppCompatActivity {
 
     //Variables
@@ -26,7 +22,6 @@ public class homeActivity extends AppCompatActivity {
     private Button  btnArticulos;
     private Button  btnClientes;
     private TextView tvEmail;
-
 
     //Variables String
     private String strEmail;
@@ -139,7 +134,7 @@ public class homeActivity extends AppCompatActivity {
 
         //Crea Intents para NuevaFacturaActivity
 
-        Intent i = new Intent(this, FacturaActivity.class);
+        Intent i = new Intent(this, VerFacturaActivity.class);
 
         i.putExtra("DatosEmail", strEmail);
 

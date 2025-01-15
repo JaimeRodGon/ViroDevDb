@@ -24,6 +24,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class AnadirArticulosFraActivity extends AppCompatActivity {
@@ -33,12 +34,18 @@ public class AnadirArticulosFraActivity extends AppCompatActivity {
     private String idArticulo="0";
     private String refArticulo;
     private String nomArticulo;
-    private String strClienteFra;
+
     private String strFechaFra;
 
     private String precArticulo;
 
     private String mensaje="";
+
+    private String docId;
+
+    private String strClienteFra;
+    private String strClienteNombre;
+    private String strClienteNif;
 
     //Variables TextView
     private TextView tvTitulo;
@@ -67,16 +74,21 @@ public class AnadirArticulosFraActivity extends AppCompatActivity {
 
 
     //Variables subTotal
-    private String strSubTotal="0";
+    private String strSubTotal="0.00";
     private TextView tvSubtotal;
-    private int intSubTotal= 0;
-    private int intPrecio =0;
+    private double dblSubTotal= 0.00;
+    private double dblPrecio =0.00;
 
     //Contar Subcoleciones
-    private int cantidadDocumentos;
-    private int docActual = 1 ;
+    private int cantidadDocumentos;;
 
     private int numDoc=0;
+
+    //Double format
+    private DecimalFormat formatoDbl = new DecimalFormat("#.00");
+    private Double precDbl;
+
+    private String precDbl2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,8 +106,12 @@ public class AnadirArticulosFraActivity extends AppCompatActivity {
 
         Intent recibir = getIntent();
         strEmail = recibir.getStringExtra("DatosEmail");
-        strClienteFra = recibir.getStringExtra("clienteFactura");
         strFechaFra = recibir.getStringExtra("fechaFactura");
+
+        //Cliente
+        strClienteFra = recibir.getStringExtra("idCliente");
+        strClienteNombre= recibir.getStringExtra("nombreCliente");
+        strClienteNif = recibir.getStringExtra("nifCliente");
 
 
         //Instancia listViewArticulos
@@ -205,10 +221,10 @@ public class AnadirArticulosFraActivity extends AppCompatActivity {
 
                             // Procesar el documento (recoge campos)
                             if (thirdPostDocument != null) {
-                                String docId = thirdPostDocument.getString("idArticulos");
+                                docId = thirdPostDocument.getString("idArticulos");
                                 String docRef = thirdPostDocument.getString("refArticulo");
                                 String docNombre = thirdPostDocument.getString("nombreArticulo");
-                                String doctPrecio = thirdPostDocument.getString("precio");
+                                String docPrecio = thirdPostDocument.getString("precio");
                                 Log.d("Firestore", "Título del tercer post: " + docNombre);
 
 
@@ -216,7 +232,7 @@ public class AnadirArticulosFraActivity extends AppCompatActivity {
                                 tvIdArticulo.setText(docId);
                                 tvRefArticulo.setText(docRef);
                                 tvNomArticulo.setText(docNombre);
-                                tvPrecArticulo.setText(doctPrecio);
+                                tvPrecArticulo.setText(docPrecio);
                             }
                         } else {
                             Log.d("Firestore", "No hay suficientes documentos en la subcolección.");
@@ -285,7 +301,11 @@ public class AnadirArticulosFraActivity extends AppCompatActivity {
         i = new Intent(this, GenerarFacturaActivity.class);
 
         i.putExtra("DatosEmail", strEmail);
-        i.putExtra("clienteFactura", tvClienteFra.getText().toString());
+        i.putExtra("clienteFactura", strClienteFra);
+        i.putExtra("clienteNombre", strClienteNombre);
+        i.putExtra("clienteNif", strClienteNif);
+
+
         i.putExtra("fechaFactura", tvFechaFra.getText().toString());
         //Envia subtotal
         i.putExtra("subTotal", tvSubtotal.getText().toString());
@@ -312,17 +332,29 @@ public class AnadirArticulosFraActivity extends AppCompatActivity {
             precArticulo = tvPrecArticulo.getText().toString();
             strSubTotal = tvSubtotal.getText().toString();
 
+            //Calcula nuevo subtotal
+
+            dblSubTotal = Double.valueOf(tvSubtotal.getText().toString());
+            dblPrecio = Double.valueOf(tvPrecArticulo.getText().toString());
+
+            dblSubTotal = dblSubTotal + dblPrecio;
+
+            //Aplica formato
+            precDbl2 = formatoDbl.format(dblSubTotal);
+
+            //Modifica precio articulo
+            strSubTotal =(String.valueOf(precDbl2.replaceAll(",",".")));
+
+            //Inserta datos en subtotal
+            tvSubtotal.setText(strSubTotal);
+
+            //Modifica precio articulo
+            //strSubTotal = tvSubtotal.getText().toString();
+
             alArticulos.add(new claseArticulo("Id:" + idArticulo, "Ref:" + refArticulo,
                     "Nombre:" + nomArticulo, "Precio:" + precArticulo + "€"));
             adaptador1.notifyDataSetChanged();
 
-
-            //Calcula nuevo subtotal
-
-            intPrecio= Integer.valueOf(precArticulo);
-            intSubTotal = intSubTotal + intPrecio;
-            strSubTotal = Integer.toString(intSubTotal);
-            tvSubtotal.setText(strSubTotal);
 
         }
     }
