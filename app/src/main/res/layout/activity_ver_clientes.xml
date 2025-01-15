@@ -206,7 +206,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:enabled="false"
-            android:text="@string/eliminar"
+            android:text="@string/eliminarwip"
             android:layout_marginStart="@dimen/margin_left_crear_perfil"
             android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
             android:layout_marginBottom="8dp" />

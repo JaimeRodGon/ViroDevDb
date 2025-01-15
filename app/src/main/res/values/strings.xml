@@ -57,7 +57,7 @@
     <string name="direccion">Dirección</string>
     <string name="detalles_del_cliente">DETALLES DEL CLIENTE</string>
     <string name="empresa">Empresa:</string>
-    <string name="actualizarEmpresa">ACTUALIZAR EMPRESA</string>
+    <string name="actualizarEmpresa">ACTUALIZAR EMPRESA (WIP)</string>
     <string name="siguiente">SIGUIENTE</string>
     <string name="idArticulo">Identificador de Articulo</string>
     <string name="nombreArticulo">NOMBRE ARTICULO</string>
@@ -72,6 +72,8 @@
     <string name="subtotal">SubTotal</string>
     <string name="agregar">Agregar Articulo</string>
     <string name="verPerfil">Perfil</string>
+    <string name="eliminarwip">Eliminar (WIP)</string>
+    <string name="premium">Premium</string>
 
 
 </resources>
