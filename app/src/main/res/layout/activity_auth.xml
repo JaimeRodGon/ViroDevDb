@@ -110,7 +110,7 @@
         android:layout_height="match_parent"
         android:layout_marginTop="250dp"
         android:paddingBottom="15dp"
-        android:text="@string/nameProyect"
+        android:text=""
         android:textAlignment="center"
         android:textSize="50sp"
         android:translationZ="1dp"
@@ -122,12 +122,14 @@
     <ImageView
         android:id="@+id/avatar"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="200dp"
         android:contentDescription="@string/avatar"
         app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.192"
-        app:srcCompat="@drawable/avatarbussines_foreground"
+        app:srcCompat="@mipmap/logo_product_round"
         tools:layout_editor_absoluteX="-45dp" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
