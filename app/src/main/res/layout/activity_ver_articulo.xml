@@ -121,11 +121,11 @@
                 android:id="@+id/buttonActualizar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:enabled="false"
-                android:text="@string/btnActualizar"
                 android:layout_marginBottom="15dp"
                 android:backgroundTint="@color/colorBoton"
-                android:textColor="@color/Titulos"/>
+                android:enabled="true"
+                android:text="@string/btnActualizar"
+                android:textColor="@color/Titulos" />
 
             <Button
                 android:id="@+id/buttonEliminar"

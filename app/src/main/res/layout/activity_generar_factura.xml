@@ -95,17 +95,29 @@
                 android:textSize="12sp" />
 
             <TextView
-                android:id="@+id/textViewPerfil"
+                android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-black"
                 android:text="@string/txtCliente" />
 
             <TextView
-                android:id="@+id/textViewCliente"
+                android:id="@+id/textViewIdCliente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/idCliente" />
+
+            <TextView
+                android:id="@+id/textViewNombreCliente"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/nombre" />
+
+            <TextView
+                android:id="@+id/textViewNifCliente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/NIF" />
 
             <TextView
                 android:id="@+id/textViewFecha"
@@ -122,7 +134,7 @@
             <ListView
                 android:id="@+id/listViewArticulos"
                 android:layout_width="match_parent"
-                android:layout_height="195dp"
+                android:layout_height="200dp"
                 android:nestedScrollingEnabled="true">
 
             </ListView>
@@ -133,8 +145,17 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:text="SubTotal: "
+                    android:textAlignment="textStart"
+                    android:textSize="20sp" />
+
+                <TextView
                     android:id="@+id/textViewSubTotal"
-                    android:layout_width="207dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-black"
                     android:text="SubTotal"
@@ -144,11 +165,77 @@
                 <TextView
                     android:id="@+id/textView16"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:fontFamily="sans-serif-black"
                     android:text="@string/euro"
                     android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="21dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Iva 21%: "
+                    android:textAlignment="textStart"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textViewIva"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Iva"
+                    android:textAlignment="textEnd"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textView19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-black"
+                    android:text="@string/euro"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Total: "
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textViewTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Total"
+                    android:textAlignment="textEnd"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-black"
+                    android:text="@string/euro"
+                    android:textSize="20sp" />
+
             </LinearLayout>
 
             <Button
