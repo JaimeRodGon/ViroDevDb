@@ -21,19 +21,21 @@
                 android:id="@+id/ActualizarPerfil"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:layout_marginBottom="30dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="40dp"
                 android:fontFamily="sans-serif-black"
                 android:text="@string/actualizarPerfil"
                 android:textAlignment="center"
-                android:textSize="20sp" />
+                android:textSize="30sp" />
 
             <TextView
                 android:id="@+id/textViewTitulo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
-                android:background="@color/textBoxs"
+                android:layout_marginBottom="25dp"
+                android:background="@drawable/redondeo_bordes"
+                android:layout_marginStart="@dimen/margin_left_crear_perfil"
+                android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
                 android:hint="@string/email"
                 android:minHeight="48dp"
                 android:textAlignment="center"
@@ -43,9 +45,11 @@
                 android:id="@+id/textViewNombre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
+                android:layout_marginBottom="25dp"
+                android:layout_marginStart="@dimen/margin_left_crear_perfil"
+                android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
                 android:autofillHints=""
-                android:background="@color/textBoxs"
+                android:background="@drawable/redondeo_bordes"
                 android:hint="@string/nombre"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
@@ -56,9 +60,11 @@
                 android:id="@+id/textViewApellidos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
+                android:layout_marginBottom="25dp"
                 android:autofillHints="@string/apellido"
-                android:background="@color/textBoxs"
+                android:background="@drawable/redondeo_bordes"
+                android:layout_marginStart="@dimen/margin_left_crear_perfil"
+                android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
                 android:hint="@string/apellido"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
@@ -69,9 +75,11 @@
                 android:id="@+id/textViewDniCif"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
+                android:layout_marginBottom="25dp"
                 android:autofillHints="@string/apellido"
-                android:background="@color/textBoxs"
+                android:background="@drawable/redondeo_bordes"
+                android:layout_marginStart="@dimen/margin_left_crear_perfil"
+                android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
                 android:hint="@string/apellido"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
@@ -82,9 +90,11 @@
                 android:id="@+id/textViewDireccion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
-                android:background="@color/textBoxs"
-                android:hint="Dirección"
+                android:layout_marginBottom="25dp"
+                android:background="@drawable/redondeo_bordes"
+                android:layout_marginStart="@dimen/margin_left_crear_perfil"
+                android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
+                android:hint="@string/direccion"
                 android:inputType="text"
                 android:minHeight="48dp"
                 android:textAlignment="center"
@@ -94,9 +104,11 @@
                 android:id="@+id/textViewCp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
+                android:layout_marginBottom="25dp"
+                android:layout_marginStart="@dimen/margin_left_crear_perfil"
+                android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
                 android:autofillHints="postalCode"
-                android:background="@color/textBoxs"
+                android:background="@drawable/redondeo_bordes"
                 android:hint="@string/cp"
                 android:inputType="number"
                 android:minHeight="48dp"
@@ -107,31 +119,60 @@
                 android:id="@+id/textViewTelefono"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
+                android:layout_marginBottom="25dp"
+                android:layout_marginStart="@dimen/margin_left_crear_perfil"
+                android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
                 android:autofillHints="phone"
-                android:background="@color/textBoxs"
+                android:background="@drawable/redondeo_bordes"
                 android:hint="@string/telefono"
                 android:inputType="phone"
                 android:minHeight="48dp"
                 android:textAlignment="center"
                 android:textSize="25sp" />
-
-            <Button
-                android:id="@+id/btnGuardarActualizaPerfil"
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="75dp"
                 android:layout_marginTop="15dp"
-                android:layout_marginBottom="10dp"
-                android:backgroundTint="@color/colorBoton"
-                android:text="@string/guardar" />
+                android:layout_marginBottom="25dp">
+                <Button
+                    android:id="@+id/btnGuardarActualizaPerfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="25dp"
+                    android:backgroundTint="@color/colorBoton"
+                    android:layout_marginStart="@dimen/margin_left_crear_perfil"
+                    android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
+                    android:text="@string/guardar"
+                    android:alpha="0"/>
 
-            <Button
-                android:id="@+id/btnCancelarActualizaPerfil"
+                <ImageView
+                    android:id="@+id/guardar"
+                    android:layout_width="380dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/guardar"
+                    app:srcCompat="@mipmap/save_product_round" />
+            </FrameLayout>
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:backgroundTint="@color/botonCancelar"
-                android:text="@string/cancel" />
+                android:layout_height="match_parent">
+                <Button
+                    android:id="@+id/btnCancelarActualizaPerfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="25dp"
+                    android:backgroundTint="@color/botonCancelar"
+                    android:alpha="0"
+                    android:text="@string/cancel" />
+                <ImageView
+                    android:id="@+id/menu"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="15dp"
+                    android:contentDescription="@string/Menu"
+                    app:srcCompat="@mipmap/menu_product_round" />
+            </FrameLayout>
         </LinearLayout>
     </ScrollView>
 

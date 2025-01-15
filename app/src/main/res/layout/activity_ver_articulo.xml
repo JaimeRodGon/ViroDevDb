@@ -31,50 +31,64 @@
                 android:fontFamily="sans-serif-black"
                 android:text="@string/Articulos"
                 android:textAlignment="center"
-                android:textSize="20sp"
-                android:textAllCaps="true" />
+                android:textSize="35sp"
+                android:textAllCaps="true"
+                android:layout_marginTop="35dp"
+                android:layout_marginBottom="35dp"/>
 
             <TextView
                 android:id="@+id/textViewIdArticulo"
+                android:text="@string/nombreArticulo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_left_crear_perfil"
+                android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
                 android:textSize="20sp"
                 android:minHeight="48dp"
                 android:textAlignment="center"
-                android:background="@color/textBoxs"
+                android:background="@drawable/redondeo_bordes"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp" />
 
             <TextView
                 android:id="@+id/textViewRefArticulo"
+                android:text="@string/idArticulo"
+                android:layout_marginStart="@dimen/margin_left_crear_perfil"
+                android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:minHeight="48dp"
                 android:textAlignment="center"
-                android:background="@color/textBoxs"
+                android:background="@drawable/redondeo_bordes"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp" />
 
             <TextView
                 android:id="@+id/textViewNomArticulo"
+                android:text="@string/nombreArticulo"
+                android:layout_marginStart="@dimen/margin_left_crear_perfil"
+                android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:minHeight="48dp"
                 android:textAlignment="center"
-                android:background="@color/textBoxs"
+                android:background="@drawable/redondeo_bordes"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp" />
 
             <TextView
                 android:id="@+id/textViewPrecArticlo"
+                android:text="@string/precioArticulo"
+                android:layout_marginStart="@dimen/margin_left_crear_perfil"
+                android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:minHeight="48dp"
                 android:textAlignment="center"
-                android:background="@color/textBoxs"
+                android:background="@drawable/redondeo_bordes"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp" />
 
@@ -82,74 +96,174 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/buttonAnterior"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="15dp"
-                    android:backgroundTint="@color/colorBoton"
-                    android:text="@string/btnAnterior"
-                    android:textColor="@color/Titulos" />
-
+                <FrameLayout
+                    android:layout_width="100dp"
+                    android:layout_height="70dp">
+                    <Button
+                        android:id="@+id/buttonAnterior"
+                        android:layout_width="120dp"
+                        android:layout_height="70dp"
+                        android:layout_marginBottom="15dp"
+                        android:backgroundTint="@color/colorBoton"
+                        android:text="@string/btnAnterior"
+                        android:alpha="0"
+                        android:textColor="@color/Titulos" />
+                    <ImageView
+                        android:id="@+id/back"
+                        android:layout_width="120dp"
+                        android:layout_height="70dp"
+                        android:alpha="0.9"
+                        android:contentDescription="@string/btnAnterior"
+                        app:srcCompat="@drawable/back_foreground" />
+                </FrameLayout>
                 <Space
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
-
-                <Button
-                    android:id="@+id/buttonSiguiente"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="15dp"
-                    android:backgroundTint="@color/colorBoton"
-                    android:text="@string/btnSiguiente"
-                    android:textColor="@color/Titulos" />
+                <FrameLayout
+                    android:layout_width="120dp"
+                    android:layout_height="70dp">
+                    <Button
+                        android:id="@+id/buttonSiguiente"
+                        android:layout_width="120dp"
+                        android:layout_height="70dp"
+                        android:backgroundTint="@color/colorBoton"
+                        android:text="@string/btnSiguiente"
+                        android:textColor="@color/Titulos"
+                        android:alpha="0"/>
+                    <ImageView
+                        android:id="@+id/Next"
+                        android:layout_width="120dp"
+                        android:layout_height="70dp"
+                        android:alpha="0.9"
+                        android:contentDescription="@string/next"
+                        app:srcCompat="@drawable/next_foreground" />
+                </FrameLayout>
 
             </LinearLayout>
+            <FrameLayout
+                android:layout_width="275dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="20dp">
+                <Button
+                    android:id="@+id/buttonNuevo"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:text="@string/btnNuevo"
+                    android:layout_marginBottom="15dp"
+                    android:backgroundTint="@color/colorBoton"
 
-            <Button
-                android:id="@+id/buttonNuevo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/btnNuevo"
-                android:layout_marginBottom="15dp"
-                android:backgroundTint="@color/colorBoton"
-                android:textColor="@color/Titulos"/>
+                    android:textColor="@color/Titulos"
+                    android:alpha="0"/>
+                <ImageView
+                    android:id="@+id/nuevoProducto"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:contentDescription="@string/nuevoArticulo"
+                    app:srcCompat="@mipmap/new_product" />
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="52dp"
+                    android:layout_marginStart="107dp"
+                    android:textAllCaps="true"
+                    android:textSize="15sp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="@string/agregar" />
+            </FrameLayout>
+            <FrameLayout
+                android:layout_width="275dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="20dp">
+                <Button
+                    android:id="@+id/buttonActualizar"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:enabled="false"
+                    android:text="@string/btnActualizar"
+                    android:layout_marginBottom="15dp"
+                    android:backgroundTint="@color/colorBoton"
+                    android:textColor="@color/Titulos"
+                    android:alpha="0"/>
 
-            <Button
-                android:id="@+id/buttonActualizar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
-                android:backgroundTint="@color/colorBoton"
-                android:enabled="true"
-                android:text="@string/btnActualizar"
-                android:textColor="@color/Titulos" />
-
-            <Button
-                android:id="@+id/buttonEliminar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/eliminar"
-                android:layout_marginBottom="15dp"
-                android:backgroundTint="@color/colorBoton"
-                android:textColor="@color/Titulos"/>
-
-            <Button
-                android:id="@+id/buttonAtras"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
-                android:backgroundTint="@color/botonCancelar"
-                android:text="@string/cancel"
-                android:textColor="@color/Titulos" />
-
+                <ImageView
+                    android:id="@+id/actualizaProducto"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:contentDescription="@string/actualizaArticulo"
+                    app:srcCompat="@mipmap/update_product_round" />
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginStart="90dp"
+                    android:textAllCaps="true"
+                    android:textSize="15sp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="@string/actualizaArticulo" />
+            </FrameLayout>
+            <FrameLayout
+                android:layout_width="275dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="20dp">
+                <Button
+                    android:id="@+id/buttonEliminar"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:text="@string/eliminar"
+                    android:layout_marginBottom="15dp"
+                    android:backgroundTint="@color/colorBoton"
+                    android:textColor="@color/Titulos"
+                    android:alpha="0"/>
+                <ImageView
+                    android:id="@+id/borrarProducto"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="10dp"
+                    android:alpha="0.9"
+                    android:contentDescription="@string/borrarArticulo"
+                    app:srcCompat="@mipmap/delete_product_round" />
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="52dp"
+                    android:layout_marginStart="107dp"
+                    android:textAllCaps="true"
+                    android:textSize="15sp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="@string/eliminar" />
+            </FrameLayout>
+            <FrameLayout
+                android:layout_width="275dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="40dp">
+                <Button
+                    android:id="@+id/buttonAtras"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginBottom="15dp"
+                    android:backgroundTint="@color/botonCancelar"
+                    android:text="@string/cancel"
+                    android:textColor="@color/Titulos"
+                    android:alpha="0"/>
+                <ImageView
+                    android:id="@+id/guardar"
+                    android:layout_width="275dp"
+                    android:layout_height="70dp"
+                    android:layout_marginStart="0dp"
+                    android:contentDescription="@string/eliminar"
+                    app:srcCompat="@mipmap/menu_product_round" />
+            </FrameLayout>
             <TextView
                 android:id="@+id/textViewColeccion"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/txtTotalArticulos" />
+                android:layout_height="0dp"
+                android:text="@string/txtTotalArticulos"
+                />
 
         </LinearLayout>
     </ScrollView>

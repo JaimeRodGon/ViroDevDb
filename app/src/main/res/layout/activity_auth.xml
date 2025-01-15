@@ -9,6 +9,7 @@
     tools:context=".AuthActivity">
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -21,7 +22,6 @@
         app:layout_constraintWidth_max="800dp">
 
 
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -31,30 +31,31 @@
                 android:id="@+id/emailEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="150dp"
+                android:layout_marginBottom="15dp"
                 android:autofillHints="emailAddress"
+                android:background="@drawable/redondeo_bordes"
                 android:ems="10"
                 android:hint="@string/email"
                 android:inputType="textEmailAddress"
-                android:minHeight="48dp"
                 android:maxLength="488"
+                android:minHeight="48dp"
                 android:textAlignment="center"
-                android:background="@color/textBoxs"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp"/>
+                />
 
             <EditText
                 android:id="@+id/passwordEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
                 android:autofillHints="password"
+                android:background="@drawable/redondeo_bordes"
                 android:ems="10"
                 android:hint="@string/Password"
                 android:inputType="textPassword"
                 android:minHeight="48dp"
-                android:textAlignment="center"
-                android:background="@color/textBoxs"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp" />
+                android:textAlignment="center" />
 
         </LinearLayout>
 
@@ -69,8 +70,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="@color/colorBoton"
                 android:text="@string/Registrar"
-                android:backgroundTint="@color/colorBoton"/>
+                android:width="120dp"
+                android:height="60dp"
+                android:alpha="0.9"/>
 
             <Space
                 style="20"
@@ -84,8 +88,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="@color/colorBoton"
                 android:text="@string/Acceder"
-                android:backgroundTint="@color/colorBoton"/>
+                android:width="120dp"
+                android:height="60dp"
+                android:alpha="0.9"/>
         </LinearLayout>
 
     </LinearLayout>
@@ -101,15 +108,26 @@
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="150dp"
-        android:layout_marginBottom="500dp"
+        android:layout_marginTop="250dp"
         android:paddingBottom="15dp"
         android:text="@string/nameProyect"
         android:textAlignment="center"
         android:textSize="50sp"
-        app:layout_constraintBottom_toTopOf="parent"
+        android:translationZ="1dp"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.037"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="-200dp" />
+
+    <ImageView
+        android:id="@+id/avatar"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:contentDescription="@string/avatar"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.192"
+        app:srcCompat="@drawable/avatarbussines_foreground"
+        tools:layout_editor_absoluteX="-45dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

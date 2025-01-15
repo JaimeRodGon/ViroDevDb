@@ -25,139 +25,180 @@
             android:id="@+id/textViewTitulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="DETALLES DEL CLIENTE"
-            android:textSize="24sp"
+            android:text="@string/detalles_del_cliente"
+            android:textSize="30sp"
             android:textAlignment="center"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="sans-serif-black"/>
 
         <!-- Campo: Empresa -->
         <TextView
             android:id="@+id/textViewClienteEmpresa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Empresa:"
-            android:textSize="16sp" />
+            android:text="@string/empresa"
+            android:alpha="0"
+            android:textSize="0sp" />
 
         <EditText
             android:id="@+id/editTextClienteEmpresa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nombre de la empresa"
+            android:hint="@string/empresa"
             android:minHeight="50dp"
             android:textAlignment="center"
             android:inputType="text"
-            android:background="@color/textBoxs"
-            android:layout_marginBottom="10dp" />
+            android:background="@drawable/redondeo_bordes"
+            android:layout_marginStart="@dimen/margin_left_crear_perfil"
+            android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
+            android:layout_marginBottom="20dp" />
 
         <!-- Campo: NIF -->
         <TextView
             android:id="@+id/textViewClienteNIF"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="NIF:"
-            android:textSize="16sp" />
+            android:text="@string/NIF"
+            android:textSize="0sp" />
 
         <EditText
             android:id="@+id/editTextClienteNIF"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="NIF del cliente"
+            android:hint="@string/NIF"
+            android:layout_marginStart="@dimen/margin_left_crear_perfil"
+            android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
             android:minHeight="50dp"
             android:textAlignment="center"
             android:inputType="text"
-            android:background="@color/textBoxs"
-            android:layout_marginBottom="10dp" />
+            android:background="@drawable/redondeo_bordes"
+            android:layout_marginBottom="20dp" />
 
         <!-- Campo: Código Postal -->
         <TextView
             android:id="@+id/textViewClienteCP"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Código Postal:"
-            android:textSize="16sp" />
+            android:text="@string/cp"
+            android:textSize="0sp" />
 
         <EditText
             android:id="@+id/editTextClienteCP"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Código postal"
+            android:hint="@string/cp"
             android:inputType="number"
             android:minHeight="50dp"
             android:textAlignment="center"
-            android:background="@color/textBoxs"
-            android:layout_marginBottom="10dp" />
+            android:background="@drawable/redondeo_bordes"
+            android:layout_marginStart="@dimen/margin_left_crear_perfil"
+            android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
+            android:layout_marginBottom="20dp" />
 
         <!-- Campo: Localidad -->
         <TextView
             android:id="@+id/textViewClienteLocalidad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Localidad:"
-            android:textSize="16sp" />
+            android:text="@string/domicilioFiscal"
+            android:textSize="0sp" />
 
         <EditText
             android:id="@+id/editTextClienteLocalidad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Localidad"
+            android:hint="@string/domicilioFiscal"
             android:inputType="text"
             android:minHeight="50dp"
             android:textAlignment="center"
-            android:background="@color/textBoxs"
-            android:layout_marginBottom="10dp" />
+            android:background="@drawable/redondeo_bordes"
+            android:layout_marginStart="@dimen/margin_left_crear_perfil"
+            android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
+            android:layout_marginBottom="20dp" />
 
         <!-- Campo: Calle -->
         <TextView
             android:id="@+id/textViewClienteCalle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Calle:"
-            android:textSize="16sp" />
+            android:text="@string/domicilio"
+            android:textSize="0sp" />
 
         <EditText
             android:id="@+id/editTextClienteCalle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Calle"
+            android:hint="@string/domicilio"
             android:inputType="text"
             android:minHeight="50dp"
             android:textAlignment="center"
-            android:background="@color/textBoxs"
-            android:layout_marginBottom="10dp" />
+            android:background="@drawable/redondeo_bordes"
+            android:layout_marginStart="@dimen/margin_left_crear_perfil"
+            android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
+            android:layout_marginBottom="20dp" />
 
         <!-- Campo: Información adicional -->
         <TextView
             android:id="@+id/textViewClienteInfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Información Adicional:"
-            android:textSize="16sp" />
+            android:text="@string/infoAd"
+            android:textSize="0sp" />
 
         <EditText
             android:id="@+id/editTextClienteInfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Información adicional"
+            android:hint="@string/infoAd"
             android:inputType="text"
             android:minHeight="50dp"
             android:textAlignment="center"
-            android:background="@color/textBoxs"
-            android:layout_marginBottom="16dp" />
+            android:background="@drawable/redondeo_bordes"
+            android:layout_marginStart="@dimen/margin_left_crear_perfil"
+            android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
+            android:layout_marginBottom="20dp" />
 
         <!-- Botones -->
-        <Button
-            android:id="@+id/buttonNuevo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="NUEVO"
-            android:layout_marginBottom="8dp" />
+        <FrameLayout
+            android:layout_width="370dp"
+            android:layout_height="75dp">
+            <Button
+                android:id="@+id/buttonNuevo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/nuevaEmpresa"
+                android:layout_marginStart="@dimen/margin_left_crear_perfil"
+                android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
+                android:alpha="0"
+                android:layout_marginTop="12dp" />
+
+            <ImageView
+                android:id="@+id/NuevaEmpresa"
+                android:layout_width="385dp"
+                android:layout_height="65dp"
+                android:alpha="0.9"
+                android:contentDescription="@string/nuevaEmpresa"
+                app:srcCompat="@drawable/avatarbussines_foreground" />
+            <TextView
+                android:layout_width="220dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="52dp"
+                android:layout_marginStart="130dp"
+                android:textAllCaps="true"
+                android:textSize="15sp"
+                android:fontFamily="sans-serif-black"
+                android:text="@string/nuevaEmpresa" />
+        </FrameLayout>
 
         <Button
             android:id="@+id/buttonActualizar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:enabled="false"
-            android:text="ACTUALIZAR"
+            android:text="@string/actualizarEmpresa"
+            android:layout_marginStart="@dimen/margin_left_crear_perfil"
+            android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
             android:layout_marginBottom="8dp" />
 
         <Button
@@ -165,34 +206,71 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:enabled="false"
-            android:text="ELIMINAR"
+            android:text="@string/eliminarwip"
+            android:layout_marginStart="@dimen/margin_left_crear_perfil"
+            android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
             android:layout_marginBottom="8dp" />
-
-        <Button
-            android:id="@+id/buttonAtras"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="CANCELAR"
-            android:layout_marginBottom="16dp" />
+        <FrameLayout
+            android:layout_width="375dp"
+            android:layout_height="75dp">
+            <Button
+                android:id="@+id/buttonAtras"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/cancel"
+                android:layout_marginStart="@dimen/margin_left_crear_perfil"
+                android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="10dp"
+                android:alpha="0"/>
+            <ImageView
+                android:id="@+id/buttonCancelar"
+                android:layout_width="375dp"
+                android:layout_height="75dp"
+                android:contentDescription="@string/cancel"
+                app:srcCompat="@mipmap/menu_product_round"/>
+        </FrameLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/buttonAnterior"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="ANTERIOR" />
-
-            <Button
-                android:id="@+id/buttonSiguiente"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="SIGUIENTE" />
+            <FrameLayout
+                android:layout_width="200dp"
+                android:layout_height="100dp">
+                <Button
+                    android:id="@+id/buttonAnterior"
+                    android:layout_width="170dp"
+                    android:layout_height="75dp"
+                    android:alpha="0"
+                    android:text="@string/btnAnterior" />
+                <ImageView
+                    android:id="@+id/back"
+                    android:layout_width="150dp"
+                    android:layout_height="85dp"
+                    android:layout_marginStart="20dp"
+                    android:alpha="0.9"
+                    android:contentDescription="@string/btnAnterior"
+                    app:srcCompat="@drawable/back_foreground" />
+            </FrameLayout>
+            <FrameLayout
+                android:layout_width="200dp"
+                android:layout_height="100dp">
+                <Button
+                    android:id="@+id/buttonSiguiente"
+                    android:layout_width="170dp"
+                    android:layout_height="75dp"
+                    android:alpha="0"
+                    android:text="@string/siguiente" />
+                <ImageView
+                    android:id="@+id/Next"
+                    android:layout_width="150dp"
+                    android:layout_height="85dp"
+                    android:layout_marginStart="15dp"
+                    android:alpha="0.9"
+                    android:contentDescription="@string/next"
+                    app:srcCompat="@drawable/next_foreground" />
+            </FrameLayout>
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

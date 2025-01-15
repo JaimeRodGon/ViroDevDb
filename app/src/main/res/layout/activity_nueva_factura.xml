@@ -25,7 +25,11 @@
         <LinearLayout
 
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="10dp"
             android:orientation="vertical">
 
             <TextView
@@ -37,7 +41,7 @@
                 android:fontFamily="sans-serif-black"
                 android:text="@string/NewFactura"
                 android:textAlignment="center"
-                android:textSize="24sp" />
+                android:textSize="35sp" />
 
             <TextView
                 android:id="@+id/textViewFechaFra"
@@ -50,7 +54,9 @@
                 android:id="@+id/buttonModificar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
+                android:text="@string/modificar_fecha"
+                android:layout_marginBottom="55dp"
+
                 android:backgroundTint="@color/colorBoton"
                 android:text="Modificar fecha"
                 android:textColor="@color/Titulos" />
@@ -113,7 +119,7 @@
                 android:id="@+id/calendarView"
                 android:layout_width="match_parent"
                 android:layout_height="14dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="30dp"
                 android:backgroundTint="@color/colorBoton"
                 android:text="@string/guardar"
                 android:visibility="invisible" />
@@ -123,20 +129,32 @@
                 android:id="@+id/buttonContinuar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
+                android:layout_marginBottom="30dp"
                 android:backgroundTint="@color/colorBoton"
                 android:text="@string/btnContinuar"
                 android:textColor="@color/Titulos" />
 
-            <Button
-                android:id="@+id/buttonCancelar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
-                android:backgroundTint="@color/botonCancelar"
-                android:text="@string/cancel"
-                android:textColor="@color/Titulos" />
-
+            <FrameLayout
+                android:layout_width="300dp"
+                android:layout_height="70dp"
+                android:layout_marginBottom="50dp">
+                <Button
+                    android:id="@+id/buttonCancelar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cancel"
+                    android:layout_marginTop="5dp"
+                    android:backgroundTint="@color/botonCancelar"
+                    android:textColor="@color/Titulos"
+                    android:alpha="0"/>
+                <ImageView
+                    android:id="@+id/menu"
+                    android:layout_width="275dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="5dp"
+                    android:contentDescription="@string/Menu"
+                    app:srcCompat="@mipmap/menu_product_round" />
+            </FrameLayout>
 
         </LinearLayout>
     </ScrollView>

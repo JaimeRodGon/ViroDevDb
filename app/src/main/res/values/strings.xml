@@ -10,7 +10,7 @@
     <string name="Registrar">Registrarse</string>
     <string name="Acceder">Acceder</string>
     <string name="Menu">Menú</string>
-    <string name="Perfil">Perfil</string>
+    <string name="Perfil">Crear Perfil</string>
     <string name="Facturas">Facturas</string>
     <string name="Articulos">Articulos</string>
     <string name="Clientes">Clientes</string>
@@ -49,6 +49,31 @@
     <string name="nuevaFra">Nueva Factura</string>
     <string name="btnGenerarFra">Generar Factura</string>
     <string name="txtAnadirArticulos">Añadir Articulos</string>
+    <string name="avatar">avatar</string>
+    <string name="nuevoCliente">Nuevo Cliente</string>
+    <string name="nuevaEmpresa">Nueva Empresa</string>
+    <string name="comunidad">Comunidad</string>
+    <string name="infoAd">Información adicional</string>
+    <string name="direccion">Dirección</string>
+    <string name="detalles_del_cliente">DETALLES DEL CLIENTE</string>
+    <string name="empresa">Empresa:</string>
+    <string name="actualizarEmpresa">ACTUALIZAR EMPRESA (WIP)</string>
+    <string name="siguiente">SIGUIENTE</string>
+    <string name="idArticulo">Identificador de Articulo</string>
+    <string name="nombreArticulo">NOMBRE ARTICULO</string>
+    <string name="precioArticulo">Precio Articulo</string>
+    <string name="nuevoArticulo">Nuevo Producto</string>
+    <string name="actualizaArticulo">Actualizar articulo</string>
+    <string name="borrarArticulo">Borrar Articulo</string>
+    <string name="logo">Logo</string>
+    <string name="menu">menu</string>
+    <string name="textview">TextView</string>
+    <string name="modificar_fecha">Modificar fecha</string>
+    <string name="subtotal">SubTotal</string>
+    <string name="agregar">Agregar Articulo</string>
+    <string name="verPerfil">Perfil</string>
+    <string name="eliminarwip">Eliminar (WIP)</string>
+    <string name="premium">Premium</string>
 
 
 </resources>

@@ -12,91 +12,216 @@
 
   <LinearLayout
       android:layout_width="0dp"
-      android:layout_height="wrap_content"
+      android:layout_height="0dp"
       android:layout_marginStart="16dp"
       android:layout_marginEnd="16dp"
       android:orientation="vertical"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="1.0"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.952"
       app:layout_constraintWidth_max="800dp">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:alpha="0.9"
+        android:contentDescription="@string/logo"
+        app:srcCompat="@drawable/avatar_foreground" />
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="match_parent"
+        android:layout_width="388dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:fontFamily="sans-serif-black"
         android:text="@string/Menu"
         android:textAlignment="center"
-        android:textSize="40sp"
+        android:textSize="35sp" />
 
-        android:layout_marginBottom="50dp"/>
 
     <TextView
         android:id="@+id/textViewTitulo"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="0dp"
         android:text="@string/email"
-        tools:text="Email"
-        />
+        tools:text="Email" />
+    <FrameLayout
+        android:layout_width="370dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="20dp">
+      <Button
+          android:id="@+id/buttonPerfil"
+          android:layout_width="match_parent"
+          android:layout_height="70dp"
+          android:layout_marginBottom="35dp"
+          android:backgroundTint="@color/colorBoton"
+          android:text="@string/Perfil"
+          android:textAllCaps="true"
+          android:textColor="@color/Titulos"
+          android:alpha="0"/>
 
-    <Button
-        android:id="@+id/buttonPerfil"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/Perfil"
-        android:layout_marginBottom="15dp"
-        android:backgroundTint="@color/colorBoton"
-        android:textColor="@color/Titulos"
-        android:textAllCaps="true"
-        />
+      <ImageView
+          android:id="@+id/PERFIL"
+          android:layout_width="380dp"
+          android:layout_height="60dp"
+          android:contentDescription="@string/guardar"
+          app:srcCompat="@mipmap/perfil_product_round" />
+      <TextView
+          android:layout_width="120dp"
+          android:layout_height="20dp"
+          android:layout_marginTop="52dp"
+          android:layout_marginStart="165dp"
+          android:textAllCaps="true"
+          android:textSize="15sp"
+          android:fontFamily="sans-serif-black"
+          android:text="@string/verPerfil" />
+    </FrameLayout>
+    <FrameLayout
+        android:layout_width="370dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="20dp">
+      <Button
+          android:id="@+id/buttonFacturas"
+          android:layout_width="match_parent"
+          android:layout_height="60dp"
+          android:layout_marginBottom="35dp"
+          android:backgroundTint="@color/colorBoton"
+          android:text="@string/Facturas"
+          android:textColor="@color/Titulos"
+          android:alpha="0"
+          />
+      <ImageView
+          android:id="@+id/factura"
+          android:layout_width="380dp"
+          android:layout_height="65dp"
+          android:contentDescription="@string/Facturas"
+          app:srcCompat="@mipmap/facturas_product_round" />
+      <TextView
+          android:layout_width="120dp"
+          android:layout_height="20dp"
+          android:layout_marginTop="52dp"
+          android:layout_marginStart="155dp"
+          android:textAllCaps="true"
+          android:textSize="15sp"
+          android:fontFamily="sans-serif-black"
+          android:text="@string/Facturas" />
+    </FrameLayout>
 
-    <Button
-        android:id="@+id/buttonFacturas"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/Facturas"
-        android:layout_marginBottom="15dp"
-        android:backgroundTint="@color/colorBoton"
-        android:textColor="@color/Titulos"/>
+    <FrameLayout
+        android:layout_width="370dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="20dp">
+      <Button
+          android:id="@+id/buttonClientes"
+          android:layout_width="match_parent"
+          android:layout_height="60dp"
+          android:layout_marginBottom="35dp"
+          android:backgroundTint="@color/colorBoton"
+          android:enabled="true"
+          android:text="@string/Clientes"
+          android:textColor="@color/Titulos"
+          android:alpha="0"/>
+      <ImageView
+          android:id="@+id/clientes"
+          android:layout_width="380dp"
+          android:layout_height="65dp"
+          android:contentDescription="@string/Clientes"
+          app:srcCompat="@mipmap/clientes_product_round" />
 
-    <Button
-        android:id="@+id/buttonClientes"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:enabled="true"
-        android:text="@string/Clientes"
-        android:layout_marginBottom="15dp"
-        android:backgroundTint="@color/colorBoton"
-        android:textColor="@color/Titulos"/>
+      <TextView
+          android:layout_width="120dp"
+          android:layout_height="20dp"
+          android:layout_marginTop="52dp"
+          android:layout_marginStart="155dp"
+          android:textAllCaps="true"
+          android:textSize="15sp"
+          android:fontFamily="sans-serif-black"
+          android:text="@string/Clientes" />
+    </FrameLayout>
 
-    <Button
-        android:id="@+id/buttonArticulos"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        android:backgroundTint="@color/colorBoton"
-        android:enabled="true"
-        android:text="@string/Articulos"
-        android:textColor="@color/Titulos" />
-    <Button
-        android:id="@+id/buttonInformes"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:enabled="false"
-        android:text="@string/informes"
-        android:layout_marginBottom="15dp"
-        android:backgroundTint="@color/colorBoton"
-        android:textColor="@color/Titulos"/>
+    <FrameLayout
+        android:layout_width="370dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="20dp">
+      <Button
+          android:id="@+id/buttonArticulos"
+          android:layout_width="match_parent"
+          android:layout_height="60dp"
+          android:layout_marginBottom="35dp"
+          android:backgroundTint="@color/colorBoton"
+          android:enabled="true"
+          android:text="@string/Articulos"
+          android:textColor="@color/Titulos"
+          android:alpha="0"/>
+      <ImageView
+          android:id="@+id/productos"
+          android:layout_width="380dp"
+          android:layout_height="wrap_content"
+          android:contentDescription="@string/Articulos"
+          app:srcCompat="@mipmap/articulos_product_round" />
+      <TextView
+          android:layout_width="120dp"
+          android:layout_height="20dp"
+          android:layout_marginTop="52dp"
+          android:layout_marginStart="155dp"
+          android:textAllCaps="true"
+          android:textSize="15sp"
+          android:fontFamily="sans-serif-black"
+          android:text="@string/Articulos" />
+    </FrameLayout>
+    <FrameLayout
+        android:layout_width="375dp"
+        android:layout_height="150dp">
 
-    <Button
-        android:id="@+id/buttonCerrarPerfil"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/LogOut"
-        android:layout_marginBottom="15dp"
-        android:backgroundTint="@color/botonCancelar"
-        android:textColor="@color/Titulos"/>
+      <Button
+          android:id="@+id/buttonInformes"
+          android:layout_width="250dp"
+          android:layout_height="50dp"
+          android:layout_marginTop="30dp"
+          android:layout_marginBottom="35dp"
+          android:layout_marginStart="50dp"
+          android:enabled="false"
+          android:text="@string/informes"
+          android:textColor="@color/Titulos" />
 
+      <ImageView
+          android:id="@+id/premium"
+          android:layout_width="50dp"
+          android:layout_height="50dp"
+          android:layout_marginTop="30dp"
+          android:layout_marginStart="300dp"
+          android:contentDescription="@string/premium"
+          app:srcCompat="@android:drawable/btn_star_big_on" />
+
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp">
+      <Button
+          android:id="@+id/buttonCerrarPerfil"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_marginBottom="10dp"
+          android:backgroundTint="@color/botonCancelar"
+          android:text="@string/LogOut"
+          android:textColor="@color/Titulos"
+          android:alpha="0"/>
+      <ImageView
+          android:id="@+id/logout"
+          android:layout_width="380dp"
+          android:layout_height="wrap_content"
+          android:contentDescription="@string/guardar"
+          app:srcCompat="@mipmap/logout_product_round" />
+
+    </FrameLayout>
   </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
