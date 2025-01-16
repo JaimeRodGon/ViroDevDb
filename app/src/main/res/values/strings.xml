@@ -77,6 +77,7 @@
     <string name="refArticulo">Referencia Articulo</string>
     <string name="idFactura">Id Factura</string>
     <string name="coleccion">Coleccion</string>
+    <string name="actualizarCliente">Actualizar Clientes</string>
 
 
 </resources>
