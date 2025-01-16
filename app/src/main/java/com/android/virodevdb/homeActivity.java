@@ -159,14 +159,14 @@ public class homeActivity extends AppCompatActivity {
 
     private void showClientesActivity(String strEmail){
 
-        //Crea Intents para NuevaFacturaActivity
+        //Crea un Intent para VerClientesActivity
+        Intent i3 = new Intent(this, VerClientesActivity.class);
 
-        Intent i3 = new Intent(this, ClientesActivity.class);
-
+        //Pasa el email como extra
         i3.putExtra("DatosEmail", strEmail);
 
+        //Inicia la actividad
         startActivity(i3);
-
     }
 
     //Muestra ArticulosActivity

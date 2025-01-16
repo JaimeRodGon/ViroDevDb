@@ -195,8 +195,8 @@
             android:id="@+id/buttonActualizar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:enabled="false"
-            android:text="@string/actualizarEmpresa"
+            android:enabled="true"
+            android:text="Actualizar"
             android:layout_marginStart="@dimen/margin_left_crear_perfil"
             android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
             android:layout_marginBottom="8dp" />
@@ -205,8 +205,8 @@
             android:id="@+id/buttonEliminar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:enabled="false"
-            android:text="@string/eliminarwip"
+            android:enabled="true"
+            android:text="Eliminar"
             android:layout_marginStart="@dimen/margin_left_crear_perfil"
             android:layout_marginEnd="@dimen/margin_righ_crear_perfil"
             android:layout_marginBottom="8dp" />
@@ -223,12 +223,13 @@
                 android:layout_marginTop="12dp"
                 android:layout_marginBottom="10dp"
                 android:alpha="0"/>
+
             <ImageView
                 android:id="@+id/buttonCancelar"
-                android:layout_width="375dp"
-                android:layout_height="75dp"
+                android:layout_width="374dp"
+                android:layout_height="wrap_content"
                 android:contentDescription="@string/cancel"
-                app:srcCompat="@mipmap/menu_product_round"/>
+                app:srcCompat="@mipmap/menu_product_round" />
         </FrameLayout>
 
         <LinearLayout
